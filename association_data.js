@@ -6,7 +6,7 @@ const associationData = {
     "nationalCode": "14010204763",
     "foundingDate": "1404/08/17",
     "foundingLocation": "شرکت پخش البرز اردبیل",
-    "centralRepresentative": "حجت‌الله پاشا",
+    "centralRepresentative": "حجت اله پاشا",
     "address": "اردبیل، مبارزان، خیابان داروپخش، روبروی درمانگاه شهید بهشتی، شرکت پخش البرز",
     "postalCode": "5616694761",
     "phone": "09332169990",
@@ -33,7 +33,7 @@ const associationData = {
       "name": "حبیب اعیانی",
       "role": "نایب رئیس هیئت‌مدیره",
       "votes": 19,
-      "company": "شرکت امیدآریا دارو",
+      "company": "شرکت امید آریا دارو",
       "badge": "اصلی",
       "type": "main"
     },
@@ -41,7 +41,7 @@ const associationData = {
       "name": "مهدی شاهی",
       "role": "عضو اصلی و خزانه‌دار",
       "votes": 11,
-      "company": "شرکت توزیع دارو پخش",
+      "company": "شرکت توزیع داروپخش",
       "badge": "اصلی",
       "type": "main"
     },
@@ -49,7 +49,7 @@ const associationData = {
       "name": "عیسی فتحی",
       "role": "عضو اصلی هیئت‌مدیره",
       "votes": 11,
-      "company": "سها هلال",
+      "company": "شرکت سها هلال",
       "badge": "اصلی",
       "type": "main"
     }
@@ -84,92 +84,108 @@ const associationData = {
   ],
   "documents": [
     {
-      "id": 1,
-      "title": "سربرگ انجمن صنفی شرکت‌های پخش دارویی اردبیل",
-      "category": "سربرگ و هویت بصری",
-      "date": "—",
-      "type": "DOCX",
-      "filename": "__سربرگ_ اردبیل نمونه.docx"
+        "id": 1,
+        "title": "سند انتصاب هیئت‌مدیره",
+        "category": "مصوبات و ارکان",
+        "date": "—",
+        "type": "PDF",
+        "filename": "board-appointment.pdf"
     },
     {
-      "id": 2,
-      "title": "صورت‌جلسه هیئت‌مدیره انجمن (مصوبات و پیگیری‌ها)",
-      "category": "صورت‌جلسات",
-      "date": "۱۴۰۴/۰۹/۲۲",
-      "type": "DOCX",
-      "filename": "__صورتجلسه  انجمن14040923_.docx"
+        "id": 2,
+        "title": "صورت‌جلسه انتخابات",
+        "category": "صورت‌جلسات و انتخابات",
+        "date": "—",
+        "type": "PDF",
+        "filename": "election-minutes.pdf"
     },
     {
-      "id": 3,
-      "title": "اساسنامه رسمی انجمن شرکت‌های پخش دارو و مکمل‌های انسانی",
-      "category": "اسناد بالادستی",
-      "date": "مصوب",
-      "type": "PDF",
-      "filename": "اساسنامه شرکت های پخش دارو و مکمل های انسانی 0157.pdf"
+        "id": 3,
+        "title": "نامه به معاونت غذا و دارو",
+        "category": "مکاتبات رسمی",
+        "date": "—",
+        "type": "PDF",
+        "filename": "letter-food.pdf"
     },
     {
-      "id": 4,
-      "title": "صورت‌جلسه هیئت‌مدیره (طرح ترافیک و بازرس علی‌البدل)",
-      "category": "صورت‌جلسات",
-      "date": "۱۴۰۵/۰۲/۰۶",
-      "type": "DOCX",
-      "filename": "صورتجلسه  انجمن14050206 نمونه.docx"
+        "id": 4,
+        "title": "نامه به مجلس شورای اسلامی (مرحله اول)",
+        "category": "مکاتبات رسمی",
+        "date": "—",
+        "type": "DOCX",
+        "filename": "letter-parl-1.docx"
     },
     {
-      "id": 5,
-      "title": "صورت‌جلسه انجمن",
-      "category": "صورت‌جلسات",
-      "date": "—",
-      "type": "DOCX",
-      "filename": "صورتجلسه.docx"
+        "id": 5,
+        "title": "نامه به مجلس شورای اسلامی (مرحله دوم)",
+        "category": "مکاتبات رسمی",
+        "date": "—",
+        "type": "DOCX",
+        "filename": "letter-parl-2.docx"
     },
     {
-      "id": 6,
-      "title": "نامه رسمی به رئیس دانشگاه علوم پزشکی",
-      "category": "مکاتبات رسمی",
-      "date": "۱۴۰۴",
-      "type": "PDF",
-      "filename": "نامه به رئیس دانشگاه.pdf"
+        "id": 6,
+        "title": "نامه به دانشگاه علوم پزشکی",
+        "category": "مکاتبات رسمی",
+        "date": "—",
+        "type": "PDF",
+        "filename": "letter-uni.pdf"
     },
     {
-      "id": 7,
-      "title": "نامه رسمی معرفی ارکان انجمن به معاونت غذا و دارو",
-      "category": "مکاتبات رسمی",
-      "date": "۱۴۰۴/۰۸/۲۷",
-      "type": "PDF",
-      "filename": "نامه به معاونت غذا و دارو.pdf"
+        "id": 7,
+        "title": "سربرگ انجمن",
+        "category": "هویت بصری",
+        "date": "—",
+        "type": "DOCX",
+        "filename": "letterhead.docx"
     },
     {
-      "id": 8,
-      "title": "نامه رسمی به نایب‌رئیس مجلس شورای اسلامی (مرحله اول)",
-      "category": "مکاتبات رسمی",
-      "date": "۱۴۰۴/۱۰/۲۶",
-      "type": "DOCX",
-      "filename": "نامه به نایب رئیس مجلس.docx"
+        "id": 8,
+        "title": "لوگوی انجمن",
+        "category": "هویت بصری",
+        "date": "—",
+        "type": "JPEG",
+        "filename": "logo.jpeg"
     },
     {
-      "id": 9,
-      "title": "نامه رسمی دوم به نایب‌رئیس مجلس شورای اسلامی",
-      "category": "مکاتبات رسمی",
-      "date": "۱۴۰۴",
-      "type": "DOCX",
-      "filename": "نامه دوم به نایب رئیس مجلس.docx"
+        "id": 9,
+        "title": "صورت‌جلسه هیئت‌مدیره (۱۴۰۴/۰۹/۲۳)",
+        "category": "صورت‌جلسات",
+        "date": "۱۴۰۴/۰۹/۲۳",
+        "type": "DOCX",
+        "filename": "minutes-14040923.docx"
     },
     {
-      "id": 10,
-      "title": "گزارش انتخابات مجمع عمومی و تعیین ارکان هیئت‌مدیره",
-      "category": "انتخابات و آرا",
-      "date": "۱۴۰۴/۰۸/۱۷",
-      "type": "DOCX",
-      "filename": "گزارش انجمن دارویی استان اردبیل.docx"
+        "id": 10,
+        "title": "صورت‌جلسه هیئت‌مدیره (۱۴۰۵/۰۲/۰۶)",
+        "category": "صورت‌جلسات",
+        "date": "۱۴۰۵/۰۲/۰۶",
+        "type": "DOCX",
+        "filename": "minutes-14050206.docx"
     },
     {
-      "id": 11,
-      "title": "لوگوی رسمی انجمن",
-      "category": "هویت بصری",
-      "date": "—",
-      "type": "JPEG",
-      "filename": "آرم انجمن.jpeg"
+        "id": 11,
+        "title": "صورت‌جلسه انجمن",
+        "category": "صورت‌جلسات",
+        "date": "—",
+        "type": "DOCX",
+        "filename": "minutes.docx"
+    },
+    {
+        "id": 12,
+        "title": "گزارش انجمن",
+        "category": "گزارش‌ها",
+        "date": "—",
+        "type": "DOCX",
+        "filename": "report.docx"
+    },
+    {
+        "id": 13,
+        "title": "اساسنامه انجمن",
+        "category": "اسناد بالادستی",
+        "date": "مصوب",
+        "type": "PDF",
+        "filename": "statute.pdf"
     }
-  ]
-};
+]
+  };
