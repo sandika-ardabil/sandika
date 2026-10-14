@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه هوشمند بایگانی بخشنامه‌ها و رسید دیجیتال (فاز ۴)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tesseract.js for OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v5/dist/tesseract.min.js"></script>
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #121417;
+            color: #e2e8f0;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-[#1a1e24] border-b border-gray-800 p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-[#00b4d8] text-[#121417] p-2.5 rounded-xl font-bold text-xl shadow-md">پ۴</div>
+                <div>
+                    <h1 class="text-xl font-bold text-white">سامانه هوشمند بایگانی و رسید دیجیتال</h1>
+                    <p class="text-xs text-gray-400">فاز ۴ - استخراج OCR و ارسال پیام رسان</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap gap-2">
+                <button onclick="switchTab('search')" id="btn-search" class="px-4 py-2 rounded-lg text-sm font-medium transition bg-[#00b4d8] text-[#121417] shadow">جستجوی هوشمند بخشنامه‌ها</button>
+                <button onclick="switchTab('ocr')" id="btn-ocr" class="px-4 py-2 rounded-lg text-sm font-medium transition bg-[#1a1e24] text-gray-300 hover:bg-gray-800 border border-gray-700">بایگانی اسناد و استخراج متن (OCR)</button>
+                <button onclick="switchTab('receipt')" id="btn-receipt" class="px-4 py-2 rounded-lg text-sm font-medium transition bg-[#1a1e24] text-gray-300 hover:bg-gray-800 border border-gray-700">مرکز صدور رسید دیجیتال (بله / پیامک)</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto flex-1 w-full p-4 md:p-6">
+        
+        <!-- Tab 1: Search Circulars -->
+        <div id="tab-search" class="tab-content active space-y-6">
+            <div class="bg-[#1a1e24] p-6 rounded-2xl border border-gray-800 shadow-xl">
+                <h2 class="text-lg font-bold text-[#00b4d8] mb-4">جستجوی پیشرفته بخشنامه‌ها</h2>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" id="search-input" placeholder="جستجو بر اساس عنوان، شماره بخشنامه، کلیدواژه یا سازمان..." class="flex-1 bg-[#121417] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00b4d8]">
+                    <button onclick="searchCirculars()" class="bg-[#00b4d8] text-[#121417] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition">جستجو</button>
+                </div>
+            </div>
+            
+            <div class="bg-[#1a1e24] rounded-2xl border border-gray-800 shadow-xl overflow-hidden">
+                <div class="p-4 border-b border-gray-800 font-bold text-gray-300">نتایج بخشنامه‌ها</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right border-collapse">
+                        <thead>
+                            <tr class="bg-gray-900/50 text-gray-400 text-sm border-b border-gray-800">
+                                <th class="p-4">عنوان بخشنامه</th>
+                                <th class="p-4">شماره پیرو</th>
+                                <th class="p-4">تاریخ صدور</th>
+                                <th class="p-4">سازمان صادرکننده</th>
+                                <th class="p-4">کلیدواژه‌ها</th>
+                                <th class="p-4">عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="circulars-table-body" class="divide-y divide-gray-800 text-sm">
+                            <tr><td colspan="6" class="p-6 text-center text-gray-500">در حال بارگذاری اطلاعات...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: OCR & Archive -->
+        <div id="tab-ocr" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#1a1e24] p-6 rounded-2xl border border-gray-800 shadow-xl space-y-4">
+                    <h2 class="text-lg font-bold text-[#00b4d8]">آپلود سند / اسکن بخشنامه جهت OCR</h2>
+                    <input type="file" id="ocr-file-input" accept="image/*" class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-gray-300">
+                    <div id="image-preview-container" class="hidden">
+                        <img id="image-preview" class="max-h-60 rounded-xl mx-auto border border-gray-700 object-contain">
+                    </div>
+                    <button onclick="runOCR()" class="w-full bg-[#00b4d8] text-[#121417] font-bold py-3 rounded-xl hover:opacity-95 transition shadow-lg">شروع استخراج متن (OCR فارسی/انگلیسی)</button>
+                    <div id="ocr-status" class="text-xs text-yellow-400"></div>
+                </div>
+
+                <div class="bg-[#1a1e24] p-6 rounded-2xl border border-gray-800 shadow-xl space-y-4 flex flex-col">
+                    <h2 class="text-lg font-bold text-[#00b4d8]">ثبت نهایی بخشنامه استخراج شده</h2>
+                    <form id="archive-form" onsubmit="saveCircular(event)" class="space-y-3 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-xs text-gray-400 block mb-1">عنوان بخشنامه</label>
+                                <input type="text" id="form-title" required class="w-full bg-[#121417] border border-gray-700 rounded-lg p-2.5 text-white text-sm">
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">شماره بخشنامه</label>
+                                    <input type="text" id="form-ref" class="w-full bg-[#121417] border border-gray-700 rounded-lg p-2.5 text-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-gray-400 block mb-1">سازمان صادرکننده</label>
+                                    <input type="text" id="form-org" class="w-full bg-[#121417] border border-gray-700 rounded-lg p-2.5 text-white text-sm" value="سازمان غذا و دارو">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs text-gray-400 block mb-1">متن استخراج شده OCR</label>
+                                <textarea id="form-ocr" rows="4" class="w-full bg-[#121417] border border-gray-700 rounded-lg p-2.5 text-white text-sm font-mono"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition shadow-lg mt-4">ذخیره در بانک اطلاعاتی Supabase</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Digital Receipt & Bale Outbox -->
+        <div id="tab-receipt" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#1a1e24] p-6 rounded-2xl border border-gray-800 shadow-xl space-y-4">
+                    <h2 class="text-lg font-bold text-[#00b4d8]">ارسال رسید دیجیتال / پیام‌رسان بله</h2>
+                    <form id="receipt-form" onsubmit="sendReceipt(event)" class="space-y-4">
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">کد رهگیری / شماره سند</label>
+                            <input type="text" id="rcpt-code" required class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-white" placeholder="مثال: TRK-98421">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">نام گیرنده</label>
+                            <input type="text" id="rcpt-name" required class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-white" placeholder="مثال: داروخانه دکتر کریمی">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">شماره تماس یا شناسه بله (ChatID)</label>
+                            <input type="text" id="rcpt-target" required class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-white" placeholder="09123456789 یا @username">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">کانال ارسال</label>
+                            <select id="rcpt-channel" class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-white">
+                                <option value="Bale">پیام‌رسان بله (Bale Bot)</option>
+                                <option value="SMS">سامانه پیامک کوتاه (SMS)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">متن پیام / رسید</label>
+                            <textarea id="rcpt-text" rows="3" class="w-full bg-[#121417] border border-gray-700 rounded-xl p-3 text-white">رسید درخواست شما با موفقیت صادر و ثبت گردید.</textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#00b4d8] text-[#121417] font-bold py-3 rounded-xl hover:opacity-90 transition shadow-lg">افزودن به صف ارسال (Outbox)</button>
+                    </form>
+                </div>
+
+                <div class="bg-[#1a1e24] p-6 rounded-2xl border border-gray-800 shadow-xl space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-lg font-bold text-[#00b4d8]">وضعیت صف ارسال (Digital Receipts Outbox)</h2>
+                        <button onclick="loadOutbox()" class="text-xs bg-gray-800 hover:bg-gray-700 px-3 py-1.5 rounded-lg text-gray-300">بروزرسانی</button>
+                    </div>
+                    <div class="overflow-x-auto max-h-[500px]">
+                        <table class="w-full text-right border-collapse">
+                            <thead>
+                                <tr class="bg-gray-900/50 text-gray-400 text-xs border-b border-gray-800">
+                                    <th class="p-3">کد رهگیری</th>
+                                    <th class="p-3">گیرنده</th>
+                                    <th class="p-3">کانال</th>
+                                    <th class="p-3">وضعیت</th>
+                                </tr>
+                            </thead>
+                            <tbody id="outbox-table-body" class="divide-y divide-gray-800 text-xs">
+                                <tr><td colspan="4" class="p-4 text-center text-gray-500">در حال بارگذاری صف...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1e24] border-t border-gray-800 py-4 text-center text-xs text-gray-500">
+        سامانه جامع انجمن داروسازان - فاز ۴ اجرا شده با Supabase و Tesseract.js
+    </footer>
+
+    <!-- Script Application Logic -->
+    <script>
+        // Supabase Configuration
+        const SUPABASE_URL = 'https://halyqkmvxpgxagmrvzpo.supabase.co';
+        const SUPABASE_KEY = 'secret-abc776d2';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // Tab Switching
+        function switchTab(tabId) {
+            ['search', 'ocr', 'receipt'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.remove('active');
+                document.getElementById(`btn-${t}`).className = 'px-4 py-2 rounded-lg text-sm font-medium transition bg-[#1a1e24] text-gray-300 hover:bg-gray-800 border border-gray-700';
+            });
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            document.getElementById(`btn-${tabId}`).className = 'px-4 py-2 rounded-lg text-sm font-medium transition bg-[#00b4d8] text-[#121417] shadow';
+
+            if (tabId === 'search') loadCirculars();
+            if (tabId === 'receipt') loadOutbox();
+        }
+
+        // Image Preview & OCR Handler
+        const fileInput = document.getElementById('ocr-file-input');
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    document.getElementById('image-preview').src = event.target.result;
+                    document.getElementById('image-preview-container').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        async function runOCR() {
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('لطفاً ابتدا یک تصویر یا سند آپلود کنید.');
+                return;
+            }
+            const statusEl = document.getElementById('ocr-status');
+            statusEl.innerText = 'در حال پردازش OCR تصویر... لطفاً صبر کنید.';
+            try {
+                const worker = await Tesseract.createWorker('fas+eng');
+                const ret = await worker.recognize(file);
+                await worker.terminate();
+                
+                const text = ret.data.text;
+                document.getElementById('form-ocr').value = text;
+                document.getElementById('form-title').value = text.split('
+')[0] || 'بخشنامه استخراج شده';
+                statusEl.innerText = 'OCR با موفقیت انجام شد!';
+            } catch (err) {
+                console.error(err);
+                statusEl.innerText = 'خطا در انجام OCR: ' + err.message;
+            }
+        }
+
+        // Load Circulars from Supabase
+        async function loadCirculars(query = '') {
+            const tbody = document.getElementById('circulars-table-body');
+            tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-gray-400">در حال جستجو...</td></tr>';
+            
+            let req = supabaseClient.from('archive_circulars').select('*').order('created_at', { ascending: false });
+            if (query) {
+                req = req.or(`title.ilike.%${query}%,ref_no.ilike.%${query}%,organization.ilike.%${query}%,keywords.ilike.%${query}%`);
+            }
+            const { data, error } = await req;
+            if (error) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-red-400">خطا در دریافت اطلاعات: ${error.message}</td></tr>`;
+                return;
+            }
+            if (!data || data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-gray-500">هیچ بخشنامه‌ای یافت نشد.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = data.map(item => `
+                <tr class="hover:bg-gray-800/50 transition">
+                    <td class="p-4 font-bold text-white">${item.title}</td>
+                    <td class="p-4 text-gray-300">${item.ref_no || '-'}</td>
+                    <td class="p-4 text-gray-300">${item.issue_date || '-'}</td>
+                    <td class="p-4 text-gray-300">${item.organization || '-'}</td>
+                    <td class="p-4 text-gray-400">${item.keywords || '-'}</td>
+                    <td class="p-4">
+                        <button onclick="alert('متن OCR:
+\n' + (uniEscape('${item.content_ocr || "متنی موجود نیست"}')))" class="text-xs bg-[#00b4d8] text-[#121417] font-bold px-3 py-1.5 rounded-lg hover:opacity-90">مشاهده متن</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function uniEscape(str) {
+            return str.replace(/'/g, "\'").replace(/
+/g, ' ');
+        }
+
+        // Search trigger
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            loadCirculars(e.target.value.trim());
+        });
+        function searchCirculars() {
+            loadCirculars(document.getElementById('search-input').value.trim());
+        }
+
+        // Save Circular
+        async function saveCircular(e) {
+            e.preventDefault();
+            const title = document.getElementById('form-title').value;
+            const ref_no = document.getElementById('form-ref').value;
+            const organization = document.getElementById('form-org').value;
+            const content_ocr = document.getElementById('form-ocr').value;
+            
+            const { error } = await supabaseClient.from('archive_circulars').insert([{
+                title, ref_no, organization, content_ocr, issue_date: jalaliToday(), category: 'عمومی'
+            }]);
+            
+            if (error) {
+                alert('خطا در ذخیره بخشنامه: ' + error.message);
+            } else {
+                alert('بخشنامه با موفقیت در Supabase ذخیره شد!');
+                document.getElementById('archive-form').reset();
+                switchTab('search');
+            }
+        }
+
+        // Receipt Outbox
+        async function loadOutbox() {
+            const tbody = document.getElementById('outbox-table-body');
+            const { data, error } = await supabaseClient.from('digital_receipts_outbox').select('*').order('created_at', { ascending: false });
+            if (error) {
+                tbody.innerHTML = `<tr><td colspan="4" class="p-4 text-center text-red-400">خطا: ${error.message}</td></tr>`;
+                return;
+            }
+            if (!data || data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-500">صف ارسال خالی است.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = data.map(item => `
+                <tr class="hover:bg-gray-800/50">
+                    <td class="p-3 font-mono text-white">${item.tracking_code}</td>
+                    <td class="p-3 text-gray-300">${item.recipient_name}</td>
+                    <td class="p-3 text-gray-400">${item.channel}</td>
+                    <td class="p-3 text-emerald-400 font-medium">${item.status}</td>
+                </tr>
+            `).join('');
+        }
+
+        async function sendReceipt(e) {
+            e.preventDefault();
+            const tracking_code = document.getElementById('rcpt-code').value;
+            const recipient_name = document.getElementById('rcpt-name').value;
+            const phone_or_chatid = document.getElementById('rcpt-target').value;
+            const channel = document.getElementById('rcpt-channel').value;
+            const message_text = document.getElementById('rcpt-text').value;
+
+            const { error } = await supabaseClient.from('digital_receipts_outbox').insert([{
+                tracking_code, recipient_name, phone_or_chatid, channel, message_text, status: 'در صف ارسال'
+            }]);
+
+            if (error) {
+                alert('خطا در ثبت رسید: ' + error.message);
+            } else {
+                alert('رسید با موفقیت به صف ارسال (Outbox) افزوده شد!');
+                document.getElementById('receipt-form').reset();
+                loadOutbox();
+            }
+        }
+
+        // Jalali date utilities (Gregorian to Jalali and formatted current date)
+        function gregorianToJalali(gy, gm, gd) {
+            const gdm = [0,31,((gy%4===0 && gy%100!==0)||gy%400===0)?29:28,31,30,31,30,31,31,30,31,30,31];
+            let jy = gy <= 1600 ? 0 : 979;
+            gy -= gy <= 1600 ? 621 : 1600;
+            let days = 365*gy + Math.floor((gy+3)/4) - Math.floor((gy+99)/100) + Math.floor((gy+399)/400);
+            for (let i=0; i<gm; i++) days += gdm[i];
+            days += gd-1;
+            let jnp = days - 79;
+            const jnpCycle = Math.floor(jnp/12053); jnp %= 12053;
+            jy += 33*jnpCycle + 4*Math.floor(jnp/1461); jnp %= 1461;
+            if (jnp >= 366) { jy += Math.floor((jnp-1)/365); jnp = (jnp-1)%365; }
+            let jm, jd;
+            if (jnp < 186) { jm = 1 + Math.floor(jnp/31); jd = 1 + jnp%31; }
+            else { jm = 7 + Math.floor((jnp-186)/30); jd = 1 + (jnp-186)%30; }
+            return [jy, jm, jd];
+        }
+        function jalaliToday(separator = '/') {
+            const d = new Date(); const j = gregorianToJalali(d.getFullYear(), d.getMonth()+1, d.getDate());
+            return j.map(n => String(n).padStart(2,'0')).join(separator);
+        }
+
+        // Initial Load
+        window.onload = () => {
+            loadCirculars();
+        };
+    </script>
+</body>
+</html>
