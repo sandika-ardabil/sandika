@@ -14,9 +14,7 @@
   if(Array.isArray(remoteC))for(const row of remoteC){const r=row.record_data;if(r&&typeof r==='object'&&!seenC.has(companyKey(r))){mergedC.push(r);seenC.add(companyKey(r))}}
   data.personnel=mergedP;data.companies=mergedC;data.meta=data.meta||{};data.meta.total_personnel=mergedP.length;data.meta.total_companies=mergedC.length;return data;
  }
-
- async function loadData(url){const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status+' loading '+url);return res.json();}
  async function savePerson(record){const c=client();if(!c)return;try{await c.upsert('personnel',[{record_key:keyOf(record),record_data:record}],'record_key')}catch(e){console.warn('Personnel cloud save deferred:',e.message)}}
  async function deletePerson(record){/* retain records in cloud; soft delete avoids accidental data loss */const c=client();if(!c)return;const row={...record,_deleted:true};try{await c.upsert('personnel',[{record_key:keyOf(record),record_data:row}],'record_key')}catch(e){console.warn('Personnel cloud delete deferred:',e.message)}}
- w.PersonnelSync={loadData,bootstrap,savePerson,deletePerson};
+ w.PersonnelSync={bootstrap,savePerson,deletePerson};
 })(typeof window!=='undefined'?window:globalThis);
