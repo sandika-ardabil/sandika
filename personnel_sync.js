@@ -18,11 +18,19 @@
  async function deletePerson(record){/* retain records in cloud; soft delete avoids accidental data loss */const c=client();if(!c)return;const row={...record,_deleted:true};try{await c.upsert('personnel',[{record_key:keyOf(record),record_data:row}],'record_key')}catch(e){console.warn('Personnel cloud delete deferred:',e.message)}}
  w.PersonnelSync={bootstrap,savePerson,deletePerson};
 })(typeof window!=='undefined'?window:globalThis);
-if (window.PersonnelSync && !window.PersonnelSync.loadData) {
-  window.PersonnelSync.loadData = function() {
-    if (typeof window.PersonnelSync.bootstrap === 'function') {
-      return window.PersonnelSync.bootstrap();
+if (window.PersonnelSync) {
+  window.PersonnelSync.loadData = async function(url) {
+    try {
+      const res = await fetch(url || 'data.json');
+      const data = await res.json();
+      if (typeof window.PersonnelSync.bootstrap === 'function') {
+        return await window.PersonnelSync.bootstrap(data);
+      }
+      return data;
+    } catch (e) {
+      console.warn('Personnel fallback to local data.json:', e);
+      const res = await fetch('data.json');
+      return await res.json();
     }
-    return Promise.resolve([]);
   };
 }
