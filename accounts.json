@@ -1,0 +1,35 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "title": "مدیر سیستم (انجمن)"
+  },
+  {
+    "username": "fda_ardabil",
+    "password": "fda12345",
+    "role": "fda",
+    "title": "معاونت غذا و دارو استان اردبیل"
+  },
+  {
+    "username": "company_01",
+    "password": "comp1234",
+    "role": "company",
+    "company_name": "شرکت پخش رازی",
+    "title": "مدیر شرکت پخش رازی"
+  },
+  {
+    "username": "company_02",
+    "password": "comp1234",
+    "role": "company",
+    "company_name": "شرکت داروپخش",
+    "title": "مدیر شرکت داروپخش"
+  },
+  {
+    "username": "company_03",
+    "password": "comp1234",
+    "role": "company",
+    "company_name": "شرکت پخش فردوس",
+    "title": "مدیر شرکت پخش فردوس"
+  }
+]
