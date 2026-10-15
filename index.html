@@ -820,7 +820,7 @@ if (window.PersonnelSync && typeof window.PersonnelSync.loadData === 'function')
 } else if (window.PersonnelSync && typeof window.PersonnelSync.init === 'function') {
     window.PersonnelSync.init();
 }
-('data.json').then(d=>window.PersonnelSync.bootstrap(d)).then(d=>{data=d;init()}).catch(err=>{$('#loadState').innerHTML='<div class="error"><b>بارگذاری اطلاعات انجام نشد.</b><br>فایل <code>data.json</code> باید کنار <code>index.html</code> قرار داشته باشد و از طریق GitHub Pages یا وب‌سرور اجرا شود. مرورگرها به‌دلایل امنیتی در حالت <code>file://</code> اجازهٔ دریافت JSON را نمی‌دهند.<br><small>'+esc(err.message)+'</small></div>';if(location.protocol==='file:')$('#fileNotice').classList.add('show')});
+fetch('data.json').then(window.PersonnelSync.bootstrap(...).then(d=>{data=d;init()}).catch(err=>{$('#loadState').innerHTML='<div class="error"><b>بارگذاری اطلاعات انجام نشد.</b><br>فایل <code>data.json</code> باید کنار <code>index.html</code> قرار داشته باشد و از طریق GitHub Pages یا وب‌سرور اجرا شود. مرورگرها به‌دلایل امنیتی در حالت <code>file://</code> اجازهٔ دریافت JSON را نمی‌دهند.<br><small>'+esc(err.message)+'</small></div>';if(location.protocol==='file:')$('#fileNotice').classList.add('show')});
 window.persistImportedPersonnel=function(rows){
   const columns=data.columns, overrides=read(KEYS.over,{});let count=0;
   rows.forEach(row=>{
