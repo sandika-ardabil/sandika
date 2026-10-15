@@ -819,11 +819,22 @@ if (window.PersonnelSync && typeof window.PersonnelSync.loadData === 'function')
     window.PersonnelSync.loadData();
 } else if (window.PersonnelSync && typeof window.PersonnelSync.init === 'function') {
     window.PersonnelSync.init();
+// بارگذاری خودکار اطلاعات پرسنل و همگام‌سازی با سامانه
+if (window.PersonnelSync && typeof window.PersonnelSync.bootstrap === 'function') {
+  fetch('data.json')
+    .then(function(response) {
+      if (!response.ok) throw new Error('خطا در دریافت data.json: ' + response.status);
+      return response.json();
+    })
+    .then(function(data) {
+      window.PersonnelSync.bootstrap(data);
+    })
+    .catch(function(err) {
+      console.warn('عدم موفقیت در بارگذاری data.json، تلاش از حافظه محلی:', err);
+      window.PersonnelSync.bootstrap();
+    });
 }
-fetch('data.json').then(window.PersonnelSync.bootstrap(...).then(d=>{data=d;init()}).catch(err=>{$('#loadState').innerHTML='<div class="error"><b>بارگذاری اطلاعات انجام نشد.</b><br>فایل <code>data.json</code> باید کنار <code>index.html</code> قرار داشته باشد و از طریق GitHub Pages یا وب‌سرور اجرا شود. مرورگرها به‌دلایل امنیتی در حالت <code>file://</code> اجازهٔ دریافت JSON را نمی‌دهند.<br><small>'+esc(err.message)+'</small></div>';if(location.protocol==='file:')$('#fileNotice').classList.add('show')});
-window.persistImportedPersonnel=function(rows){
-  const columns=data.columns, overrides=read(KEYS.over,{});let count=0;
-  rows.forEach(row=>{
+
     const person=Object.fromEntries(columns.map(column=>[column,String(row[column]??'').trim()]));
     if(!columns.some(column=>person[column]))return;
     const id='local:import:'+Date.now()+':'+Math.random().toString(36).slice(2,9);
