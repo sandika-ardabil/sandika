@@ -773,24 +773,6 @@ function renderPeople(){const list=filteredPeople(),rawSize=$('#pageSize').value
 function renderCompanies(){const counts={};people.forEach(p=>{let n=p['نام شرکت']||'بدون نام شرکت';counts[n]=(counts[n]||0)+1});$('#companyCards').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([n,c])=>`<div class="company-card"><strong>${esc(n)}</strong><span class="badge">${faNum(c)} نفر</span></div>`).join('')||'<div class="empty">شرکتی ثبت نشده است.</div>';}
 function updateStats(){$('#statPeople').textContent=faNum(people.length);$('#statCompanies').textContent=faNum(new Set(people.map(p=>p['نام شرکت']).filter(Boolean)).size);$('#statOut').textContent=faNum(letters.filter(l=>l.direction==='صادر').length);$('#statIn').textContent=faNum(letters.filter(l=>l.direction==='وارد').length);$('#statDraft').textContent=faNum(letters.filter(l=>l.status==='پیش‌نویس').length);}
 function renderLetters(){const q=$('#letterSearch').value.trim().toLocaleLowerCase(),dir=$('#letterDirection').value,st=$('#letterStatus').value,typ=$('#letterType')?.value||'';const ls=letters.filter(l=>(!dir||l.direction===dir)&&(!st||l.status===st)&&(!typ||l.type===typ)&&(!q||Object.values(l).join(' ').toLocaleLowerCase().includes(q))).sort((a,b)=>b._created-a._created);$('#letterRows').innerHTML=ls.map(l=>`<tr><td>${esc(l.tracking_no)}</td><td>${esc(l.direction)}</td><td>${esc(toShamsiDate(l.date))}</td><td>${esc(l.subject)}</td><td>${esc(l.sender)}</td><td>${esc(l.receiver)}</td><td>${esc(l.company)}</td><td><span class="badge ${l.status==='مختومه'?'green':l.status==='پیش‌نویس'?'orange':'blue'}">${esc(l.status)}</span></td><td class="no-print"><button class="btn secondary" data-printletter="${esc(l._id)}">چاپ</button> <button class="btn danger" data-dell="${esc(l._id)}">حذف</button></td></tr>`).join('');$('#letterEmpty').hidden=ls.length>0;$('#letterRows').querySelectorAll('[data-printletter]').forEach(b=>b.onclick=()=>printLetter(b.dataset.printletter));$('#letterRows').querySelectorAll('[data-dell]').forEach(b=>b.onclick=()=>{if(confirm('این نامه حذف شود؟')){letters=letters.filter(x=>x._id!==b.dataset.dell);save(KEYS.letters,letters);renderLetters();updateStats()}});updateStats();}
-
-/* ---- Supabase letters sync (unified) ---- */
-window.lettersSyncMerge=function(remote,opts){
-  try{
-    opts=opts||{};
-    const local=letters.filter(l=>!l._src);           // فقط نامه‌های محلی حفظ شوند
-    const seen=new Set();
-    const merged=[];
-    remote.forEach(r=>{if(r._id&&!seen.has(r._id)){seen.add(r._id);merged.push(r);}});
-    local.forEach(l=>{if(!seen.has(l._id)){seen.add(l._id);merged.push(l);}});
-    letters=merged;
-    try{save(KEYS.letters,letters);}catch(e){}
-    if(typeof renderLetters==='function')renderLetters();
-    if(typeof updateStats==='function')updateStats();
-    if(typeof toast==='function'&&!opts.silent)toast('همگام‌سازی نامه‌ها انجام شد ('+remote.length+' نامه)');
-  }catch(e){console.error('[letters-sync] merge error',e);}
-};
-
 function openModal(title,fields,values,submit){$('#modalTitle').textContent=title;$('#modalFields').innerHTML=fields.map(f=>{let v=values[f.key]??'';if(f.type==='date')v=formatLetterDate(v);let field=f.options?`<select id="f_${f.key}" ${f.required?'required':''}>${f.options.map(o=>`<option ${v===o?'selected':''}>${esc(o)}</option>`).join('')}</select>`:f.area?`<textarea id="f_${f.key}">${esc(v)}</textarea>`:`<input id="f_${f.key}" value="${esc(v)}" ${f.required?'required':''} ${f.type==='date'?'type="text" inputmode="numeric" dir="ltr" placeholder="۱۴۰۵/۰۱/۰۱" autocomplete="off" title="تاریخ شمسی به صورت سال/ماه/روز"':'type="text"'}>`;return `<div class="field ${f.wide?'spanall':''}"><label>${esc(f.label)}${f.required?' *':''}</label>${field}</div>`}).join('');editContext=submit;$('#modal').classList.add('show');}
 function closeModal(){$('#modal').classList.remove('show');editContext=null}$('#cancelModal').onclick=closeModal;$('#modal').onclick=e=>{if(e.target===$('#modal'))closeModal()};$('#modalForm').onsubmit=e=>{e.preventDefault();const fields=[...$('#modalFields').querySelectorAll('input,select,textarea')],vals={};let invalidDate=false;fields.forEach(x=>{let value=x.value.trim();if(x.id==='f_date'){const normalized=normalizeJalaliInput(value);if(!normalized){x.setCustomValidity('تاریخ را به صورت شمسی و با قالب سال/ماه/روز وارد کنید.');x.reportValidity();invalidDate=true;return}x.setCustomValidity('');value=normalized}vals[x.id.slice(2)]=value});if(invalidDate)return;editContext?.(vals);closeModal()};
 function personModal(id){const existing=people.find(x=>x._id===id), vals=existing||{};const fields=data.columns.map((c,i)=>({key:c,label:c,required:i===1||i===2}));openModal(existing?'ویرایش اطلاعات پرسنل':'افزودن پرسنل',fields,vals,v=>{if(existing){if(id.startsWith('base:')){const o=read(KEYS.over,{});o[id]=Object.fromEntries(data.columns.map(c=>[c,v[c]??'']));save(KEYS.over,o)}Object.assign(existing,v)}else{const newId='local:'+Date.now()+':'+Math.random().toString(36).slice(2,7);people.push({...Object.fromEntries(data.columns.map(c=>[c,v[c]||''])),_id:newId});const o=read(KEYS.over,{});o[newId]=Object.fromEntries(data.columns.map(c=>[c,v[c]||'']));save(KEYS.over,o)}buildFilters();renderPeople();renderCompanies();updateStats()});}
@@ -826,7 +808,6 @@ header.topbar .headorg, header.topbar #orgTitle {
   header.topbar .headorg, header.topbar #orgTitle { animation: none !important; }
 }
 </style>
-<script src="letters-sync-unified.js"></script>
 </body></html>`);w.document.close()}
 
 function exportCSV(){const rows=filteredPeople(),quote=x=>'"'+String(x??'').replace(/"/g,'""')+'"';const csv='\ufeff'+[data.columns.map(quote).join(','),...rows.map(p=>data.columns.map(c=>quote(p[c])).join(','))].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='personnel-filtered.csv';a.click();URL.revokeObjectURL(a.href)}
@@ -1028,4 +1009,27 @@ function confirmExcelImport(){
   alert(`${added} ردیف پرسنل وارد شد.`);location.reload();
 }
 </script>
-</body></html>
+<script>
+window.lettersSyncMerge = function(syncedLetters) {
+  if (!Array.isArray(syncedLetters) || syncedLetters.length === 0) return;
+  if (!window.letters) window.letters = [];
+  let addedCount = 0;
+  syncedLetters.forEach(function(item) {
+    var exists = window.letters.some(function(l) {
+      return (l.tracking_no && l.tracking_no === item.tracking_no) || (l._id && l._id === item._id);
+    });
+    if (!exists) {
+      window.letters.unshift(item);
+      addedCount++;
+    }
+  });
+  if (addedCount > 0) {
+    try { if (typeof save === 'function' && typeof KEYS !== 'undefined') save(KEYS.letters, window.letters); } catch(e) {}
+    if (typeof renderLetters === 'function') renderLetters();
+    if (typeof updateStats === 'function') updateStats();
+  }
+};
+</script>
+<script src="letters-sync-unified.js"></script>
+</body>
+</html>
