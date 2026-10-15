@@ -832,17 +832,23 @@ window.persistImportedPersonnel=function(rows){
 #fileNotice{grid-column:1/-1;grid-row:1}
 #app>.cards{grid-column:2;grid-row:2;direction:rtl;grid-template-columns:repeat(5,minmax(0,1fr));}
 #app>.sidebar{grid-column:1;grid-row:2 / span 2;align-self:start}
-#app>.tab-content{grid-column:2;grid-row:3}
-.sidebar-logo{display:none!important}
-.header-association-logo{position:absolute;z-index:4;right:clamp(18px,4vw,64px);top:50%;transform:translateY(-50%);width:clamp(72px,8vw,108px);height:clamp(72px,8vw,108px);display:grid;place-items:center;padding:7px;border-radius:20px;background:linear-gradient(145deg,#f4fbff,#cbe8f2);border:2px solid #75c8c0;box-shadow:0 8px 22px rgba(0,0,0,.34),inset 0 1px 0 #fff}
-.header-association-logo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
-header.topbar .headorg,header.topbar #orgTitle{padding-right:clamp(105px,13vw,170px)!important}
-#newLetterPanel{display:none!important}
-@media(max-width:900px){#app{display:flex;flex-direction:column;gap:14px}#app>.cards{order:1;width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}.sidebar{order:2;width:100%;position:static}.tab-content{order:3;width:100%}.sidebar .tabs{flex-direction:row;flex-wrap:wrap}.sidebar .tab{flex:1 1 145px;width:auto}}
-@media(max-width:600px){#app>.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.header-association-logo{right:8px;width:62px;height:62px;padding:4px;border-radius:13px}header.topbar .headorg,header.topbar #orgTitle{padding-right:72px!important;padding-left:54px!important;font-size:12px!important}.sidebar .tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar .tab{width:100%;padding:9px 6px;font-size:11px}.sidebar .tab:last-child{grid-column:1/-1}}
-</style>
-<script id="new-sections-local-storage">
-(()=>{'use strict';const $=id=>document.getElementById(id), load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k)||'null')??d}catch(_){return d}},save=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+    });
+}
+
+window.persistImportedPersonnel = function(rows) {
+  const columns = window.PERSONNEL_COLUMNS || ['ردیف', 'کد ملی', 'نام و نام خانوادگی'];
+  const overrides = read(KEYS.over, {});
+  let count = 0;
+  rows.forEach(row => {
+    const person = Object.fromEntries(columns.map(column => [column, String(row[column] ?? '').trim()]));
+    if (!columns.some(column => person[column])) return;
+    const id = 'local:import:' + Date.now() + ':' + Math.random().toString(36).slice(2, 9);
+    overrides[id] = person; count++;
+  });
+  save(KEYS.over, overrides);
+  return count;
+};
+
 /* Mafasa accounting UI is initialized below from accounting_data_updated.js. */
 /* Association panel is rendered from association_data.js below. */
 })();
