@@ -1,0 +1,27 @@
+CHANGELOG — Sandika Perfect v5
+================================
+
+1) Hero Cleaning
+   - Background of the hero section replaced with the fully cleaned
+     image (assets/hero_bg_clean.webp); artifacts and old overlay
+     text removed.
+
+2) Glass Emblem
+   - New emblem assets/embers replaced with assets/emblem_glass.png.
+   - A cyan glowing aura was added around the emblem to blend the
+     cut edges smoothly into the background.
+
+3) 360-Degree Rotation
+   - The emblem now performs a full 360-degree rotation animation.
+
+4) Centered Oval Pedestal Alignment
+   - assets/pedestal.png (oval pedestal) is horizontally centered
+     under the emblem; alignment corrected for all screen sizes.
+
+5) Content Cleanup
+   - Removed redundant slogans and duplicate titles from the hero
+     and section headers.
+
+6) Code Hygiene
+   - style.css: removed orphan .hero-subtitle rule.
+   - app.js: verified, no broken references remain.
