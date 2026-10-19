@@ -82,7 +82,7 @@ main{animation:fadein .7s ease}
 :root{--brand:#121417;--cyan:#00b4d8}
 .hero{position:relative;min-height:740px;height:auto;display:grid;place-items:center;text-align:center;padding:105px 20px 115px;
  background-image:linear-gradient(180deg,rgba(8,16,27,.10),rgba(8,16,27,.16) 55%,#0c1017),url("assets/hero_bg_clean.webp");
- background-size:cover;background-position:center top;overflow:hidden}
+ background-size:cover;background-position:center center;overflow:hidden}
 .hero-content{position:relative;z-index:1;padding-bottom:20px;display:flex;flex-direction:column;align-items:center}
 .emblem-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;margin:0 auto 10px;perspective:1000px}
 .hero-emblem{width:auto;max-height:225px;max-width:min(75vw,270px);object-fit:contain;display:block;
@@ -105,7 +105,7 @@ main{animation:fadein .7s ease}
   background-image:radial-gradient(ellipse at 50% 42%,rgba(3,12,22,.16),rgba(3,12,22,.48) 65%,rgba(3,8,16,.82)),
     linear-gradient(180deg,rgba(5,12,22,.28) 0%,rgba(5,12,22,.24) 52%,rgba(8,12,19,.88) 100%),
     url("assets/hero_bg_clean.webp");
-  background-size:cover; background-position:center top;
+  background-size:cover; background-position:center center;
 }
 .hero::before,.hero::after{content:none!important;display:none!important}
 .hero-content{width:100%;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
