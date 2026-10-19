@@ -102,10 +102,10 @@ main{animation:fadein .7s ease}
 .hero{
   min-height:740px; padding:112px 20px 86px; overflow:hidden;
   background-color:#09131f;
-  background-image:radial-gradient(ellipse at 50% 42%,rgba(0,164,205,.18),transparent 36%),
-    radial-gradient(ellipse at 50% 90%,rgba(5,46,66,.44),transparent 58%),
-    linear-gradient(180deg,#0b1826 0%,#0b1520 66%,#0c1017 100%);
-  background-size:cover; background-position:center;
+  background-image:radial-gradient(ellipse at 50% 42%,rgba(3,12,22,.16),rgba(3,12,22,.48) 65%,rgba(3,8,16,.82)),
+    linear-gradient(180deg,rgba(5,12,22,.28) 0%,rgba(5,12,22,.24) 52%,rgba(8,12,19,.88) 100%),
+    url("assets/hero_bg_clean.webp");
+  background-size:cover; background-position:center top;
 }
 .hero::before,.hero::after{content:none!important;display:none!important}
 .hero-content{width:100%;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
@@ -118,7 +118,7 @@ main{animation:fadein .7s ease}
   position:relative; z-index:3; width:min(280px,65vw); height:270px;
   display:grid; place-items:center; margin:0 auto -54px;
   transform-style:preserve-3d; perspective:1200px;
-  animation:crystalTurn 8s ease-in-out infinite alternate;
+  animation:crystalTurn 12s linear infinite;
   filter:drop-shadow(0 12px 12px rgba(0,0,0,.40)) drop-shadow(0 0 16px rgba(60,222,255,.38)) drop-shadow(0 0 38px rgba(0,180,216,.25));
 }
 .emblem-crystal::before{
@@ -144,7 +144,7 @@ main{animation:fadein .7s ease}
   filter:drop-shadow(0 2px 1px rgba(255,255,255,.5)) drop-shadow(0 7px 7px rgba(0,23,42,.55));
   backface-visibility:visible;
 }
-@keyframes crystalTurn{0%{transform:rotateY(-10deg) rotateX(3deg) translateY(2px)}100%{transform:rotateY(10deg) rotateX(-2deg) translateY(-3px)}}
+@keyframes crystalTurn{from{transform:rotateY(0deg) rotateX(2deg)}to{transform:rotateY(360deg) rotateX(2deg)}}
 .pedestal{
   position:relative; z-index:2; flex:none; width:min(470px,84vw); height:145px;
   margin:0; background:url("assets/pedestal.png") center/100% 100% no-repeat;
