@@ -25,3 +25,10 @@ CHANGELOG — Sandika Perfect v5
 6) Code Hygiene
    - style.css: removed orphan .hero-subtitle rule.
    - app.js: verified, no broken references remain.
+
+
+Version 6 — hero visual corrections
+- Removed the starburst/background artwork from the home hero by replacing it with a clean CSS gradient backdrop.
+- Kept one centered association heading below the emblem; retained the separate site-wide brand/footer labels.
+- Aligned the crystal emblem and glowing pedestal as one centered stage.
+- Added layered glass highlights, depth shadows, preserve-3d and 1200px perspective; kept gentle 3D motion.
