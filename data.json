@@ -1,185 +1,212 @@
 {
- "companies": [
-  {
-   "name": "امیداریا دارو",
-   "personnel": 15
+  "association": "انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل",
+  "companies": [
+    {
+      "name": "امیداریا دارو",
+      "personnel": 15
+    },
+    {
+      "name": "قاسم ایران",
+      "personnel": 15
+    },
+    {
+      "name": "دی دارو",
+      "personnel": 8
+    },
+    {
+      "name": "شفاآراد",
+      "personnel": 45
+    },
+    {
+      "name": "سایه  سمن",
+      "personnel": 1
+    },
+    {
+      "name": "سونار تک دارو",
+      "personnel": 6
+    },
+    {
+      "name": "مشکات فارمد",
+      "personnel": 22
+    },
+    {
+      "name": "یارا طب ثامن",
+      "personnel": 10
+    },
+    {
+      "name": "مکمل کارن",
+      "personnel": 29
+    },
+    {
+      "name": "بهداشت سلامت آوند فر",
+      "personnel": 25
+    },
+    {
+      "name": "مهبان دارو",
+      "personnel": 17
+    },
+    {
+      "name": "هجرت",
+      "personnel": 18
+    },
+    {
+      "name": "ارمغان طبیعت",
+      "personnel": 11
+    },
+    {
+      "name": "مشاء طب",
+      "personnel": 19
+    },
+    {
+      "name": "داروگستر باریج اسانس",
+      "personnel": 25
+    },
+    {
+      "name": "فردوس",
+      "personnel": 19
+    },
+    {
+      "name": "البرز",
+      "personnel": 33
+    },
+    {
+      "name": "دارو گستر نخبگان",
+      "personnel": 11
+    },
+    {
+      "name": "سینا پخش",
+      "personnel": 16
+    },
+    {
+      "name": "سها سروش",
+      "personnel": 10
+    },
+    {
+      "name": "التیام",
+      "personnel": 15
+    },
+    {
+      "name": "ادورا",
+      "personnel": 19
+    },
+    {
+      "name": "دارو پخش",
+      "personnel": 22
+    },
+    {
+      "name": "سها هلال",
+      "personnel": 19
+    },
+    {
+      "name": "سلامت  پخش هستی",
+      "personnel": 13
+    },
+    {
+      "name": "الیت",
+      "personnel": 40
+    },
+    {
+      "name": "پونل برسام",
+      "personnel": 16
+    },
+    {
+      "name": "اکسیر",
+      "personnel": 16
+    },
+    {
+      "name": "پورا پخش",
+      "personnel": 4
+    },
+    {
+      "name": "ممتاز",
+      "personnel": 12
+    },
+    {
+      "name": "رازی",
+      "personnel": 61
+    },
+    {
+      "name": "دایا دارو",
+      "personnel": 7
+    },
+    {
+      "name": "میلان  پارس فارمد",
+      "personnel": 40
+    }
+  ],
+  "board": [
+    {
+      "name": "ایرج خضری",
+      "role": "رئیس هیئت‌مدیره",
+      "company": "پخش فردوس",
+      "votes": 19
+    },
+    {
+      "name": "حبیب اعیانی",
+      "role": "نایب رئیس هیئت‌مدیره",
+      "company": "امید آریا دارو",
+      "votes": 19
+    },
+    {
+      "name": "حسین قدیمی",
+      "role": "دبیر انجمن",
+      "company": "پخش البرز",
+      "votes": 21
+    },
+    {
+      "name": "مهدی شاهی",
+      "role": "عضو اصلی و خزانه‌دار",
+      "company": "توزیع داروپخش",
+      "votes": 11
+    },
+    {
+      "name": "عیسی فتحی",
+      "role": "عضو اصلی هیئت‌مدیره",
+      "company": "سها هلال",
+      "votes": 11
+    }
+  ],
+  "alternate": [
+    {
+      "name": "حبیب اسفندیاری",
+      "votes": 10
+    },
+    {
+      "name": "قاسم لطفی",
+      "votes": 7
+    }
+  ],
+  "inspectors": [
+    {
+      "name": "توحید نعمتی",
+      "votes": 17
+    },
+    {
+      "name": "مهدی زمانی",
+      "votes": 9
+    }
+  ],
+  "contact": {
+    "address": "اردبیل، خیابان امام، ساختمان انجمن صنفی - دفتر مرکزی پخش البرز",
+    "postal": "5616694761",
+    "email": "phasda.ardabil@gmail.com",
+    "mobile": "09332169990"
   },
-  {
-   "name": "قاسم ایران",
-   "personnel": 15
-  },
-  {
-   "name": "دی دارو",
-   "personnel": 8
-  },
-  {
-   "name": "شفاآراد",
-   "personnel": 45
-  },
-  {
-   "name": "سایه  سمن",
-   "personnel": 1
-  },
-  {
-   "name": "سونار تک دارو",
-   "personnel": 6
-  },
-  {
-   "name": "مشکات فارمد",
-   "personnel": 22
-  },
-  {
-   "name": "یارا طب ثامن",
-   "personnel": 10
-  },
-  {
-   "name": "مکمل کارن",
-   "personnel": 29
-  },
-  {
-   "name": "بهداشت سلامت آوند فر",
-   "personnel": 25
-  },
-  {
-   "name": "مهبان دارو",
-   "personnel": 17
-  },
-  {
-   "name": "هجرت",
-   "personnel": 18
-  },
-  {
-   "name": "ارمغان طبیعت",
-   "personnel": 11
-  },
-  {
-   "name": "مشاء طب",
-   "personnel": 19
-  },
-  {
-   "name": "داروگستر باریج اسانس",
-   "personnel": 25
-  },
-  {
-   "name": "فردوس",
-   "personnel": 19
-  },
-  {
-   "name": "البرز",
-   "personnel": 33
-  },
-  {
-   "name": "دارو گستر نخبگان",
-   "personnel": 11
-  },
-  {
-   "name": "سینا پخش",
-   "personnel": 16
-  },
-  {
-   "name": "سها سروش",
-   "personnel": 10
-  },
-  {
-   "name": "التیام",
-   "personnel": 15
-  },
-  {
-   "name": "ادورا",
-   "personnel": 19
-  },
-  {
-   "name": "دارو پخش",
-   "personnel": 22
-  },
-  {
-   "name": "سها هلال",
-   "personnel": 19
-  },
-  {
-   "name": "سلامت  پخش هستی",
-   "personnel": 13
-  },
-  {
-   "name": "الیت",
-   "personnel": 40
-  },
-  {
-   "name": "پونل برسام",
-   "personnel": 16
-  },
-  {
-   "name": "اکسیر",
-   "personnel": 16
-  },
-  {
-   "name": "پورا پخش",
-   "personnel": 4
-  },
-  {
-   "name": "ممتاز",
-   "personnel": 12
-  },
-  {
-   "name": "رازی",
-   "personnel": 61
-  },
-  {
-   "name": "دایا دارو",
-   "personnel": 7
-  },
-  {
-   "name": "میلان  پارس فارمد",
-   "personnel": 40
-  }
- ],
- "board": [
-  {
-   "name": "ایرج خضری",
-   "role": "رئیس انجمن",
-   "company": "فردوس"
-  },
-  {
-   "name": "حبیب اعیانی",
-   "role": "نایب رئیس",
-   "company": "امیداریا دارو"
-  },
-  {
-   "name": "حسین قدیمی",
-   "role": "عضو هیئت مدیره",
-   "company": "البرز"
-  },
-  {
-   "name": "مهدی شاهی",
-   "role": "عضو هیئت مدیره",
-   "company": "دارو پخش"
-  },
-  {
-   "name": "عیسی فتحی",
-   "role": "عضو هیئت مدیره",
-   "company": "سها هلال"
-  },
-  {
-   "name": "حبیب اسفندیاری",
-   "role": "عضو علی‌البدل",
-   "company": "قاسم ایران"
-  },
-  {
-   "name": "قاسم لطفی",
-   "role": "عضو علی‌البدل",
-   "company": "ادورا"
-  },
-  {
-   "name": "توحید نعمتی",
-   "role": "بازرس",
-   "company": "سلامت  پخش هستی"
-  },
-  {
-   "name": "مهدی زمانی",
-   "role": "بازرس",
-   "company": null
-  }
- ],
- "total_personnel": 639,
- "total_companies": 33
+  "news": [
+    {
+      "title": "برگزاری جلسه هیئت مدیره انجمن در خصوص مسائل صنفی و توزیع دارو",
+      "date": "۱۴۰۴/۰۴/۱۶",
+      "thumb": "assets/news1.png"
+    },
+    {
+      "title": "ابلاغ بخشنامه جدید در خصوص قیمت‌گذاری دارو در داروخانه‌ها",
+      "date": "۱۴۰۴/۰۴/۱۰",
+      "thumb": "assets/news2.png"
+    },
+    {
+      "title": "حضور انجمن در همایش ملی صنعت پخش دارو",
+      "date": "۱۴۰۴/۰۵/۰۵",
+      "thumb": "assets/news3.png"
+    }
+  ]
 }
