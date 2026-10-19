@@ -121,22 +121,6 @@ main{animation:fadein .7s ease}
   animation:crystalTurn 12s linear infinite;
   filter:drop-shadow(0 12px 12px rgba(0,0,0,.40)) drop-shadow(0 0 16px rgba(60,222,255,.38)) drop-shadow(0 0 38px rgba(0,180,216,.25));
 }
-.emblem-crystal::before{
-  content:""; position:absolute; z-index:-1; inset:8% 10%; border-radius:28%;
-  transform:translateZ(-16px) scale(.96);
-  background:linear-gradient(135deg,rgba(219,252,255,.34),rgba(32,174,207,.12) 44%,rgba(5,39,66,.48));
-  border:1px solid rgba(202,250,255,.6);
-  box-shadow:0 0 0 4px rgba(41,197,226,.12),0 18px 28px rgba(0,0,0,.48),inset 0 0 28px rgba(200,250,255,.16);
-  clip-path:polygon(50% 0,61% 19%,82% 8%,78% 32%,100% 43%,79% 54%,91% 77%,66% 73%,50% 100%,37% 76%,10% 88%,21% 61%,0 48%,22% 36%,13% 12%,39% 22%);
-}
-.emblem-crystal::after{
-  content:""; position:absolute; pointer-events:none; inset:9% 12%; border-radius:26%;
-  transform:translateZ(15px);
-  background:linear-gradient(118deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,.08) 16%,transparent 40%,transparent 72%,rgba(92,229,255,.13) 100%);
-  border:1px solid rgba(229,253,255,.36);
-  clip-path:polygon(50% 0,61% 19%,82% 8%,78% 32%,100% 43%,79% 54%,91% 77%,66% 73%,50% 100%,37% 76%,10% 88%,21% 61%,0 48%,22% 36%,13% 12%,39% 22%);
-  mix-blend-mode:screen;
-}
 .hero-emblem{
   width:100%; height:100%; max-width:none; max-height:none; object-fit:contain;
   display:block; position:relative; z-index:1; margin:0;
