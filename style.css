@@ -87,11 +87,11 @@ main{animation:fadein .7s ease}
 .emblem-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;margin:0 auto 10px;perspective:1000px}
 .hero-emblem{width:auto;max-height:225px;max-width:min(75vw,270px);object-fit:contain;display:block;
  filter:drop-shadow(0 0 14px rgba(0,180,216,.75)) drop-shadow(0 0 34px rgba(0,180,216,.45)) drop-shadow(0 0 70px rgba(0,180,216,.28))}
-.pedestal{position:relative;z-index:1;width:min(500px,78vw);height:150px;margin-top:-4px;background:url("assets/pedestal.png") center/100% 100% no-repeat}
+
 .hero h1{line-height:1.8;margin:12px auto;max-width:1000px;font-size:clamp(24px,3.4vw,42px);font-weight:800;
  background:linear-gradient(120deg,#eafcff,#52e2ef 45%,#00b4d8);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 span{font-size:.72em}
-@media(max-width:640px){.hero{min-height:640px;padding:80px 16px 100px}.emblem-stage{min-height:250px}.hero-emblem{max-height:180px}.pedestal{height:115px}.hero h1{font-size:clamp(1.35rem,5vw,2rem)}}
+@media(max-width:640px){.hero{min-height:640px;padding:80px 16px 100px}.emblem-stage{min-height:250px}.hero-emblem{max-height:180px}.hero h1{font-size:clamp(1.35rem,5vw,2rem)}}
 
 
 /* v6 — clean, single-title hero and dimensional crystal centerpiece */
@@ -125,11 +125,7 @@ main{animation:fadein .7s ease}
   backface-visibility:visible;
 }
 @keyframes crystalTurn{from{transform:rotateY(0deg) rotateX(2deg)}to{transform:rotateY(360deg) rotateX(2deg)}}
-.pedestal{
-  position:relative; z-index:2; flex:none; width:min(470px,84vw); height:145px;
-  margin:0; background:url("assets/pedestal.png") center/100% 100% no-repeat;
-  filter:drop-shadow(0 0 18px rgba(0,205,240,.38));
-}
+
 .hero h1{
   position:relative; z-index:4; max-width:920px; margin:0 auto;
   padding:0 16px; text-align:center; line-height:1.75;
@@ -143,7 +139,7 @@ main{animation:fadein .7s ease}
  .hero{min-height:650px;padding:88px 14px 78px}
  .emblem-stage{height:310px;width:100%;margin-bottom:4px}
  .emblem-crystal{width:min(220px,62vw);height:220px;margin-bottom:-43px}
- .pedestal{width:min(350px,88vw);height:112px}
+ 
  .hero h1{font-size:clamp(21px,6vw,29px)}
 }
 @media(prefers-reduced-motion:reduce){.emblem-crystal{animation:none}}
@@ -173,5 +169,11 @@ main{animation:fadein .7s ease}
 /* v13 — new transparent logo integration */
 .hero-emblem{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;aspect-ratio:1/1;display:block;margin:0}
 .emblem-crystal{filter:drop-shadow(0 12px 12px rgba(0,0,0,.40)) drop-shadow(0 0 18px rgba(0,180,216,.30))}
-.pedestal{background:url("assets/pedestal.png") center/100% 100% no-repeat}
+
 .hero h1{position:relative;z-index:4}
+
+/* v14 — crisp emblem rendering, no lossy resampling */
+.hero-emblem{
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+}
