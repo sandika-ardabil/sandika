@@ -37,11 +37,28 @@ document.addEventListener('DOMContentLoaded',function(){
     grid.innerHTML=list.map(function(c){
      var key=logoKeys[norm(c.name)],src=logoFiles[key];
      var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
-     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+     return '<button type="button" class="company-tile company-tile-button" data-company="'+c.name.replace(/&/g,'&amp;').replace(/\"/g,'&quot;')+'" aria-label="نمایش پرسنل شرکت '+c.name+'">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span><span class="tile-hint">مشاهدهٔ فهرست پرسنل ←</span></button>';
     }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
    render(D.companies);
+   var dlg=document.getElementById('personnel-dialog'), psearch=document.getElementById('personnel-search');
+   var plist=document.getElementById('personnel-list'), ptitle=document.getElementById('personnel-title'), psum=document.getElementById('personnel-summary');
+   var personnel=[];
+   fetch('assets/personnel.json').then(r=>r.json()).then(data=>{personnel=data.records||[];}).catch(()=>{personnel=[];});
+   function safe(s){return String(s||'—').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+   function showStaff(company){
+    var rows=personnel.filter(x=>norm(x.company)===norm(company));
+    ptitle.textContent=company; psum.textContent=fa(rows.length)+' نفر پرسنل ثبت‌شده';
+    function draw(q){var list=rows.filter(x=>!q||norm(x.name).includes(norm(q))||norm(x.role).includes(norm(q)));
+     plist.innerHTML=list.length?list.map((x,i)=>'<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div><b>'+safe(x.name)+'</b><p>'+safe(x.role)+'</p></div><div class="personnel-meta"><span>'+safe(x.education)+'</span>'+(x.distributionExperience?'<small>سابقه پخش: '+fa(x.distributionExperience)+' سال</small>':'')+'</div></article>').join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
+    }
+    psearch.value='';draw('');psearch.oninput=()=>draw(psearch.value);
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+   }
+   grid.addEventListener('click',function(e){var card=e.target.closest('[data-company]');if(card)showStaff(card.dataset.company);});
+   dlg.querySelector('.dialog-close').addEventListener('click',()=>dlg.close());
+   dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
    var inp=document.getElementById('member-search');
    inp.addEventListener('input',function(){
     var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));

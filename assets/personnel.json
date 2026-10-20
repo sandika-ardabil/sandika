@@ -1,0 +1,4478 @@
+{
+  "source": "syndicate-backup.json personnel records",
+  "records": [
+    {
+      "company": "امیداریا دارو",
+      "name": "حبیب اعیانی",
+      "role": "مدیر عامل",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "بابک فرزانه",
+      "role": "مدیر فروش",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "سهیل افراز",
+      "role": "IT کارشناس",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "علی فتح اله زاده",
+      "role": "کمک انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "رسول فتح اله زاده",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "علی عقیقی",
+      "role": "بازاریاب",
+      "education": "فوق لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "حسن اسکندرزاده",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "عاطفه آشنا",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "مهتا بشردوست",
+      "role": "کارشناس حسابداری",
+      "education": "فوق لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "جواد ورودی",
+      "role": "موزع",
+      "education": "زیر دیپلم",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "فرزانه اجیر",
+      "role": "تحصیلدار",
+      "education": "دیپلم",
+      "distributionExperience": "0"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "محمد اعیانی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "بهبود طیار",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "طه رفیق نیا",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "امیداریا دارو",
+      "name": "بابا عزیزی",
+      "role": "نگهبان",
+      "education": "زیر دیپلم",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "حبیب اسفندیاری",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "26"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "ارشد محمدزاده",
+      "role": "کارشناس حسابداری",
+      "education": "فوق لیسانس",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "محسن محمدی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "هاشم بهرامسا",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "مهدی آقایی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "23"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "اسماعیل گرجی مهر",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "یحیی مستعد",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "داور افضل",
+      "role": "انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "22"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "مسعود رشتبر",
+      "role": "کمک انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "ارسطو سلامت",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "23"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "فرزین ذبیحی",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "22"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "حسین صدوقی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "0"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "حمید دهقان",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "سعید میرجلیلی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "قاسم ایران",
+      "name": "نسیم فتحی آذر",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دی دارو",
+      "name": "سعید شفائی",
+      "role": "سرپرست فروش",
+      "education": "فوق لیسانس",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "دی دارو",
+      "name": "عرشیا شفائی",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "دی دارو",
+      "name": "مهدی آهنگری",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "دی دارو",
+      "name": "محمدباقر تقی زاده افخم",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "دی دارو",
+      "name": "امید آرمین",
+      "role": "حسابدار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دی دارو",
+      "name": "حسین نیکخو",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "دی دارو",
+      "name": "حافظ علیزاده",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "دی دارو",
+      "name": "عابد لطفی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "زهرا امامی بالابیگلو",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "محمد عبازاده چوندرق",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "تقی پورولی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "وحید قدکچی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "اسماعیل میرآبی",
+      "role": "IT کارشناس",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "رفعت مردانی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "علی اصغرپورموحد",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسن غفارزاده",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسین قربانیان",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "18"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "رسول مجلل",
+      "role": "کمک انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "داود سلیمان زاده",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "صمد لطفی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "هادی حقی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "رحمن فرهی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "میرمهدی فاروقی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "محمد شادانی",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسن بیرام زاده",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حامد صبوری",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "مهران چل گلی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "امید کیفری",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "جعفر افتخاری",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "محمد آقاکیشی زاده",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "هادی علی زاده",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "قادر فخیمی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "رضا عباس زاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "19"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "هاشم رحمانی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسین دریانی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حجت کلانتری",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "مجید وکیلی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "18"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "سعید غفارپور",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "اصغر ملکی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "امیر اسدی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "مهران عزت پور",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "مصطفی رضایان",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "شهرام ایمانی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسین الهیاری",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "امید باقرزاده",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "محمدجعفر رضایی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حسین پورممی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "حیدر حیدری",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "امین حق آخری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "مجتبی محمدی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "بهرام جوادی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "الیار تقوی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "شفاآراد",
+      "name": "علی فرجزاده",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "سایه  سمن",
+      "name": "فریدون صالحی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "رئوف عباسقلی زاده",
+      "role": "مدیر عامل",
+      "education": "فوق دیپلم",
+      "distributionExperience": "22سال"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "منوچهر دانش",
+      "role": "مدیر فروش",
+      "education": "لیسانس",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "دکتر فاطمه نوروزی",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "سه ماه"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "افشین روحی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "محمد عیسی نژاد",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "سونار تک دارو",
+      "name": "غلامرضا میر علی نزاد",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "امین فخیم",
+      "role": "مدیر شعبه",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "عباس رنگی",
+      "role": "کارشناس حسابداری",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "نسیم شهیر",
+      "role": "مسئول فنی",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "محمد رنجوری",
+      "role": "سرپرست فروش",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "حسین آقازاده",
+      "role": "انباردار",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "یعقوب بیاره",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "علیرضا سپهبان",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "ولی شایگان",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "رضا نوائی",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "ناصر الدین محسنی",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "امیررضا میلانیان",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "پوریا فلاح",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "یاسین آزاد",
+      "role": "فروشنده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "امیررضا رضوی",
+      "role": "تحصیلدار",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "محمد عبدالهی",
+      "role": "موزع",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "امیر محمد قلیزاده",
+      "role": "کمک انباردار",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "آرش علیزاده",
+      "role": "موزع",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "اکبر خلیلی",
+      "role": "راننده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "علیرضا احمدی",
+      "role": "راننده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "جعفر طالب زاده",
+      "role": "راننده",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "یونس مرکبی",
+      "role": "نگهبان",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مشکات فارمد",
+      "name": "امیررضا فطوره چی",
+      "role": "موزع",
+      "education": "",
+      "distributionExperience": ""
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "یاشارنعمتی شهریور",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "خانم شهبانو مرسلی",
+      "role": "حسابدار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "خان دکتر سونیا پرهیزکار",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای محسن عزیزی",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای مصطفی لطفی",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای محسن رستمی",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای سجاد سقایی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای میر یونس حسینی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای سجاد جهانی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "یارا طب ثامن",
+      "name": "آقای هدایت باقریان",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "هانیه مخطوط",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "شهرام قربانی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "علی حمیدی",
+      "role": "مدیر شعبه",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "18"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "محمود ختایی",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "فرحناز پیرزاده",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "آیلار شاملو",
+      "role": "IT کارشناس",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "علی اکبر دادمند",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "امیر دولتعلی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "پروانه قربانی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "حسین جانمحممدی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "حسین نعمتی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "جمال خداکرم",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "مسعود برادران بینظیر",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "علی بازدار",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "آرش سعیدی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "2ماه"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "سپیده امامی",
+      "role": "کارشناس حسابداری",
+      "education": "دیپلم",
+      "distributionExperience": "3ماه"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "احمد شری زاده",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "علی زلفی",
+      "role": "کمک انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "مهرداد جلیلی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "محمد الهویردی نژاد اقدم",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "میکاییل صمد زاده",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "5ماه"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "مهدی احمدیه",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "2ماه"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "مهدی مختاری",
+      "role": "موزع",
+      "education": "زیر دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "سعیید جهانبخش",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "عیسی قسمی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "امیر سامان قربانی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "یعقوب نجفی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "احد جامی فر",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "مکمل کارن",
+      "name": "نظامعلی امامی",
+      "role": "نگهبان",
+      "education": "زیر دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای محمدباقر نقی زاده",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "سال24"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای رضا نجفی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای آرش فلاحی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای داود عباسپور",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "21سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "خانم فرشته احمدلو",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای نوید ظهیری",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای فرهاد رستمی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای اسماعیل فضلی",
+      "role": "بازاریاب",
+      "education": "سیکل",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای میلاد آشورون",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای یونس حسن زاده",
+      "role": "بازاریاب",
+      "education": "سیکل",
+      "distributionExperience": "24سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای رسول زینالی",
+      "role": "بازاریاب مقیم اردبیل",
+      "education": "فوق دیپلم",
+      "distributionExperience": "22سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "خانم لیلا فرخی",
+      "role": "بازاریاب مقیم اردبیل",
+      "education": "لیسانس",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای محمد عباسپور",
+      "role": "کمک انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "11سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای بابک عباسپور",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای مسعود شیرازی",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای وحید عباسپور",
+      "role": "موزع",
+      "education": "سیکل",
+      "distributionExperience": "17سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای رسول اسماعیلی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "13سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای محمدرضا حسین زاده",
+      "role": "موزع",
+      "education": "سیکل",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای شهریار محمدی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "7ماه"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای رضا فرهی فر",
+      "role": "راننده",
+      "education": "کاردانی",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای حسین فرهی فر",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای حمید پورتقی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "16سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای فرهود عباسپور",
+      "role": "راننده",
+      "education": "سیکل",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای حسین احمدنژاد",
+      "role": "راننده",
+      "education": "سیکل",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "بهداشت سلامت آوند فر",
+      "name": "آقای حسین صباحی",
+      "role": "",
+      "education": "دیپلم",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "جهانگیر محمدی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "عباس استواری",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "وحید نجفی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "احسان فرمانی",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "حامد طلسچیان",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "شیرین سیمزاری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "حمید بیات",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "بهنام صالحی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "شهنام نظری",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "قهرمان محمد پور",
+      "role": "کمک انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "میکائیل عزیزی",
+      "role": "کمک انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "حمید ملازاده",
+      "role": "موزع",
+      "education": "زیر دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "میر رضا پاک نژاد",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "عرفان اعیادی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "سهیل نیرومند",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "15 ماه"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "محمود افرادی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "مهبان دارو",
+      "name": "فرشاد خان زاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "هجرت",
+      "name": "افشین فرداد",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "30سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "امیر فرجی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "19سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "محمدجواد کشاورز",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "حامد شیرازیان",
+      "role": "سرپرست فروش",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "سهیل  حیدری دیزج",
+      "role": "بازاریاب",
+      "education": "فوق لیسانس",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "امین جمال ریحان",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "وحید حکیمی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "میرمصطفی هاشمی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "18ماه"
+    },
+    {
+      "company": "هجرت",
+      "name": "علی درخشنده",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "16سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "محمدرضا  قهرمانی ساربانقلی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "1/5سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "امیر اطمینان فر",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "عرفان  انتظاری ملکی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3ماه"
+    },
+    {
+      "company": "هجرت",
+      "name": "یونس  صمدی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "محمد احمدزاده ایراندوست",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "علیرضا احدی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "20سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "اسلام طلوعی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "هجرت",
+      "name": "حمید  فرتاش نعمتی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "2/5ماه"
+    },
+    {
+      "company": "هجرت",
+      "name": "هادی صبوری کلان",
+      "role": "مدیر شعبه",
+      "education": "دیپلم",
+      "distributionExperience": ""
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "یعقوب شادانی باجه باج",
+      "role": "مدیرشعبه",
+      "education": "لیسانس",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "لطف اله بابایی",
+      "role": "انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "اصغراکبری نهند",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "6 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "شبنم لطیفی",
+      "role": "مسئول فنی",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "حسین سجودی",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "رحمان سرتپی زرنق",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "بهنام بایراملو",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "علی اکبر حیدری کهنمویی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "رقیه زینالی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "11 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "فاطمه دارابی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "ارمغان طبیعت",
+      "name": "ندا آل جعفر",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "7 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "جمال محمدی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "علی بهمن زاد",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "یوسف اقدم",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "رضا ارزاق تبریزی",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "امید رضاپور",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "افشین امیرسام",
+      "role": "فروشنده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "11 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "اشکان صادق",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "15 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "جلال فیاضی",
+      "role": "فروشنده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "یاسر محمدی",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "امین عباسی",
+      "role": "حسابدار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "علیرضا منادی فر",
+      "role": "تحصیلدار",
+      "education": "دیپلم",
+      "distributionExperience": "6 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "تقی زارعی",
+      "role": "انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "رضا صفرپور",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "احسان فرج زاده",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "6 ماه"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "سعید نظری",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "یوسف نورآذر",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "حسن زارع",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "تابوالفضل هدایتی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "مشاء طب",
+      "name": "رسول دلخون",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "وحیده ثبوتی",
+      "role": "",
+      "education": "",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "اعظم میربلوک",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "مهدی نضار پور",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "معصومه وکیل صادقی",
+      "role": "مسئول فنی",
+      "education": "داروساز",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "عارف دهقانی میاندهی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "فائزه نجفی شیرج آباد",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "آیدین یادگاری",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "ابراهیم امیری",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "حسن فرامرزی",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "زهرا احمدی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "زهرا قدیمی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "اسماعیل لیلازاده",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "احمد عاشوری چهارده",
+      "role": "فروشنده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "میثم جعفری",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "محسن شمسی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "علیرضا الوندی",
+      "role": "انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "داوود لطیفی",
+      "role": "کمک انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "محمد مینائی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "احمدرضا احتشامی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "محمد نوری",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "مجتبی تنهایی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "وجیه الله حیدری",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "22"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "میثم نزهتی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "سجادنصیری",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "داروگستر باریج اسانس",
+      "name": "مهدی فرخی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "فردوس",
+      "name": "ایرج خضری",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "27"
+    },
+    {
+      "company": "فردوس",
+      "name": "نوید وفائی زاده",
+      "role": "IT کارشناس",
+      "education": "فوق لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "فردوس",
+      "name": "فرهاد صفوی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "فردوس",
+      "name": "حامد عیسی زاده",
+      "role": "کارشناس حسابداری",
+      "education": "فوق لیسانس",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "فردوس",
+      "name": "حسن فاتحی",
+      "role": "تحصیلدار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "فردوس",
+      "name": "محسن فصیحی زاد",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "فردوس",
+      "name": "افشین پروین",
+      "role": "کمک انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "فردوس",
+      "name": "عباس فرح بخش",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "فردوس",
+      "name": "فرشید راجی",
+      "role": "نگهبان",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "فردوس",
+      "name": "سید نادر شفقتی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "فردوس",
+      "name": "میلاد عینی",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "فردوس",
+      "name": "محسن صادق",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "فردوس",
+      "name": "محرم توفیقی",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "فردوس",
+      "name": "حسن قلی وند",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "فردوس",
+      "name": "سجاد طهماسیان",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "فردوس",
+      "name": "حسین ساغری",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "فردوس",
+      "name": "امید افرند",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "فردوس",
+      "name": "داود گرجی مهر",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "فردوس",
+      "name": "کریم جوان شایانی",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "البرز",
+      "name": "حسین قدیمی",
+      "role": "مدیر شعبه",
+      "education": "فوق لیسانس",
+      "distributionExperience": "18"
+    },
+    {
+      "company": "البرز",
+      "name": "حمید ذکائی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "البرز",
+      "name": "لیلا نوری",
+      "role": "IT کارشناس",
+      "education": "فوق دیپلم",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "البرز",
+      "name": "وحید حیدری قشلاقی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "البرز",
+      "name": "شهریار فریدمادیه",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "البرز",
+      "name": "عطا کروی",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "البرز",
+      "name": "احد دادخواه مجنده",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "البرز",
+      "name": "مرتضی کریمی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "البرز",
+      "name": "فرید قنادی امامی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "18"
+    },
+    {
+      "company": "البرز",
+      "name": "میرناصر اخلاقی",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "البرز",
+      "name": "مسعود دانشی فرد",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "البرز",
+      "name": "مسعود قبادی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "البرز",
+      "name": "اصغر فیروزی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "البرز",
+      "name": "مهدی اصغرزاده",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "البرز",
+      "name": "رامین محبی باروق",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "البرز",
+      "name": "محمد خوش روزی",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "البرز",
+      "name": "میرامین تدین کندشمین",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "4ماه"
+    },
+    {
+      "company": "البرز",
+      "name": "مسعود داورپناه سوها",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "البرز",
+      "name": "مهرداد سوغاتی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "البرز",
+      "name": "جبرائیل سیفی",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "البرز",
+      "name": "جبرائیل اعیادی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "23"
+    },
+    {
+      "company": "البرز",
+      "name": "بهرام آسیابی زاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "17"
+    },
+    {
+      "company": "البرز",
+      "name": "زاهد کمال پور",
+      "role": "کمک حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "البرز",
+      "name": "یوسف نادری سامیان",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "24"
+    },
+    {
+      "company": "البرز",
+      "name": "عبداله علی پوربنیادآباد",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "البرز",
+      "name": "بهروز قهرمانی عیسی لو",
+      "role": "کمک انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "البرز",
+      "name": "سیدامیرعلی موسوی اصل",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "البرز",
+      "name": "محمد امین عبادی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "البرز",
+      "name": "زلیخا بند عیلزاده",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "البرز",
+      "name": "مهدی نوری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "البرز",
+      "name": "محمد رضا سلیمانیان",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "البرز",
+      "name": "امین دهقانی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "البرز",
+      "name": "اسماعیل",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "اسد الله شارقی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "21سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "کریم جوان شایان",
+      "role": "مشاوره",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "آیت شایگان",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "22سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "کیوان هوشیارزاده",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "9سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "مجید ولیزاده",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "آرمین مهدی زاده",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "رضا سیفی",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "13سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "هادی کریمی",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "حجت کهن پور",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "یک سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "بابک زمانی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "یک سال"
+    },
+    {
+      "company": "دارو گستر نخبگان",
+      "name": "اسماعیل کرامتی",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "حسن امانی وفقی",
+      "role": "مدیر شعبه",
+      "education": "فوق لیسانس",
+      "distributionExperience": "21سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "داود علیوند بنفشه درق",
+      "role": "مدیر مالی",
+      "education": "فوق لیسانس",
+      "distributionExperience": "17سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "شهرام جاوید",
+      "role": "سرپرست فروش",
+      "education": "فوق دیپلم",
+      "distributionExperience": "17سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "سجاد اقبال",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "علی محسناتی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "رامین امینیان",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "18سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "جابر شهبازی",
+      "role": "انباردار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "17سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "حامد کمالی فر",
+      "role": "کمک انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "تقی بصیریان",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "میلاد حقیقت",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "سلیم آرمان صدر",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "رسول کریمی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "فرزاد شیرزاد",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "سهیل عزیز ی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "علی جبار زاده",
+      "role": "کارگر انبار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "سینا پخش",
+      "name": "علی زالی اصل",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "علی طلسچیان",
+      "role": "مدیر شعبه",
+      "education": "فوق لیسانس",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "احسان فلاحتی",
+      "role": "کارشناس حسابداری",
+      "education": "فوق لیسانس",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "شهرام ناصری",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "میثم هاشم زاده",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "اکبر صیامی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "اکبر بابلی",
+      "role": "راننده",
+      "education": "لیسانس",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "نسیم قزلباش",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "8 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "سحر چرمی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "افشین مرادی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "سها سروش",
+      "name": "دانیال عباسی",
+      "role": "",
+      "education": "لیسانس",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "التیام",
+      "name": "روح الله ارجمند",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "19 سال"
+    },
+    {
+      "company": "التیام",
+      "name": "محمد امامی",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "التیام",
+      "name": "شهرام کامرانی",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "التیام",
+      "name": "رضا محمدی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "التیام",
+      "name": "یوسف عظیمی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "التیام",
+      "name": "مجتبی نیکخو",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "التیام",
+      "name": "بهمن دیندار",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "التیام",
+      "name": "رامین عطائی",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "التیام",
+      "name": "حسین یوسفی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "التیام",
+      "name": "میر محسن تدین",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "التیام",
+      "name": "قاسم جهانگیر نوران",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "التیام",
+      "name": "رضا محمدپور",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "التیام",
+      "name": "مرتضی عبدالرحیمی",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "التیام",
+      "name": "جواد فتحی",
+      "role": "مدیر شعبه",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "التیام",
+      "name": "مصطفی وزیری",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "ادورا",
+      "name": "قاسم لطفی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "25سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "ابوطالب سعادتی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "25سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "اصغرحیدری جبه دار",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "امیدپاسبان شیخ احمد",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "بهروز همتی",
+      "role": "انباردار",
+      "education": "فوق لیسانس  دکتری و بالاتر",
+      "distributionExperience": "24سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "پویاعیسی زاده",
+      "role": "مامور توزیع",
+      "education": "دیپلم",
+      "distributionExperience": "9سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "حسین احمدی جناقرد",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "حسین فدا",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "رامین جلالی",
+      "role": "فروشنده ارشد",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "رضا  سلمانپور پیالقر",
+      "role": "فروشنده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "13سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "عسگر شاکر دولق",
+      "role": "فروشنده",
+      "education": "فوق لیسانس  دکتری و بالاتر",
+      "distributionExperience": "11سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "علی احدی",
+      "role": "نگهبان",
+      "education": "لیسانس",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "عهدیه بیداردل",
+      "role": "کارشناس فروش",
+      "education": "لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "فرخنده مظفری",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "محسن نیک نژاد کلخوران",
+      "role": "مسئول فنی",
+      "education": "فوق لیسانس  دکتری و بالاتر",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "میرمحمدتقی سعادتی",
+      "role": "مامور توزیع",
+      "education": "دیپلم",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "وحید  عباس زاده",
+      "role": "مامور توزیع",
+      "education": "دیپلم",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "وحید حسین پور دیجوجین",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "ادورا",
+      "name": "یونس برنجی جلائی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "مهدی شاهی خیاوی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "اسماعیل شریفی",
+      "role": "حسابدار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "ولی اله جلالی",
+      "role": "مدیر فروش",
+      "education": "لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "ابراهیم جهانی",
+      "role": "کمک حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "امیراشکان جهانگیری صومعه",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "ذکی اله حاج اسمعیلی ملاباشی",
+      "role": "انباردار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "رضا فرهودی کلخوران",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "سیدکیومرث افلاک پرست",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "صادق پاکباز",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "علی کارگراقبلاغ",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "فرشاد منافی تپه",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "فرهاد پرستار",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "فرهاد نجفی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "مجید احمدی جیوان",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "محمد آذری صومعه",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "محمد عبدی کلش",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "محمد محمدنیا فیروزآباد",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "مهدی  طلوعی",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "مهرداد نیک سیما",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "مونا روشنی",
+      "role": "",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "میرمحمد میرمحمدی آتشگاه",
+      "role": "تحصیلدار",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "دارو پخش",
+      "name": "ناصر  اعیادی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "سها هلال",
+      "name": "عیسی فتحی",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "25سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "روح الله حسینی",
+      "role": "متاهل",
+      "education": "کاردانی",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "خانم دکتر آیلار محمدی",
+      "role": "متاهل",
+      "education": "دکتری",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای مهدی محمدی",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "20سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای مهدی فرضی زاده",
+      "role": "متاهل",
+      "education": "فوق لیسانس",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "خانم مریم نصیری",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای سعید اعتمادی",
+      "role": "متاهل",
+      "education": "دیپلم",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای آرش آینه دار",
+      "role": "مجرد",
+      "education": "لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای امیر زمانی",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "خانم بیتا جزءمرادی",
+      "role": "مجرد",
+      "education": "دیپلم",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای حمید حمیدی",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "خانم مریم افشاری",
+      "role": "متاهل",
+      "education": "فوق لیسانس",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای علیرضا ابراهیمی نیا",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای توحید رحیمی",
+      "role": "مجرد",
+      "education": "لیسانس",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای مرتضی بابایی",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای حمید نظری",
+      "role": "متاهل",
+      "education": "لیسانس",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای قاسم کریمی",
+      "role": "متاهل",
+      "education": "دیپلم",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای فرزاد حسنی",
+      "role": "متاهل",
+      "education": "دیپلم",
+      "distributionExperience": "17سال"
+    },
+    {
+      "company": "سها هلال",
+      "name": "آقای بابک حسنی",
+      "role": "متاهل",
+      "education": "دیپلم",
+      "distributionExperience": "16سال"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "توحید نعمتی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "ستار زنگنه",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "13"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "کاظم محمدی",
+      "role": "سرپرست فروش",
+      "education": "لیسانس",
+      "distributionExperience": "9"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "داریوش اژدری قره درویشلو",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "انعام اله مرادی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "مهدی باباوند",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "حسین اسگندرزاده",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "امیر اسمعیلی فلک",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "12"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "علی بخشی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "علیرضا محبی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "میرمجید صفری آتشگاه",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "حسین قلی نژاد شام اسبی",
+      "role": "کمک انباردار",
+      "education": "زیر دیپلم",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "سلامت  پخش هستی",
+      "name": "محسن شعبانی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای رضا دلکش",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "25سال"
+    },
+    {
+      "company": "الیت",
+      "name": "خانم دکتر المیرا موحددانش",
+      "role": "مسئول فنی",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "الیت",
+      "name": "خانم شمیلا بهنیا",
+      "role": "سرپرست حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای اصغر تبرک میل",
+      "role": "حسابدار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای سعید پیرزاده",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقاي نويد كريماني",
+      "role": "مدیر فروش",
+      "education": "لیسانس",
+      "distributionExperience": "19سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مهرداد مهرنامی",
+      "role": "IT کارشناس",
+      "education": "لیسانس",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقاي صمد عنایتی نیا",
+      "role": "بازاریاب",
+      "education": "دکتری و بالاتر",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای اردلان یعقوبی آذر",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای سلیمان شاهقلی زاده",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مجید کیاهی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "12سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای فرهاد قانون",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "15سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای محمد امین طاهری",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "9سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای اسماعیل خاتمی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "11سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای حامد جمالی",
+      "role": "بازاریاب",
+      "education": "فوق لیسانس",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای یحیی خاتم نژاد",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای سعید صوفیان",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای حسن شربتی نیا",
+      "role": "بازاریاب",
+      "education": "فوق لیسانس",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای سید مهدی رئیسی ساداتی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای رضا محمدی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای ایوب بزله",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای حسین صادقی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای فرید ربانی",
+      "role": "انباردار",
+      "education": "لیسانس",
+      "distributionExperience": "14سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای فرهاد جديري",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "20سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای ابراهیم صفوی",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "8سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای میلاد ندیمی",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای موسی روشن زاده",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مجید حق گوی بخشایش",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای محمدعلی سینایی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای ایرج مالک باروقی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مرتضی قدم زاده فرد",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقاي رضا تخت كياني",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقاي علي جوانبخت شيشوان",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "11سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مهدی عباسی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مهدی محمدباقری",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "5سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای مهدی حسین زاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "1سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای حسام خردمندان",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "4سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای احد اکبری",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "10سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای پیمان عبدی شرف آباد",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "3سال"
+    },
+    {
+      "company": "الیت",
+      "name": "آقای فریدون خرقه پوش",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "2سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "مهدی پارسی",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "16 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "شادی فرزانه",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "نگین نصیریان",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "مریم نعمتی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "سودا ارسی",
+      "role": "مشاوره",
+      "education": "لیسانس",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "ویدا دهقان",
+      "role": "مشاوره",
+      "education": "لیسانس",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "زیبا اسفندیاری",
+      "role": "مشاوره",
+      "education": "لیسانس",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "نازنین سیدنصیری",
+      "role": "مشاوره",
+      "education": "لیسانس",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "مهناز موسوی",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "علی پناهی مقدم",
+      "role": "حسابدار",
+      "education": "فوق لیسانس",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "امین سیمانور",
+      "role": "انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "اژدر حیدری",
+      "role": "کارگر انبار",
+      "education": "زیر دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "افشین رسولی",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "علیرضا نصرتی",
+      "role": "موزع",
+      "education": "فوق لیسانس",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "الهام افشاری",
+      "role": "مشاوره",
+      "education": "لیسانس",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "پونل برسام",
+      "name": "ارغوان مهاجری",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "اکسیر",
+      "name": "مرتضی جسور",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "22"
+    },
+    {
+      "company": "اکسیر",
+      "name": "سعید بابایی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "اکسیر",
+      "name": "میلاد رجبعلی زاده",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "اکسیر",
+      "name": "اکبر شکرزاده",
+      "role": "مدیر فروش",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "اکسیر",
+      "name": "فریدون محمدی زاد",
+      "role": "مدیر فروش",
+      "education": "فوق لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "اکسیر",
+      "name": "حمید جبرائیلی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "اکسیر",
+      "name": "حامد باقری",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "اکسیر",
+      "name": "جبار پیرزاده",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "8"
+    },
+    {
+      "company": "اکسیر",
+      "name": "مهدی غلامی",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "اکسیر",
+      "name": "شاهین شمس",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "اکسیر",
+      "name": "محسن ایمانی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "1"
+    },
+    {
+      "company": "اکسیر",
+      "name": "یونس حبیبی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "اکسیر",
+      "name": "مجید صالحی",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "16"
+    },
+    {
+      "company": "اکسیر",
+      "name": "حسین باقرنژاد",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "اکسیر",
+      "name": "مرتضی صفری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "اکسیر",
+      "name": "ناصر رشادی",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "11"
+    },
+    {
+      "company": "پورا پخش",
+      "name": "داور عظیمی",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "پورا پخش",
+      "name": "محمد بافکار",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "14"
+    },
+    {
+      "company": "پورا پخش",
+      "name": "عبداله بازیار",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "پورا پخش",
+      "name": "مرتضی نوری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "ممتاز",
+      "name": "سید حسام صادقی",
+      "role": "مدیر شعبه",
+      "education": "فوق لیسانس",
+      "distributionExperience": "21"
+    },
+    {
+      "company": "ممتاز",
+      "name": "مهسا خضری",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "ممتاز",
+      "name": "سعید ارشاد علیان",
+      "role": "سرپرست فروش",
+      "education": "دیپلم",
+      "distributionExperience": "7"
+    },
+    {
+      "company": "ممتاز",
+      "name": "مریم نگاری",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "ممتاز",
+      "name": "عرفان حسین زاده نجار",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "ممتاز",
+      "name": "رسول نسترنی عموقین",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "10"
+    },
+    {
+      "company": "ممتاز",
+      "name": "علیرضا اژدری",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "19"
+    },
+    {
+      "company": "ممتاز",
+      "name": "شاهین هوشیارزاده",
+      "role": "کمک انباردار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "1.5"
+    },
+    {
+      "company": "ممتاز",
+      "name": "اکبر نوخواه",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "4"
+    },
+    {
+      "company": "ممتاز",
+      "name": "امید علی نامی",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "3 ماه"
+    },
+    {
+      "company": "ممتاز",
+      "name": "فرهاد جعفرزاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "6"
+    },
+    {
+      "company": "ممتاز",
+      "name": "عباس کوهی",
+      "role": "راننده",
+      "education": "زیر دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "رازی",
+      "name": "جلال دباغ صادق پور",
+      "role": "سرپرست مدیریت مرکز توزیع",
+      "education": "کارشناسی",
+      "distributionExperience": "20 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدیه کدیور علمداری",
+      "role": "کارمند اداری",
+      "education": "کارشناسی",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدی صحرای بارنجی",
+      "role": "سرپرست اداری وعملیات",
+      "education": "کارشناسی",
+      "distributionExperience": "8 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "السا محمد علی پور کل تپه",
+      "role": "مسئول فنی",
+      "education": "دکترا",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "امین حسن زاده",
+      "role": "مسئول فنی تجهیزات پزشکی",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "زینب محمدی",
+      "role": "کارشناس بهداشت  و ایمنی",
+      "education": "کاردانی",
+      "distributionExperience": "6سال"
+    },
+    {
+      "company": "رازی",
+      "name": "اسماعیل صیادی",
+      "role": "0",
+      "education": "متوسطه",
+      "distributionExperience": "3 ماه"
+    },
+    {
+      "company": "رازی",
+      "name": "بابک عبداله زاده",
+      "role": "سرپرست حسابداری",
+      "education": "کارشناسی",
+      "distributionExperience": "20 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "میر رسول مومنی",
+      "role": "حسابدار",
+      "education": "کارشناسی",
+      "distributionExperience": "11 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "میلاد هادی مهترلو",
+      "role": "حسابدار",
+      "education": "کارشناسی",
+      "distributionExperience": "7 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محسن رضائی",
+      "role": "حسابدار",
+      "education": "کاردانی",
+      "distributionExperience": "7سال"
+    },
+    {
+      "company": "رازی",
+      "name": "شهروز عباسی خلخانه",
+      "role": "حسابدار",
+      "education": "کارشناسی",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "جلیل موسی پور مینق",
+      "role": "سرپرست فروش",
+      "education": "کارشناسی",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "رسول یاران مغانلو",
+      "role": "سرپرست فروش",
+      "education": "کاردانی",
+      "distributionExperience": "7 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "علی طایفه کریم زاده",
+      "role": "کارمند فروش",
+      "education": "کارشناسی",
+      "distributionExperience": "11 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدی داداش زاده",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "15 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "یوسف محمد قلی اوغلی",
+      "role": "فروشنده",
+      "education": "کارشناسی",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "پویا آریا دوست",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "حمید لطفی",
+      "role": "فروشنده",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مقصود اردوئی مینق",
+      "role": "فروشنده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "14 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد رحمانی",
+      "role": "فروشنده",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "یوسف هوشیار حسن باروق",
+      "role": "فروشنده",
+      "education": "کارشناسی",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "عرفان باغبان کهنه روز",
+      "role": "فروشنده",
+      "education": "کارشناسی",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مسعود شهبازی گرجان",
+      "role": "فروشنده",
+      "education": "سطح یک",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "شراره دوران",
+      "role": "فروشنده",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "پرویز فرج اللهی مرزرود",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد حسین فریدزاد لاله",
+      "role": "فروشنده",
+      "education": "کارشناسی",
+      "distributionExperience": "1 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد زنده قائم",
+      "role": "فروشنده",
+      "education": "کارشناسی",
+      "distributionExperience": "3 ماه"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدی صادقی",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "22 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "اکبر اسماعیلی قزلجه",
+      "role": "کمک انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "22 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "علی میرزائی",
+      "role": "راننده وسائط نقلیه سنگین",
+      "education": "دیپلم",
+      "distributionExperience": "21 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد فربه دیزج",
+      "role": "راننده وسائط نقلیه سنگین",
+      "education": "دیپلم",
+      "distributionExperience": "20 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "حسین دوستی بیرامی",
+      "role": "راننده وسائط نقلیه سبک",
+      "education": "دیپلم",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "رامین مهران تبار",
+      "role": "راننده وسائط نقلیه سنگین",
+      "education": "دیپلم",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدی حسن زاده آقبلاغ",
+      "role": "راننده وسائط نقلیه سبک",
+      "education": "دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد صادق سالک گوهری",
+      "role": "راننده وسائط نقلیه سبک",
+      "education": "دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "علیرضا صدقیان خیره مسجدی",
+      "role": "کارگر عملیات",
+      "education": "راهنمائی",
+      "distributionExperience": "25 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهیار اثماری",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "20 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مرتضی قلمی دیزجی",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "حسین دوست میهن",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "حمید پاشاپور",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی",
+      "distributionExperience": "8 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مهدی مهدیزاده شاهسوار",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "6 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "سعید مراد زاده",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "ابوالفضل نعمتی پیرعلیلو",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مجتبی کارگر",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "9 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "میر اکبر موسوی قراگوز",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمد اصغری شادباد",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "رضا نیک روز کرکان",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "12 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "محمدرضا رحیم زاده",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "حسین قهرمانی",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "فرهاد مهدوی نهند",
+      "role": "راننده کمبی و etv",
+      "education": "دیپلم",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "تورج رضا زاده شاهمرسی",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "3 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "امیررضا دخت شتربانی مسکن",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "2 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "عطاء همتی نیا",
+      "role": "کارگر عملیات",
+      "education": "کارشناسی ارشد",
+      "distributionExperience": "7 ماه"
+    },
+    {
+      "company": "رازی",
+      "name": "علی همتی ملک",
+      "role": "کارگر عملیات",
+      "education": "دیپلم",
+      "distributionExperience": "17 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "سهراب سلیمانی بیرامی",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "13 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "هادی شکوهی",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "11 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "جاوید علی پور",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "10 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "رضا جلیل زاده ثمرین",
+      "role": "راننده پیمانی",
+      "education": "0",
+      "distributionExperience": "5 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "مصطفی منصوریان",
+      "role": "راننده پیمانی",
+      "education": "0",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "رازی",
+      "name": "داود راستکار حسنی",
+      "role": "راننده پیمانی",
+      "education": "0",
+      "distributionExperience": "4 سال"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "رضا عیسی زاده",
+      "role": "مدیر شعبه",
+      "education": "فوق دیپلم",
+      "distributionExperience": "15"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "نسیم آقازاده",
+      "role": "حسابدار",
+      "education": "لیسانس",
+      "distributionExperience": "20"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "آرمان میخوش",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "مهدی رنجبر پایین انزابی",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "رضا فتحی  مرادلو",
+      "role": "بازاریاب",
+      "education": "لیسانس",
+      "distributionExperience": "3"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "سینا قاسملو گرجان",
+      "role": "بازاریاب",
+      "education": "دیپلم",
+      "distributionExperience": "2"
+    },
+    {
+      "company": "دایا دارو",
+      "name": "ایرج احد زااده",
+      "role": "بازاریاب",
+      "education": "فوق دیپلم",
+      "distributionExperience": "5"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "علیرضا بردبار",
+      "role": "مدیر شعبه",
+      "education": "لیسانس",
+      "distributionExperience": "بیست و سه سال کلا"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "پیمان احمدی",
+      "role": "نگهبان",
+      "education": "لیسانس",
+      "distributionExperience": "دو سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "سینا ادیب",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "یک سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حسن اسماعیل زاده",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "پنج سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "مریم عزتمند",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "پنج ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حسین محرم پور",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "سه سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حامد تمیزی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "پنج ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "امیرحسین نوروزی",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "سه ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "بهنام حیدرزاده",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "دو سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "رضا محبی",
+      "role": "موزع",
+      "education": "فوق دیپلم",
+      "distributionExperience": "پنج سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "پریسا حسینی اقدم",
+      "role": "کارشناس حسابداری",
+      "education": "لیسانس",
+      "distributionExperience": "چهار سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "پرناز محمد زاده",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "یک ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "نیما خاوند",
+      "role": "کارگر انبار",
+      "education": "فوق دیپلم",
+      "distributionExperience": "دو سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "وحید زراعتی",
+      "role": "انباردار",
+      "education": "دیپلم",
+      "distributionExperience": "چهار سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "فرهاد کرد",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "یک سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حسام تویل",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "سه ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "عرفان حسینیان",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "نه ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "پریناز خلیل زاده",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "دو سال و نیم"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "علیرضا صدیق",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "سه سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "پیمان حسینی پرغم",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "یک ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حسن صادقی",
+      "role": "راننده",
+      "education": "فوق دیپلم",
+      "distributionExperience": "سه سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "محمدرضا بزرگی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "هشت ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "علی محمدپور بنام",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "هشت ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "شاهین دژکام",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "سه سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "مهدی شفیع پور",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "یک و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "رامین پویان اصل",
+      "role": "کارگر انبار",
+      "education": "لیسانس",
+      "distributionExperience": "دو سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "سحر شفایی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "یک سال و نیم"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "محمدرضا خیراللهی",
+      "role": "نگهبان",
+      "education": "دیپلم",
+      "distributionExperience": "سه سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "میلاد سلیمانی",
+      "role": "کارگر انبار",
+      "education": "دیپلم",
+      "distributionExperience": "هشت ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "فرهاد پاکباز",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "یک ماه"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "علی زراعتی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "پنج سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "رضا علیان",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "یک سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "حسن وثوقی",
+      "role": "راننده",
+      "education": "دیپلم",
+      "distributionExperience": "یک و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "احمد طهماسبی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "دو و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "علی اصغر واصلی",
+      "role": "موزع",
+      "education": "لیسانس",
+      "distributionExperience": "سه و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "میلاد عشایری",
+      "role": "موزع",
+      "education": "دیپلم",
+      "distributionExperience": "سه و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "متین ارشدی",
+      "role": "فروشنده",
+      "education": "دیپلم",
+      "distributionExperience": "یک و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "سحر اعظمی",
+      "role": "فروشنده",
+      "education": "فوق لیسانس",
+      "distributionExperience": "چهار سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "داوود صحت",
+      "role": "فروشنده",
+      "education": "لیسانس",
+      "distributionExperience": "یک و نیم سال"
+    },
+    {
+      "company": "میلان  پارس فارمد",
+      "name": "نیاز موسویان فتحی",
+      "role": "مسوول فنی",
+      "education": "دکترا",
+      "distributionExperience": "چهار سال و نیم"
+    }
+  ]
+}
