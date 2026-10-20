@@ -19,16 +19,32 @@ document.addEventListener('DOMContentLoaded',function(){
  // members render + search
  var grid=document.getElementById('member-grid');
  if(grid){
-  fetch('assets/data.json').then(r=>r.json()).then(function(D){
+  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json())]).then(function(results){
+   var D=results[0], logos=results[1];
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+   // Company-name to existing logo-manifest key correspondence.
+   var logoKeys={
+    'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman',
+    'سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far',
+    'مهبان دارو':'mahban','هجرت':'hejrat','ارمغان طبیعت':'armaghan tabiat','مشاء طب':'masha','داروگستر باریج اسانس':'barij',
+    'فردوس':'ferdos','البرز':'alborz','دارو گستر نخبگان':'nokhbeghan','سینا پخش':'sina','سها سروش':'sorosh','التیام':'eltiyam',
+    'ادورا':'adora','دارو پخش':'daroupakhsh','سها هلال':'soha','سلامت پخش هستی':'hasti','الیت':'elit','پونل برسام':'ponel',
+    'اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'
+   };
+   var logoFiles={};logos.forEach(function(l){logoFiles[l.name]=l.file;});
+   function norm(s){return String(s).replace(/\s+/g,' ').trim();}
    function render(list){
-    grid.innerHTML=list.map(c=>'<div class="company-tile"><b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></div>').join('');
+    grid.innerHTML=list.map(function(c){
+     var key=logoKeys[norm(c.name)],src=logoFiles[key];
+     var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
+     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+    }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
    render(D.companies);
    var inp=document.getElementById('member-search');
    inp.addEventListener('input',function(){
-    var q=inp.value.trim();render(D.companies.filter(c=>!q||c.name.includes(q)));
+    var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));
    });
   });
  }
