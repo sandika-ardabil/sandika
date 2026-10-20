@@ -44,13 +44,36 @@ document.addEventListener('DOMContentLoaded',function(){
    render(D.companies);
    var dlg=document.getElementById('personnel-dialog'), psearch=document.getElementById('personnel-search');
    var plist=document.getElementById('personnel-list'), ptitle=document.getElementById('personnel-title'), psum=document.getElementById('personnel-summary'), pheading=dlg.querySelector('.eyebrow');
-   var personnel=personnelData.records||[];
+   var personnel=(personnelData.records||[]).map(function(x){
+     return Object.assign({},x,{
+      nationalId:x.nationalId||x['کد ملی'],
+      birthDate:x.birthDate||x['تاریخ تولد'],
+      maritalStatus:x.maritalStatus||x['وضعیت تاهل'],
+      children:x.children!==undefined?x.children:x['تعداد فرزند'],
+      insuranceExperience:x.insuranceExperience||x['سابقه بیمه'],
+      phone:x.phone||x['تلفن همراه']
+     });
+    });
    function safe(s){return String(s||'—').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
    function showStaff(company){
     var rows=personnel.filter(x=>norm(x.company)===norm(company));
     var modalTitle='اطلاعات پرسنل شرکت '+company; ptitle.textContent=modalTitle; if(pheading)pheading.textContent=modalTitle; psum.textContent=fa(rows.length)+' نفر پرسنل ثبت‌شده';
     function draw(q){var list=rows.filter(x=>!q||norm(x.name).includes(norm(q))||norm(x.role).includes(norm(q)));
-     plist.innerHTML=list.length?list.map((x,i)=>'<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div><b>'+safe(x.name)+'</b><p>'+safe(x.role)+'</p></div><div class="personnel-meta"><span>'+safe(x.education)+'</span>'+(x.distributionExperience?'<small>سابقه پخش: '+fa(x.distributionExperience)+' سال</small>':'')+'</div></article>').join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
+     function fa2(v){return v===undefined||v===null||v===''?null:fa(v);}
+     plist.innerHTML=list.length?list.map((x,i)=>{
+      var rows=[
+       ['سمت شغلی',x.role],
+       ['مدرک تحصیلی',x.education],
+       ['سابقه حضور در پخش',x.distributionExperience?fa(x.distributionExperience)+' سال':null],
+       ['کد ملی',x.nationalId],
+       ['تاریخ تولد',x.birthDate],
+       ['وضعیت تأهل',x.maritalStatus],
+       ['تعداد فرزند',x.children!==undefined&&x.children!==''?fa(x.children):null],
+       ['سابقه بیمه',x.insuranceExperience?fa(x.insuranceExperience)+' سال':null],
+       ['تلفن همراه',x.phone?'<a href="tel:'+x.phone+'" dir="ltr">'+fa(x.phone)+'</a>':null]
+      ].filter(r=>r[1]!==null&&r[1]!==undefined&&r[1]!=='').map(r=>'<li><span class="info-label">'+r[0]+':</span><span class="info-value">'+safe(r[1])+'</span></li>').join('');
+      return '<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div class="personnel-info"><b class="personnel-name">'+safe(x.name)+'</b><ul class="personnel-details">'+rows+'</ul></div></article>';
+     }).join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
     }
     psearch.value='';draw('');psearch.oninput=()=>draw(psearch.value);
     if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
