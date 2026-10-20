@@ -71,10 +71,24 @@ document.addEventListener('DOMContentLoaded',function(){
        ['تعداد فرزند',x.children!==undefined&&x.children!==''?fa(x.children):null],
        ['سابقه بیمه',x.insuranceExperience?fa(x.insuranceExperience)+' سال':null]
       ].filter(r=>r[1]!==null&&r[1]!==undefined&&r[1]!=='').map(r=>'<li><span class="info-label">'+r[0]+':</span><span class="info-value">'+safe(r[1])+'</span></li>').join('');
-      var phoneDigits=x.phone?String(x.phone).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).replace(/[^\d+]/g,''):'';
-      if(phoneDigits) rows+='<li><span class="info-label">تلفن همراه:</span><span class="info-value"><bdi dir="ltr"><a href="tel:'+safe(phoneDigits)+'">'+safe(fa(x.phone))+'</a></bdi></span></li>';
-      return '<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div class="personnel-info"><b class="personnel-name">'+safe(x.name)+'</b><ul class="personnel-details">'+rows+'</ul></div></article>';
+      return '<article class="personnel-row" data-phone="'+safe(x.phone?String(x.phone).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).replace(/[^\d+]/g,''):'')+'" data-phone-fa="'+safe(x.phone||'')+'"><span class="personnel-index">'+fa(i+1)+'</span><div class="personnel-info"><b class="personnel-name">'+safe(x.name)+'</b><ul class="personnel-details">'+rows+'</ul></div></article>';
      }).join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
+     // add phone links via safe DOM (no raw HTML injection)
+     plist.querySelectorAll('.personnel-row').forEach(function(row){
+      var phoneDigits=row.getAttribute('data-phone'), phoneFa=row.getAttribute('data-phone-fa');
+      row.removeAttribute('data-phone'); row.removeAttribute('data-phone-fa');
+      if(!phoneDigits)return;
+      var li=document.createElement('li');
+      var lab=document.createElement('span'); lab.className='info-label'; lab.textContent='تلفن همراه:';
+      var val=document.createElement('span'); val.className='info-value';
+      var bdi=document.createElement('bdi'); bdi.dir='ltr';
+      var a=document.createElement('a');
+      a.href='tel:'+phoneDigits;
+      a.textContent=phoneFa||phoneDigits;
+      bdi.appendChild(a); val.appendChild(bdi);
+      li.appendChild(lab); li.appendChild(val);
+      row.querySelector('.personnel-details').appendChild(li);
+     });
     }
     psearch.value='';draw('');psearch.oninput=()=>draw(psearch.value);
     if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
