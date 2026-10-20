@@ -69,9 +69,10 @@ document.addEventListener('DOMContentLoaded',function(){
        ['تاریخ تولد',x.birthDate],
        ['وضعیت تأهل',x.maritalStatus],
        ['تعداد فرزند',x.children!==undefined&&x.children!==''?fa(x.children):null],
-       ['سابقه بیمه',x.insuranceExperience?fa(x.insuranceExperience)+' سال':null],
-       ['تلفن همراه',x.phone?'<a href="tel:'+x.phone+'" dir="ltr">'+fa(x.phone)+'</a>':null]
+       ['سابقه بیمه',x.insuranceExperience?fa(x.insuranceExperience)+' سال':null]
       ].filter(r=>r[1]!==null&&r[1]!==undefined&&r[1]!=='').map(r=>'<li><span class="info-label">'+r[0]+':</span><span class="info-value">'+safe(r[1])+'</span></li>').join('');
+      var phoneDigits=x.phone?String(x.phone).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).replace(/[^\d+]/g,''):'';
+      if(phoneDigits) rows+='<li><span class="info-label">تلفن همراه:</span><span class="info-value"><bdi dir="ltr"><a href="tel:'+safe(phoneDigits)+'">'+safe(fa(x.phone))+'</a></bdi></span></li>';
       return '<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div class="personnel-info"><b class="personnel-name">'+safe(x.name)+'</b><ul class="personnel-details">'+rows+'</ul></div></article>';
      }).join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
     }
