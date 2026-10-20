@@ -13,11 +13,15 @@ a{color:inherit;text-decoration:none}img{max-width:100%}
 .login-btn{background:linear-gradient(120deg,#00b4d8,#087f9e);border-radius:9px;padding:8px 18px;font-size:12.5px;box-shadow:0 0 22px rgba(0,180,216,.25)}
 .search-icon,.menu-toggle{border:0;background:transparent;color:#eef9fc;font-size:26px;cursor:pointer}.menu-toggle{display:none}
 /* hero */
-
-
-
-
-
+.hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:120px 20px 80px;
+ background:linear-gradient(180deg,rgba(7,13,20,.62),rgba(8,14,22,.8) 55%,var(--bg)),url('assets/hero_bg_full.webp') center/cover no-repeat}
+.hero-content{position:relative;z-index:2}
+.emblem-stage{position:relative;width:290px;height:300px;margin:0 auto 10px;perspective:900px}
+.hero-emblem{width:230px;height:230px;object-fit:contain;margin:auto;display:block;position:relative;z-index:2;animation:float3d 6s ease-in-out infinite,spinY 14s ease-in-out infinite;filter:drop-shadow(0 0 28px rgba(0,180,216,.65)) drop-shadow(0 0 60px rgba(0,180,216,.3));transform-style:preserve-3d}
+.pedestal{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:240px;height:70px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,180,216,.55),rgba(0,180,216,.12) 55%,transparent 70%);animation:pulse-glow 3.5s ease-in-out infinite}
+.eyebrow{color:var(--cyan);letter-spacing:2px;font-size:13px;margin-bottom:6px}
+.hero h1{font-size:clamp(24px,3.4vw,42px);margin:6px 0;font-weight:800;background:linear-gradient(120deg,#eafcff,#52e2ef 45%,#00b4d8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 span{font-size:.72em}.hero-subtitle{color:var(--muted);font-size:14px}
 .scroll-cue{display:inline-block;margin-top:28px;font-size:34px;color:var(--cyan);animation:bounce-chevron 1.6s infinite}
 /* cards */
 .highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:-40px;position:relative;z-index:3;padding-bottom:70px}
@@ -68,7 +72,9 @@ a{color:inherit;text-decoration:none}img{max-width:100%}
 .socials svg{width:18px;height:18px;fill:none;stroke:var(--cyan);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .socials a:hover{background:rgba(0,180,216,.14);box-shadow:0 0 16px rgba(0,180,216,.4)}
 /* keyframes */
-50%{transform:translateY(-14px)}}50%{transform:rotateY(12deg)}100%{transform:rotateY(-12deg)}}50%{opacity:1;transform:translateX(-50%) scale(1.12)}}
+@keyframes float3d{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes spinY{0%{transform:rotateY(-12deg)}50%{transform:rotateY(12deg)}100%{transform:rotateY(-12deg)}}
+@keyframes pulse-glow{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.12)}}
 @keyframes bounce-chevron{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
 @keyframes fadein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 main{animation:fadein .7s ease}
@@ -76,104 +82,7 @@ main{animation:fadein .7s ease}
 @media(max-width:980px){.highlights{grid-template-columns:1fr}.site-header{height:auto;flex-wrap:wrap;padding:10px 18px}.site-header nav{order:3;width:100%;flex-direction:column;display:none}.site-header.nav-open nav{display:flex}.menu-toggle{display:block}.brand{min-width:0}.full-news{flex-direction:column}.full-news img{width:100%;height:160px}}
 
 /* v4 hero refinements */
-.hero-content{position:relative;z-index:1;padding-bottom:20px}.hero-emblem{position:relative;z-index:2;max-height:225px;width:auto;max-width:min(75vw,270px);object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,220,255,.35));margin-bottom:-8px}.hero h1{line-height:1.8;margin:12px auto;max-width:1000px}.highlights{position:relative;z-index:2;margin-top:0;padding-top:32px}@media(max-width:700px){.hero{min-height:740px;padding:80px 16px 100px}.hero-emblem{max-height:180px}.hero h1{font-size:clamp(1.35rem,5vw,2rem)}}
+.hero{position:relative;min-height:790px;height:auto;padding:105px 20px 115px;background-image:linear-gradient(180deg,rgba(8,16,27,.10),rgba(8,16,27,.16) 55%,#0c1017),url("assets/hero_bg_clean.webp");background-size:cover;background-position:center top;overflow:hidden}.hero-content{position:relative;z-index:1;padding-bottom:20px}.emblem-stage{position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:300px;margin:0 auto 14px}.hero-emblem{position:relative;z-index:2;max-height:225px;width:auto;max-width:min(75vw,270px);object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,220,255,.35));margin-bottom:-8px}.pedestal{position:relative;z-index:1;width:min(500px,78vw);height:150px;margin-top:-6px;background:url("assets/pedestal.png") center/100% 100% no-repeat}.hero h1{line-height:1.8;margin:12px auto;max-width:1000px}.hero-subtitle{margin:10px auto 24px}.highlights{position:relative;z-index:2;margin-top:0;padding-top:32px}@media(max-width:700px){.hero{min-height:740px;padding:80px 16px 100px}.emblem-stage{min-height:250px}.hero-emblem{max-height:180px}.pedestal{height:115px}.hero h1{font-size:clamp(1.35rem,5vw,2rem)}}
 
-/* ===== v5 hero ===== */
-:root{--brand:#121417;--cyan:#00b4d8}
-.hero{position:relative;min-height:740px;height:auto;display:grid;place-items:center;text-align:center;padding:105px 20px 115px;
- background-color:#0c0f17;background-image:linear-gradient(180deg,rgba(8,16,27,.10),rgba(8,16,27,.16) 55%,#0c0f17),url("assets/hero_bg_full.webp");
- background-size:cover;background-position:center center;overflow:hidden}
-.hero-content{position:relative;z-index:1;padding-bottom:20px;display:flex;flex-direction:column;align-items:center}
-.emblem-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;margin:0 auto 10px;perspective:1000px}
-.hero-emblem{width:auto;max-height:225px;max-width:min(75vw,270px);object-fit:contain;display:block;
- filter:drop-shadow(0 0 14px rgba(0,180,216,.75)) drop-shadow(0 0 34px rgba(0,180,216,.45)) drop-shadow(0 0 70px rgba(0,180,216,.28))}
-
-.hero h1{line-height:1.8;margin:12px auto;max-width:1000px;font-size:clamp(24px,3.4vw,42px);font-weight:800;
- background:linear-gradient(120deg,#eafcff,#52e2ef 45%,#00b4d8);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero h1 span{font-size:.72em}
-@media(max-width:640px){.hero{min-height:640px;padding:80px 16px 100px}.emblem-stage{min-height:250px}.hero-emblem{max-height:180px}.hero h1{font-size:clamp(1.35rem,5vw,2rem)}}
-
-
-/* v6 — clean, single-title hero and dimensional crystal centerpiece */
-.hero{
-  min-height:740px; padding:112px 20px 86px; overflow:hidden;
-  background-color:#09131f;
-  background-image:radial-gradient(ellipse at 50% 42%,rgba(3,12,22,.16),rgba(3,12,22,.48) 65%,rgba(3,8,16,.82)),
-    linear-gradient(180deg,rgba(5,12,22,.28) 0%,rgba(5,12,22,.24) 52%,rgba(8,12,19,.88) 100%),
-    url("assets/hero_bg_full.webp");
-  background-size:cover; background-position:center center;
-}
-.hero::before,.hero::after{content:none!important;display:none!important}
-.hero-content{width:100%;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
-.emblem-stage{
-  width:min(620px,94vw); min-height:0; height:390px; margin:0 auto 8px;
-  position:relative; display:flex; flex-direction:column; align-items:center;
-  justify-content:flex-start; perspective:1200px; transform-style:preserve-3d;
-}
-.emblem-crystal{
-  position:relative; z-index:3; width:min(280px,65vw); height:270px;
-  display:grid; place-items:center; margin:0 auto -54px;
-  transform-style:preserve-3d; perspective:1200px;
-  animation:crystalTurn 12s linear infinite;
-  filter:drop-shadow(0 12px 12px rgba(0,0,0,.40)) drop-shadow(0 0 16px rgba(60,222,255,.38)) drop-shadow(0 0 38px rgba(0,180,216,.25));
-}
-.hero-emblem{
-  width:100%; height:100%; max-width:none; max-height:none; object-fit:contain;
-  display:block; position:relative; z-index:1; margin:0;
-  transform:translateZ(22px); transform-style:preserve-3d;
-  filter:drop-shadow(0 7px 7px rgba(0,23,42,.55));
-  backface-visibility:visible;
-}
-@keyframes crystalTurn{from{transform:rotateY(0deg) rotateX(2deg)}to{transform:rotateY(360deg) rotateX(2deg)}}
-
-.hero h1{
-  position:relative; z-index:4; max-width:920px; margin:0 auto;
-  padding:0 16px; text-align:center; line-height:1.75;
-  font-size:clamp(23px,3.2vw,39px); font-weight:800;
-  color:#eafcff; background:none; -webkit-text-fill-color:initial;
-  text-shadow:0 2px 18px rgba(0,0,0,.55),0 0 24px rgba(0,180,216,.25);
-}
-.hero h1 span{font-size:.76em;color:#77e8f4}
-.scroll-cue{margin-top:14px}
-@media(max-width:640px){
- .hero{min-height:650px;padding:88px 14px 78px}
- .emblem-stage{height:310px;width:100%;margin-bottom:4px}
- .emblem-crystal{width:min(220px,62vw);height:220px;margin-bottom:-43px}
- 
- .hero h1{font-size:clamp(21px,6vw,29px)}
-}
-@media(prefers-reduced-motion:reduce){.emblem-crystal{animation:none}}
-
-/* v9 — hero background: show the FULL generated image, crisp and clear.
-   The picture (mountain left, mosque right) is 1536x1024; displaying it with
-   contain keeps the whole composition visible without over-zooming or cropping,
-   and the overlay is nearly transparent so the night sky stays vivid. */
-.hero{
-  background-color:#0c1017;
-  background-image:
-    linear-gradient(180deg, rgba(8,16,27,.05) 0%, rgba(8,16,27,.05) 62%, rgba(12,16,23,.55) 100%),
-    url("assets/hero_bg_full.webp");
-  background-size: cover, contain;
-  background-position: center center, center center;
-  background-repeat: no-repeat;
-}
-.hero::before,.hero::after{content:none!important;display:none!important}
-@media(max-width:640px){
-  .hero{
-    background-size:cover;   /* on narrow screens contain would leave wide bars */
-    background-position:center top;
-  width:100%;
-}
-
-
-/* v13 — new transparent logo integration */
-.hero-emblem{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;aspect-ratio:1/1;display:block;margin:0}
-.emblem-crystal{filter:drop-shadow(0 12px 12px rgba(0,0,0,.40)) drop-shadow(0 0 18px rgba(0,180,216,.30))}
-
-.hero h1{position:relative;z-index:4}
-
-/* v14 — crisp emblem rendering, no lossy resampling */
-.hero-emblem{
-  image-rendering:-webkit-optimize-contrast;
-  image-rendering:crisp-edges;
-}
+/* Verified v3 hero background enforcement */
+.hero{background-image:url('assets/hero_bg_full.webp') !important;background-size:cover !important;background-position:center center !important;}
