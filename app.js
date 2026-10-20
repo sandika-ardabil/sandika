@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded',function(){
  // members render + search
  var grid=document.getElementById('member-grid');
  if(grid){
-  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json())]).then(function(results){
-   var D=results[0], logos=results[1];
+  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json()),fetch('assets/personnel.json').then(r=>r.json())]).then(function(results){
+   var D=results[0], logos=results[1], personnelData=results[2];
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
    // Company-name to existing logo-manifest key correspondence.
    var logoKeys={
@@ -43,13 +43,12 @@ document.addEventListener('DOMContentLoaded',function(){
    }
    render(D.companies);
    var dlg=document.getElementById('personnel-dialog'), psearch=document.getElementById('personnel-search');
-   var plist=document.getElementById('personnel-list'), ptitle=document.getElementById('personnel-title'), psum=document.getElementById('personnel-summary');
-   var personnel=[];
-   fetch('assets/personnel.json').then(r=>r.json()).then(data=>{personnel=data.records||[];}).catch(()=>{personnel=[];});
+   var plist=document.getElementById('personnel-list'), ptitle=document.getElementById('personnel-title'), psum=document.getElementById('personnel-summary'), pheading=dlg.querySelector('.eyebrow');
+   var personnel=personnelData.records||[];
    function safe(s){return String(s||'—').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
    function showStaff(company){
     var rows=personnel.filter(x=>norm(x.company)===norm(company));
-    ptitle.textContent=company; psum.textContent=fa(rows.length)+' نفر پرسنل ثبت‌شده';
+    var modalTitle='اطلاعات پرسنل شرکت '+company; ptitle.textContent=modalTitle; if(pheading)pheading.textContent=modalTitle; psum.textContent=fa(rows.length)+' نفر پرسنل ثبت‌شده';
     function draw(q){var list=rows.filter(x=>!q||norm(x.name).includes(norm(q))||norm(x.role).includes(norm(q)));
      plist.innerHTML=list.length?list.map((x,i)=>'<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div><b>'+safe(x.name)+'</b><p>'+safe(x.role)+'</p></div><div class="personnel-meta"><span>'+safe(x.education)+'</span>'+(x.distributionExperience?'<small>سابقه پخش: '+fa(x.distributionExperience)+' سال</small>':'')+'</div></article>').join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
     }
