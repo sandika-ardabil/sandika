@@ -86,3 +86,15 @@ main{animation:fadein .7s ease}
 
 /* Verified v3 hero background enforcement */
 .hero{background-image:url('assets/hero_bg_full.webp') !important;background-size:cover !important;background-position:center center !important;}
+
+/* ==== Logos marquee ==== */
+.logos-marquee{margin:34px auto 6px}
+.logos-title{font-size:1.15rem;font-weight:800;margin:0 0 14px;text-align:center;color:var(--ink,#1c2b3a)}
+.marquee{overflow:hidden;position:relative;background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:18px 0;cursor:grab;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee:active{cursor:grabbing}
+.marquee-track{display:flex;align-items:center;gap:38px;width:max-content;animation:logo-scroll 40s linear infinite}
+@keyframes logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.07);padding:10px 16px;transition:transform .25s,box-shadow .25s}
+.logo-item:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.13)}
+.logo-item img{height:64px;max-width:130px;object-fit:contain;display:block}
+@media(max-width:640px){.logo-item img{height:46px;max-width:100px}.marquee-track{gap:24px;animation-duration:28s}}
