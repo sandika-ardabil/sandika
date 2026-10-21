@@ -49,54 +49,72 @@ document.addEventListener('DOMContentLoaded',function(){
   });
  }
 
- // logos scroll showcase (33 logos, arrows + smooth pointer drag, no dots/marquee)
- var win=document.querySelector('[data-showcase] .showcase-window');
+ // logos scroll showcase (33 logos, arrows + continuous marquee to the left, pause on hover/touch)
+ var showcase=document.querySelector('[data-showcase]');
+ var win=showcase?showcase.querySelector('.showcase-window'):null;
  if(win){
   fetch('assets/logos.json').then(r=>r.json()).then(function(L){
-   win.querySelector('[data-track]').innerHTML=L.map(function(l){
+   var track=win.querySelector('[data-track]');
+   var items=L.map(function(l){
     return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
    }).join('');
-   document.querySelectorAll('.showcase-arrow').forEach(function(btn){
+   // duplicate the set twice for a seamless -50% translate loop
+   track.innerHTML=items+items;
+   track.setAttribute('dir','ltr');
+
+   // measure one full set width -> animation duration for constant speed
+   function halfWidth(){return track.scrollWidth/2;}
+   function tuneDuration(){
+    var half=halfWidth();if(!half)return;
+    var speed=44; // px per second, smooth and slow
+    win.style.setProperty('--marquee-duration',(half/speed).toFixed(2)+'s');
+   }
+   tuneDuration();
+   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(tuneDuration);
+   window.addEventListener('resize',tuneDuration);
+
+   win.classList.add('marquee-active');
+
+   // pause on hover / touch, resume on leave
+   function pause(){win.classList.add('paused');}
+   function resume(){win.classList.remove('paused');}
+   win.addEventListener('mouseenter',pause);
+   win.addEventListener('mouseleave',resume);
+   win.addEventListener('touchstart',pause,{passive:true});
+   win.addEventListener('touchend',function(){setTimeout(resume,1200);},{passive:true});
+   win.addEventListener('touchcancel',resume,{passive:true});
+   win.addEventListener('focusin',pause);
+   win.addEventListener('focusout',resume);
+   win.addEventListener('dragstart',function(e){e.preventDefault();});
+
+   // arrow buttons: jump a viewport-width left/right and briefly re-sync the marquee
+   var busy=false;
+   showcase.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
-     if(win.dataset.dragged==='1')return;
-     win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
+     if(busy)return;busy=true;
+     pause();
+     var dir=Number(btn.dataset.dir)||1; // 1 = next (scroll left), -1 = prev (scroll right)
+     var step=Math.max(win.clientWidth*0.85,180);
+     var half=halfWidth();
+     // keep the effective offset inside one loop for seamless wrap
+     var cur=parseFloat(track.dataset.offset||'0');
+     var next=cur+dir*step;
+     if(half>0){next=((next%half)+half)%half;}
+     track.dataset.offset=String(next);
+     win.classList.add('paused');
+     track.style.transition='transform .45s ease';
+     track.style.transform='translate3d('+(-next)+'px,0,0)';
+     setTimeout(function(){
+      track.style.transition='';
+      track.style.transform='';
+      resume();
+      busy=false;
+     },470);
     });
    });
-   // pointer drag with threshold + rAF + click suppression, snap kept when idle
-   var down=false,startX=0,startScroll=0,moved=false,raf=null,vel=0,lastX=0,lastT=0;
-   win.addEventListener('pointerdown',function(e){
-    down=true;moved=false;startX=e.clientX;startScroll=win.scrollLeft;
-    lastX=e.clientX;lastT=performance.now();vel=0;
-    win.setPointerCapture(e.pointerId);
-    win.classList.remove('dragging');
-   });
-   win.addEventListener('pointermove',function(e){
-    if(!down)return;
-    var dx=e.clientX-startX;
-    if(!moved&&Math.abs(dx)<6)return; // drag threshold
-    if(!moved){moved=true;win.classList.add('dragging');}
-    var now=performance.now();
-    vel=(e.clientX-lastX)/Math.max(now-lastT,1);
-    lastX=e.clientX;lastT=now;
-    if(raf)cancelAnimationFrame(raf);
-    raf=requestAnimationFrame(function(){win.scrollLeft=startScroll-dx;});
-   });
-   function endDrag(e){
-    if(!down)return;down=false;
-    if(raf){cancelAnimationFrame(raf);raf=null;}
-    win.classList.remove('dragging');
-    if(moved){
-     win.dataset.dragged='1';
-     // momentum then snap
-     var target=win.scrollLeft - vel*260;
-     win.scrollTo({left:Math.max(0,target),behavior:'smooth'});
-     setTimeout(function(){win.dataset.dragged='0';},80);
-    }
-   }
-   win.addEventListener('pointerup',endDrag);
-   win.addEventListener('pointercancel',endDrag);
-   win.addEventListener('click',function(e){if(win.dataset.dragged==='1'){e.preventDefault();e.stopPropagation();}},true);
-   win.addEventListener('dragstart',function(e){e.preventDefault();});
+
+   // manual wheel scroll also pauses briefly
+   win.addEventListener('wheel',function(){pause();clearTimeout(win._wt);win._wt=setTimeout(resume,1200);},{passive:true});
   });
  }
 });
