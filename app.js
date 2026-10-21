@@ -99,7 +99,13 @@ if(grid){
    document.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
      if(win.dataset.dragged==='1')return;
-     win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
+     // The track is LTR: content moves right when scrollLeft grows.
+     // data-dir=+1 => visual left arrow (leftmost button, chevron points left) => reveal next items to the right (scrollLeft +)
+     // data-dir=-1 => visual right arrow (rightmost button, chevron points right) => go back to items on the left (scrollLeft -)
+     var step=Math.max(180,Math.round(win.clientWidth*0.8));
+     var maxLeft=win.scrollWidth-win.clientWidth;
+     var target=Math.min(Math.max(0,win.scrollLeft+Number(btn.dataset.dir)*step),Math.max(0,maxLeft));
+     win.scrollTo({left:target,behavior:'smooth'});
     });
    });
    // pointer drag with threshold + rAF + click suppression, snap kept when idle
