@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded',function(){
  // members render + search
  var grid=document.getElementById('member-grid');
  if(grid){
-  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json())]).then(function(results){
-   var D=results[0], logos=results[1];
+  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json()),fetch('assets/personnel.json').then(r=>r.json())]).then(function(results){
+   var D=results[0], logos=results[1], personnelData=results[2];
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
    // Company-name to existing logo-manifest key correspondence.
    var logoKeys={
@@ -37,11 +37,50 @@ document.addEventListener('DOMContentLoaded',function(){
     grid.innerHTML=list.map(function(c){
      var key=logoKeys[norm(c.name)],src=logoFiles[key];
      var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
-     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+     return '<button type="button" class="company-tile company-tile-button" data-company="'+c.name.replace(/&/g,'&amp;').replace(/\"/g,'&quot;')+'" aria-label="نمایش پرسنل شرکت '+c.name+'">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span><span class="tile-hint">مشاهدهٔ فهرست پرسنل ←</span></button>';
     }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
    render(D.companies);
+   var dlg=document.getElementById('personnel-dialog'), psearch=document.getElementById('personnel-search');
+   var plist=document.getElementById('personnel-list'), ptitle=document.getElementById('personnel-title'), psum=document.getElementById('personnel-summary'), pheading=dlg.querySelector('.eyebrow');
+   var personnel=(personnelData.records||[]).map(function(x){
+     return Object.assign({},x,{
+      nationalId:x.nationalId||x['کد ملی'],
+      birthDate:x.birthDate||x['تاریخ تولد'],
+      maritalStatus:x.maritalStatus||x['وضعیت تاهل'],
+      children:x.children!==undefined?x.children:x['تعداد فرزند'],
+      insuranceExperience:x.insuranceExperience||x['سابقه بیمه'],
+      phone:x.phone||x['تلفن همراه']
+     });
+    });
+   function safe(s){return String(s||'—').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+   function showStaff(company){
+    var rows=personnel.filter(x=>norm(x.company)===norm(company));
+    var modalTitle='اطلاعات پرسنل شرکت '+company; ptitle.textContent=modalTitle; if(pheading)pheading.textContent=modalTitle; psum.textContent=fa(rows.length)+' نفر پرسنل ثبت‌شده';
+    function draw(q){var list=rows.filter(x=>!q||norm(x.name).includes(norm(q))||norm(x.role).includes(norm(q)));
+     function fa2(v){return v===undefined||v===null||v===''?null:fa(v);}
+     plist.innerHTML=list.length?list.map((x,i)=>{
+      var rows=[
+       ['سمت شغلی',x.role],
+       ['مدرک تحصیلی',x.education],
+       ['سابقه حضور در پخش',x.distributionExperience?fa(x.distributionExperience)+' سال':null],
+       ['کد ملی',x.nationalId],
+       ['تاریخ تولد',x.birthDate],
+       ['وضعیت تأهل',x.maritalStatus],
+       ['تعداد فرزند',x.children!==undefined&&x.children!==''?fa(x.children):null],
+       ['سابقه بیمه',x.insuranceExperience?fa(x.insuranceExperience)+' سال':null],
+       ['تلفن همراه',x.phone?'<a href="tel:'+x.phone+'" dir="ltr">'+fa(x.phone)+'</a>':null]
+      ].filter(r=>r[1]!==null&&r[1]!==undefined&&r[1]!=='').map(r=>'<li><span class="info-label">'+r[0]+':</span><span class="info-value">'+safe(r[1])+'</span></li>').join('');
+      return '<article class="personnel-row"><span class="personnel-index">'+fa(i+1)+'</span><div class="personnel-info"><b class="personnel-name">'+safe(x.name)+'</b><ul class="personnel-details">'+rows+'</ul></div></article>';
+     }).join(''):'<p class="personnel-empty">فهرستی برای این شرکت یافت نشد.</p>';
+    }
+    psearch.value='';draw('');psearch.oninput=()=>draw(psearch.value);
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+   }
+   grid.addEventListener('click',function(e){var card=e.target.closest('[data-company]');if(card)showStaff(card.dataset.company);});
+   dlg.querySelector('.dialog-close').addEventListener('click',()=>dlg.close());
+   dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
    var inp=document.getElementById('member-search');
    inp.addEventListener('input',function(){
     var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));
