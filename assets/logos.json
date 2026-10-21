@@ -1,134 +1,134 @@
 [
  {
-  "file": "assets/logos/omidarya.png",
-  "name": "امیداریا دارو"
+  "name": "adora",
+  "file": "assets/logos/adora.jpeg"
  },
  {
-  "file": "assets/logos/ghasem.png",
-  "name": "قاسم ایران"
+  "name": "alborz",
+  "file": "assets/logos/alborz.png"
  },
  {
-  "file": "assets/logos/day_darou.png",
-  "name": "دی دارو"
+  "name": "armaghan tabiat",
+  "file": "assets/logos/armaghan_tabiat.png"
  },
  {
-  "file": "assets/logos/shafaarad.png",
-  "name": "شفاآراد"
+  "name": "avand far",
+  "file": "assets/logos/avand_far.jpg"
  },
  {
-  "file": "assets/logos/saye_saman.jpeg",
-  "name": "سایه  سمن"
+  "name": "barij",
+  "file": "assets/logos/barij.png"
  },
  {
-  "file": "assets/logos/sonar_tak.jpg",
-  "name": "سونار تک دارو"
+  "name": "daroupakhsh",
+  "file": "assets/logos/daroupakhsh.png"
  },
  {
-  "file": "assets/logos/meshkat.png",
-  "name": "مشکات فارمد"
+  "name": "day darou",
+  "file": "assets/logos/day_darou.png"
  },
  {
-  "file": "assets/logos/samen.png",
-  "name": "یارا طب ثامن"
+  "name": "daya",
+  "file": "assets/logos/daya.png"
  },
  {
-  "file": "assets/logos/karen.png",
-  "name": "مکمل کارن"
+  "name": "elit",
+  "file": "assets/logos/elit.png"
  },
  {
-  "file": "assets/logos/avand_far.jpg",
-  "name": "بهداشت سلامت آوند فر"
+  "name": "eltiyam",
+  "file": "assets/logos/eltiyam.png"
  },
  {
-  "file": "assets/logos/mahban.png",
-  "name": "مهبان دارو"
+  "name": "exir",
+  "file": "assets/logos/exir.png"
  },
  {
-  "file": "assets/logos/hejrat.png",
-  "name": "هجرت"
+  "name": "ferdos",
+  "file": "assets/logos/ferdos.png"
  },
  {
-  "file": "assets/logos/armaghan_tabiat.png",
-  "name": "ارمغان طبیعت"
+  "name": "ghasem",
+  "file": "assets/logos/ghasem.png"
  },
  {
-  "file": "assets/logos/masha.png",
-  "name": "مشاء طب"
+  "name": "hasti",
+  "file": "assets/logos/hasti.png"
  },
  {
-  "file": "assets/logos/barij.png",
-  "name": "داروگستر باریج اسانس"
+  "name": "hejrat",
+  "file": "assets/logos/hejrat.png"
  },
  {
-  "file": "assets/logos/ferdos.png",
-  "name": "فردوس"
+  "name": "karen",
+  "file": "assets/logos/karen.png"
  },
  {
-  "file": "assets/logos/alborz.png",
-  "name": "البرز"
+  "name": "mahban",
+  "file": "assets/logos/mahban.png"
  },
  {
-  "file": "assets/logos/nokhbeghan.png",
-  "name": "دارو گستر نخبگان"
+  "name": "masha",
+  "file": "assets/logos/masha.png"
  },
  {
-  "file": "assets/logos/sina.png",
-  "name": "سینا پخش"
+  "name": "meshkat",
+  "file": "assets/logos/meshkat.png"
  },
  {
-  "file": "assets/logos/sorosh.png",
-  "name": "سها سروش"
+  "name": "milan",
+  "file": "assets/logos/milan.png"
  },
  {
-  "file": "assets/logos/eltiyam.png",
-  "name": "التیام"
+  "name": "momtaz",
+  "file": "assets/logos/momtaz.png"
  },
  {
-  "file": "assets/logos/adora.jpeg",
-  "name": "ادورا"
+  "name": "nokhbeghan",
+  "file": "assets/logos/nokhbeghan.png"
  },
  {
-  "file": "assets/logos/daroupakhsh.png",
-  "name": "دارو پخش"
+  "name": "omidarya",
+  "file": "assets/logos/omidarya.png"
  },
  {
-  "file": "assets/logos/soha.png",
-  "name": "سها هلال"
+  "name": "ponel",
+  "file": "assets/logos/ponel.png"
  },
  {
-  "file": "assets/logos/hasti.png",
-  "name": "سلامت  پخش هستی"
+  "name": "pora",
+  "file": "assets/logos/pora.png"
  },
  {
-  "file": "assets/logos/elit.png",
-  "name": "الیت"
+  "name": "razi",
+  "file": "assets/logos/razi.jpeg"
  },
  {
-  "file": "assets/logos/ponel.png",
-  "name": "پونل برسام"
+  "name": "samen",
+  "file": "assets/logos/samen.png"
  },
  {
-  "file": "assets/logos/exir.png",
-  "name": "اکسیر"
+  "name": "saye saman",
+  "file": "assets/logos/saye_saman.jpeg"
  },
  {
-  "file": "assets/logos/pora.png",
-  "name": "پورا پخش"
+  "name": "shafaarad",
+  "file": "assets/logos/shafaarad.png"
  },
  {
-  "file": "assets/logos/momtaz.png",
-  "name": "ممتاز"
+  "name": "sina",
+  "file": "assets/logos/sina.png"
  },
  {
-  "file": "assets/logos/razi.jpeg",
-  "name": "رازی"
+  "name": "soha",
+  "file": "assets/logos/soha.png"
  },
  {
-  "file": "assets/logos/daya.png",
-  "name": "دایا دارو"
+  "name": "sonar tak",
+  "file": "assets/logos/sonar_tak.jpg"
  },
  {
-  "file": "assets/logos/milan.png",
-  "name": "میلان  پارس فارمد"
+  "name": "sorosh",
+  "file": "assets/logos/sorosh.png"
  }
 ]
