@@ -19,45 +19,84 @@ document.addEventListener('DOMContentLoaded',function(){
  // members render + search
  var grid=document.getElementById('member-grid');
  if(grid){
-  fetch('assets/data.json').then(r=>r.json()).then(function(D){
+  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json())]).then(function(results){
+   var D=results[0], logos=results[1];
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+   // Company-name to existing logo-manifest key correspondence.
+   var logoKeys={
+    'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman',
+    'سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far',
+    'مهبان دارو':'mahban','هجرت':'hejrat','ارمغان طبیعت':'armaghan tabiat','مشاء طب':'masha','داروگستر باریج اسانس':'barij',
+    'فردوس':'ferdos','البرز':'alborz','دارو گستر نخبگان':'nokhbeghan','سینا پخش':'sina','سها سروش':'sorosh','التیام':'eltiyam',
+    'ادورا':'adora','دارو پخش':'daroupakhsh','سها هلال':'soha','سلامت پخش هستی':'hasti','الیت':'elit','پونل برسام':'ponel',
+    'اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'
+   };
+   var logoFiles={};logos.forEach(function(l){logoFiles[l.name]=l.file;});
+   function norm(s){return String(s).replace(/\s+/g,' ').trim();}
    function render(list){
-    grid.innerHTML=list.map(c=>'<div class="company-tile"><b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></div>').join('');
+    grid.innerHTML=list.map(function(c){
+     var key=logoKeys[norm(c.name)],src=logoFiles[key];
+     var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
+     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+    }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
    render(D.companies);
    var inp=document.getElementById('member-search');
    inp.addEventListener('input',function(){
-    var q=inp.value.trim();render(D.companies.filter(c=>!q||c.name.includes(q)));
+    var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));
    });
   });
  }
- // emblem parallax tilt
- var em=document.querySelector('.tilt-emblem');
- if(em){var st=em.closest('.emblem-stage');
-  document.querySelector('.hero').addEventListener('mousemove',function(e){
-   var r=st.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;
-   em.style.animationPlayState='paused';
-   em.style.transform='translateY('+(-y*8)+'px) rotateY('+(x*22)+'deg) rotateX('+(-y*10)+'deg)';
-  });
-  document.querySelector('.hero').addEventListener('mouseleave',function(){em.style.transform='';em.style.animationPlayState='running';});
- }
 
- // logos marquee (auto scroll, RTL, pause on hover)
- var track=document.querySelector('[data-track]');
- if(track){
+ // logos scroll showcase (33 logos, arrows + smooth pointer drag, no dots/marquee)
+ var win=document.querySelector('[data-showcase] .showcase-window');
+ if(win){
   fetch('assets/logos.json').then(r=>r.json()).then(function(L){
-   var html=L.map(l=>'<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy"></div>').join('');
-   track.innerHTML=html+html; // duplicate for seamless loop
+   win.querySelector('[data-track]').innerHTML=L.map(function(l){
+    return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
+   }).join('');
+   document.querySelectorAll('.showcase-arrow').forEach(function(btn){
+    btn.addEventListener('click',function(){
+     if(win.dataset.dragged==='1')return;
+     win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
+    });
+   });
+   // pointer drag with threshold + rAF + click suppression, snap kept when idle
+   var down=false,startX=0,startScroll=0,moved=false,raf=null,vel=0,lastX=0,lastT=0;
+   win.addEventListener('pointerdown',function(e){
+    down=true;moved=false;startX=e.clientX;startScroll=win.scrollLeft;
+    lastX=e.clientX;lastT=performance.now();vel=0;
+    win.setPointerCapture(e.pointerId);
+    win.classList.remove('dragging');
+   });
+   win.addEventListener('pointermove',function(e){
+    if(!down)return;
+    var dx=e.clientX-startX;
+    if(!moved&&Math.abs(dx)<6)return; // drag threshold
+    if(!moved){moved=true;win.classList.add('dragging');}
+    var now=performance.now();
+    vel=(e.clientX-lastX)/Math.max(now-lastT,1);
+    lastX=e.clientX;lastT=now;
+    if(raf)cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){win.scrollLeft=startScroll-dx;});
+   });
+   function endDrag(e){
+    if(!down)return;down=false;
+    if(raf){cancelAnimationFrame(raf);raf=null;}
+    win.classList.remove('dragging');
+    if(moved){
+     win.dataset.dragged='1';
+     // momentum then snap
+     var target=win.scrollLeft - vel*260;
+     win.scrollTo({left:Math.max(0,target),behavior:'smooth'});
+     setTimeout(function(){win.dataset.dragged='0';},80);
+    }
+   }
+   win.addEventListener('pointerup',endDrag);
+   win.addEventListener('pointercancel',endDrag);
+   win.addEventListener('click',function(e){if(win.dataset.dragged==='1'){e.preventDefault();e.stopPropagation();}},true);
+   win.addEventListener('dragstart',function(e){e.preventDefault();});
   });
-  var mq=track.closest('.marquee');
-  mq.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});
-  mq.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});
-  // drag to scroll left/right
-  var down=false,sx=0,start=0;
-  mq.addEventListener('mousedown',function(e){down=true;sx=e.clientX;start=parseFloat(getComputedStyle(track).transform.split(',')[4])||0;track.style.animationPlayState='paused';});
-  window.addEventListener('mouseup',function(){down=false;track.style.animationPlayState='running';});
-  window.addEventListener('mousemove',function(e){if(!down)return;var dx=e.clientX-sx;track.style.animation='none';track.style.transform='translateX('+(start+dx)+'px)';});
-  mq.addEventListener('wheel',function(e){e.preventDefault();var cur=parseFloat(getComputedStyle(track).transform.split(',')[4])||0;track.style.animation='none';track.style.transform='translateX('+(cur - Math.sign(e.deltaY)*60)+'px)';},{passive:false});
  }
 });
