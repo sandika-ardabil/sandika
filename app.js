@@ -23,6 +23,7 @@ if(grid){
    var D=results[0], logos=results[1], P=results[2];
    var personnel=P.records||P;
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+   var esc=s=>String(s==null?'':s).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]));
    var logoKeys={
     'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman',
     'سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far',
@@ -32,18 +33,18 @@ if(grid){
     'اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'
    };
    var logoFiles={};logos.forEach(function(l){logoFiles[l.name]=l.file;});
-   function norm(s){return String(s||'').replace(/\s+/g,' ').trim();}
+   function norm(s){return String(s||'').normalize('NFC').replace(/[\u200c\u200f\u202a-\u202e]/g,'').replace(/\s+/g,' ').trim();}
    var modal=document.getElementById('personnel-modal');
    var currentCompany=null;
    function renderRows(q){
     q=norm(q).toLowerCase();
-    var rows=personnel.filter(function(r){return r['نام شرکت']===currentCompany;});
+    var rows=personnel.filter(function(r){return norm(r.company||r['نام شرکت'])===norm(currentCompany);});
     if(q)rows=rows.filter(function(r){
       return norm(r.name||r['نام و نام خانوادگی']).toLowerCase().includes(q)||
              norm(r.role||r['سمت شغلی']).toLowerCase().includes(q);
     });
     document.getElementById('pm-tbody').innerHTML=rows.map(function(r,i){
-     return '<tr><td>'+fa(i+1)+'</td><td>'+(r.name||r['نام و نام خانوادگی']||'')+'</td><td>'+(r.role||r['سمت شغلی']||'')+'</td><td>'+(r.education||r['مدرک تحصیلی']||'')+'</td><td>'+fa(r.distributionExperience||r['سابقه حضور در پخش']||'۰')+'</td><td>'+fa(r['تلفن همراه']||'')+'</td></tr>';
+     return '<tr><td>'+fa(i+1)+'</td><td>'+esc(r.name||r['نام و نام خانوادگی']||'')+'</td><td>'+esc(r.role||r['سمت شغلی']||'')+'</td><td>'+esc(r.education||r['مدرک تحصیلی']||'')+'</td><td>'+fa(r.distributionExperience||r['سابقه حضور در پخش']||'۰')+'</td><td>'+fa(r['تلفن همراه']||'')+'</td></tr>';
     }).join('');
     document.getElementById('pm-empty').hidden=rows.length>0;
    }
@@ -53,7 +54,7 @@ if(grid){
     var key=logoKeys[norm(name)];
     var lg=document.getElementById('pm-logo');
     if(key&&logoFiles[key]){lg.src=logoFiles[key];lg.hidden=false;}else lg.hidden=true;
-    var n=personnel.filter(function(r){return r['نام شرکت']===name;}).length;
+    var n=personnel.filter(function(r){return norm(r.company||r['نام شرکت'])===norm(name);}).length;
     document.getElementById('pm-sub').textContent=fa(n)+' نفر پرسنل';
     document.getElementById('pm-search').value='';
     renderRows('');
