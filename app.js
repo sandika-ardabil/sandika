@@ -56,16 +56,8 @@ document.addEventListener('DOMContentLoaded',function(){
    win.querySelector('[data-track]').innerHTML=L.map(function(l){
     return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
    }).join('');
-   // auto scroll: starts on load, pauses on hover, resumes on leave, restarts after arrows/drag
-   var autoTimer=null,autoDelay=null;
-   function stopAuto(){if(autoDelay){clearTimeout(autoDelay);autoDelay=null;}if(autoTimer){clearInterval(autoTimer);autoTimer=null;}}
-   function startAuto(){stopAuto();autoTimer=setInterval(function(){win.scrollBy({left:360,behavior:'smooth'});},3000);}
-   startAuto();
-   win.addEventListener('mouseenter',stopAuto);
-   win.addEventListener('mouseleave',function(){startAuto();});
    document.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
-     stopAuto();autoDelay=setTimeout(startAuto,4000);
      if(win.dataset.dragged==='1')return;
      win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
     });
@@ -73,7 +65,6 @@ document.addEventListener('DOMContentLoaded',function(){
    // pointer drag with threshold + rAF + click suppression, snap kept when idle
    var down=false,startX=0,startScroll=0,moved=false,raf=null,vel=0,lastX=0,lastT=0;
    win.addEventListener('pointerdown',function(e){
-    if(win.dataset.hover!=='1')stopAuto();
     down=true;moved=false;startX=e.clientX;startScroll=win.scrollLeft;
     lastX=e.clientX;lastT=performance.now();vel=0;
     win.setPointerCapture(e.pointerId);
