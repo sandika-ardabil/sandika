@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded',function(){
     grid.innerHTML=list.map(function(c){
      var key=logoKeys[norm(c.name)],src=logoFiles[key];
      var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
-     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+     return '<article class="company-tile" data-company="'+c.name+'" title="مشاهده پرسنل '+c.name+'">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
     }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
@@ -100,3 +100,50 @@ document.addEventListener('DOMContentLoaded',function(){
   });
  }
 });
+
+ // ===== Bug 1 fix: company personnel modal =====
+ var modal=document.getElementById('personnel-modal');
+ var personnelCache=null;
+ function loadPersonnel(){
+  if(personnelCache)return Promise.resolve(personnelCache);
+  return fetch('assets/personnel.json').then(r=>r.json()).then(function(j){
+   personnelCache=j.records||j;return personnelCache;
+  });
+ }
+ function openPersonnel(companyName){
+  loadPersonnel().then(function(records){
+   var list=records.filter(function(p){return (p.company||p['نام شرکت'])===companyName;});
+   document.getElementById('personnel-company').textContent=companyName;
+   document.getElementById('personnel-count-line').textContent=list.length?('تعداد پرسنل: '+fa(list.length)+' نفر'):'';
+   var box=document.getElementById('personnel-list');
+   if(!list.length){
+    box.innerHTML='<p class="p-empty">پرسنلی برای این شرکت ثبت نشده است.</p>';
+   }else{
+    box.innerHTML=list.map(function(p){
+     return '<div class="personnel-card"><b>'+(p.name||p['نام و نام خانوادگی'])+'</b>'
+      +'<span class="p-role">سمت: '+(p.role||p['سمت شغلی']||'—')+'</span>'
+      +'<span>تحصیلات: '+(p.education||p['مدرک تحصیلی']||'—')+'</span>'
+      +'<span>سابقه: '+fa(p.distributionExperience||p['سابقه حضور در پخش']||'—')+' سال</span>'
+      +'</div>'; // national ID & phone deliberately excluded (PII)
+    }).join('');
+   }
+   modal.classList.add('open');
+   modal.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';
+  });
+ }
+ function closePersonnel(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+ }
+ if(modal){
+  modal.addEventListener('click',function(e){if(e.target===modal)closePersonnel();});
+  modal.querySelector('.personnel-close').addEventListener('click',closePersonnel);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closePersonnel();});
+  // delegate clicks on company tiles (also works after re-render on search)
+  grid.addEventListener('click',function(e){
+   var tile=e.target.closest('.company-tile');
+   if(tile)openPersonnel(tile.dataset.company);
+  });
+ }

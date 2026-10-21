@@ -115,3 +115,37 @@ main{animation:fadein .7s ease}
 .company-logo-fallback{display:grid;place-items:center;color:#789;background:#fff}
 .company-grid .badge{margin-right:auto;white-space:nowrap}
 @media(max-width:520px){.company-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr))}.company-grid .company-tile{gap:9px;padding:12px}.company-logo{width:48px;height:48px;flex-basis:48px}}
+
+
+/* ==== Mission page ==== */
+.mission-card{position:relative;padding:28px}
+.mission-card h2{color:var(--cyan)}
+.mission-icon{display:inline-block;font-size:26px;color:var(--cyan);text-shadow:0 0 18px rgba(0,180,216,.7);margin-bottom:6px}
+.mission-lead{color:#dbe7ef;font-size:14.5px}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;margin-top:10px}
+.mission-section-title{color:#fff;font-size:1.25rem;margin:34px 0 14px}
+.mission-card ul{margin:8px 0 0;padding-inline-start:18px;color:var(--muted);font-size:13px}
+.mission-card li{margin:6px 0}
+.mission-note{margin-top:30px;color:var(--muted);font-size:12px;border-top:1px dashed var(--line);padding-top:14px}
+
+/* ==== Bug 1 fix: personnel modal ==== */
+#personnel-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(5,10,16,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+#personnel-modal.open{opacity:1;visibility:visible}
+.personnel-box{position:relative;width:min(720px,94vw);max-height:82vh;overflow:auto;background:#121417;border:1px solid rgba(0,180,216,.35);border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.55);transform:translateY(14px);transition:transform .25s}
+#personnel-modal.open .personnel-box{transform:none}
+.personnel-close{position:absolute;top:12px;left:12px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,180,216,.4);background:rgba(0,180,216,.12);color:var(--cyan);font-size:18px;cursor:pointer;transition:.2s}
+.personnel-close:hover{background:rgba(0,180,216,.3)}
+.personnel-box h3{margin:2px 0 4px;font-size:19px;color:#fff}
+.personnel-box .p-count{color:var(--cyan);font-size:12px}
+.personnel-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:16px}
+.personnel-card{background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:12px;padding:12px}
+.personnel-card b{display:block;font-size:13.5px;color:#fff}
+.personnel-card span{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.personnel-card .p-role{color:var(--cyan)}
+.p-empty{color:var(--muted);font-size:13px;margin-top:14px}
+
+/* ==== Bug 2 fix: smooth uninterrupted logo showcase scroll ==== */
+.showcase-window{scroll-snap-type:none;scroll-behavior:auto;overscroll-behavior-x:contain}
+.logo-item{scroll-snap-align:none}
+.showcase-window{touch-action:pan-y;user-select:none;-webkit-user-select:none}
