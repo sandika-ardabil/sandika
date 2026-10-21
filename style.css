@@ -115,3 +115,13 @@ main{animation:fadein .7s ease}
 .company-logo-fallback{display:grid;place-items:center;color:#789;background:#fff}
 .company-grid .badge{margin-right:auto;white-space:nowrap}
 @media(max-width:520px){.company-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr))}.company-grid .company-tile{gap:9px;padding:12px}.company-logo{width:48px;height:48px;flex-basis:48px}}
+
+
+/* ---- Company personnel page additions (appended; existing styles untouched) ---- */
+a.company-tile-link{text-decoration:none;color:inherit;cursor:pointer}
+a.company-tile-link:hover b{color:var(--cyan)}
+.person-row{background:rgba(18,24,36,.72);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;transition:.25s}
+.person-row:hover{border-color:rgba(0,180,216,.45)}
+.person-row b{font-size:14.5px}
+.person-row .badge{white-space:nowrap}
+.person-row .p-meta{color:var(--muted);font-size:12.5px}

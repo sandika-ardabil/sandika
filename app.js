@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded',function(){
     grid.innerHTML=list.map(function(c){
      var key=logoKeys[norm(c.name)],src=logoFiles[key];
      var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
-     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
+     var enc=encodeURIComponent(c.name);return '<a class="company-tile company-tile-link" href="company_personnel.html?company='+enc+'" title="مشاهده پرسنل '+c.name+'">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></a>';
     }).join('');
     document.getElementById('empty-state').hidden=list.length>0;
    }
@@ -100,3 +100,40 @@ document.addEventListener('DOMContentLoaded',function(){
   });
  }
 });
+
+// company personnel page
+(function(){
+ var list=document.getElementById('personnel-list');
+ if(!list)return;
+ var params=new URLSearchParams(location.search);
+ var company=params.get('company')||'';
+ var norm=function(s){return String(s).replace(/\s+/g,' ').trim();};
+ var fa=function(s){return String(s).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d];});};
+ company=norm(company);
+ document.getElementById('company-title').textContent=company||'شرکت انتخاب نشده';
+ document.title=(company?company+' | ':'')+'پرسنل شرکت | انجمن صنفی اردبیل';
+ fetch('assets/personnel.json').then(function(r){return r.json();}).then(function(P){
+  var rows=P.records.filter(function(r){return norm(r['نام شرکت']||r.company)===company;});
+  var esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
+  function render(q){
+   q=norm(q||'');
+   var shown=rows.filter(function(r){if(!q)return true;var t=norm((r.name||'')+' '+(r.role||''));return t.indexOf(q)!==-1;});
+   list.innerHTML=shown.map(function(r){
+    var exp=r['سابقه حضور در پخش']!=null&&r['سابقه حضور در پخش']!==''?fa(r['سابقه حضور در پخش'])+' سال سابقه پخش':'';
+    var edu=r.education||r['مدرک تحصیلی']||'';
+    var parts=[];
+    if(r.role)parts.push('<span class="badge">'+esc(r.role)+'</span>');
+    if(edu)parts.push('<span class="p-meta">مدرک: '+esc(edu)+'</span>');
+    if(exp)parts.push('<span class="p-meta">'+exp+'</span>');
+    return '<article class="person-row"><b>'+esc(r.name||r['نام و نام خانوادگی'])+'</b>'+parts.join(' ')+'</article>';
+   }).join('');
+   document.getElementById('personnel-total').textContent=fa(shown.length);
+   document.getElementById('personnel-empty').hidden=shown.length>0;
+  }
+  render('');
+  var inp=document.getElementById('personnel-search');
+  inp.addEventListener('input',function(){render(inp.value);});
+ }).catch(function(){
+  document.getElementById('company-title').textContent='خطا در بارگذاری اطلاعات';
+ });
+})();
