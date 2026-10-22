@@ -114,23 +114,3 @@ document.addEventListener('DOMContentLoaded',function(){
   });
  }
 });
-
-/* --- Hero slider --- */
-(function(){
-  const slider = document.querySelector('[data-hero-slider]');
-  if(!slider) return;
-  const slides = slider.querySelectorAll('.hero-slide');
-  const dots = slider.querySelectorAll('.hero-dot');
-  let idx = 0, timer = null;
-  function go(i){
-    idx = (i + slides.length) % slides.length;
-    slides.forEach((s,n)=>s.classList.toggle('active', n===idx));
-    dots.forEach((d,n)=>d.classList.toggle('active', n===idx));
-  }
-  function next(){ go(idx+1); }
-  function reset(){ clearInterval(timer); timer = setInterval(next, 5000); }
-  slider.querySelector('.hero-arrow.next').addEventListener('click', ()=>{ next(); reset(); });
-  slider.querySelector('.hero-arrow.prev').addEventListener('click', ()=>{ go(idx-1); reset(); });
-  dots.forEach((d,n)=>d.addEventListener('click', ()=>{ go(n); reset(); }));
-  reset();
-})();
