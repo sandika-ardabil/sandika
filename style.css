@@ -91,7 +91,7 @@ main{animation:fadein .7s ease}
 .logos-marquee{margin:34px auto 6px}
 .logos-title{font-size:1.15rem;font-weight:800;margin:0 0 14px;text-align:center;color:var(--ink,#1c2b3a)}
 .logo-showcase{display:flex;align-items:center;gap:12px}
-.showcase-window{flex:1;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;direction:ltr;cursor:grab;scrollbar-width:none;border-radius:18px;background:transparent;border:1px solid var(--line,rgba(0,180,216,.18));padding:16px 12px}
+.showcase-window{flex:1;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;direction:ltr;cursor:grab;scrollbar-width:none;border-radius:18px;background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.06);padding:16px 12px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 .showcase-window::-webkit-scrollbar{display:none}
 .showcase-window.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
 .logo-track{display:flex;align-items:center;gap:18px;width:max-content}
@@ -128,3 +128,47 @@ main{animation:fadein .7s ease}
 .personnel-table th{position:sticky;top:0;background:#172332;color:#52e2ef;font-weight:700}.personnel-table tbody tr:nth-child(even){background:rgba(255,255,255,.025)}.personnel-table tbody tr:hover{background:rgba(0,180,216,.1)}
 .personnel-empty{padding:0 22px 18px;color:#a6b3c2}.company-grid .company-tile{font:inherit;color:inherit;text-align:right;cursor:pointer}.company-grid .company-tile:focus-visible,.personnel-close:focus-visible{outline:2px solid #52e2ef;outline-offset:3px}
 @media(max-width:600px){.personnel-dialog{width:96vw;max-width:96vw}.personnel-modal-head{padding:15px}.personnel-search{margin:10px}.personnel-table-wrap{margin:0 10px 12px;max-height:calc(88vh - 175px)}.personnel-table{font-size:11px}}
+
+/* ==== Personnel compact table, toolbar, cards, detail modal (v2) ==== */
+.personnel-panel{margin-top:34px;padding:22px;border:1px solid rgba(0,180,216,.18);border-radius:16px;background:rgba(18,20,23,.65)}
+.personnel-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.personnel-panel-head h2{margin:0;font-size:20px;color:#00b4d8}
+.personnel-toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.personnel-search-inline{flex:1 1 260px;margin:0}
+.company-filter{display:flex;align-items:center;gap:8px;font-size:13px;color:#a6b3c2}
+.company-filter select{padding:9px 12px;border-radius:10px;border:1px solid rgba(170,220,235,.2);background:#0c1017;color:#f3f8fb;font:inherit;max-width:230px}
+.personnel-table-compact .th-sort{background:none;border:0;color:inherit;font:inherit;font-weight:700;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:6px}
+.personnel-table-compact .th-sort::after{content:'';width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(82,226,239,.45)}
+.personnel-table-compact .th-sort.asc::after{border-top:0;border-bottom:6px solid #52e2ef}
+.personnel-table-compact .th-sort.desc::after{border-top-color:#52e2ef}
+.personnel-table-compact .th-sort:focus-visible{outline:2px solid #52e2ef;outline-offset:2px}
+.person-view-btn{padding:6px 14px;border-radius:9px;border:1px solid rgba(0,180,216,.45);background:rgba(0,180,216,.1);color:#00b4d8;font:inherit;font-size:12px;cursor:pointer;transition:background .15s,color .15s}
+.person-view-btn:hover{background:#00b4d8;color:#04141a}
+.person-view-btn:focus-visible{outline:2px solid #52e2ef;outline-offset:2px}
+.person-cards{display:grid;gap:10px;grid-template-columns:1fr}
+.person-card{padding:14px;border:1px solid rgba(170,220,235,.14);border-radius:12px;background:rgba(255,255,255,.03);display:grid;gap:6px}
+.person-card b{color:#00b4d8;font-size:14px}
+.person-card p{margin:0;font-size:12.5px;color:#cfd9e4}
+.person-card p span{color:#8fa0b3}
+.person-card .person-view-btn{justify-self:start;margin-top:4px}
+.person-detail-dialog{width:min(560px,94vw)}
+.person-detail-body{padding:18px 24px 24px;overflow:auto;max-height:calc(88vh - 96px)}
+.person-detail-list{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:13.5px}
+.person-detail-list dt{color:#8fa0b3}
+.person-detail-list dd{margin:0;color:#f3f8fb}
+@media(max-width:768px){
+ .personnel-panel{padding:14px}
+ .personnel-toolbar{gap:8px}
+ .company-filter select{max-width:100%}
+ .person-cards{grid-template-columns:1fr}
+ .person-detail-body{padding:14px}
+}
+
+/* Compact, fixed-scope personnel table in company modal */
+#personnel-dialog .personnel-table-wrap{max-height:calc(88vh - 190px);overflow:auto}
+#personnel-dialog .personnel-table-compact{width:100%;min-width:780px;white-space:nowrap;font-size:12px}
+#personnel-dialog .personnel-table-compact th,#personnel-dialog .personnel-table-compact td{padding:7px 10px;line-height:1.55}
+#personnel-dialog .personnel-table-compact th:last-child,#personnel-dialog .personnel-table-compact td:last-child{position:sticky;left:0;background:#121824}
+#personnel-dialog .personnel-table-compact thead th:last-child{z-index:1;background:#172332}
+.personnel-back{display:inline-flex;align-items:center;gap:8px;margin:14px 0;padding:8px 16px;border:1px solid rgba(0,180,216,.45);border-radius:9px;color:#52e2ef;background:rgba(0,180,216,.08);cursor:pointer;font:inherit}
+.personnel-back:hover{background:rgba(0,180,216,.18)}
