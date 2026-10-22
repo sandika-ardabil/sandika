@@ -134,3 +134,7 @@ main{animation:fadein .7s ease}
 
 /* Mission page additions */
 .content-section>.glass-card{margin-bottom:18px}.content-section>.glass-card h2 small{font-size:12px;color:var(--muted);font-weight:500}.content-section>.glass-card h3{font-size:15px;color:var(--cyan);margin:12px 0 2px}.content-section>.glass-card ul{margin:4px 0 8px;padding-right:22px;color:#d4dce2;font-size:13px}.content-section>.glass-card li{padding:2px 0}.source-note{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
+
+/* back button */
+.back-btn{display:inline-block;margin:0 0 18px 0;padding:9px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#eef2ff;text-decoration:none;font-size:.95em;transition:background .2s,border-color .2s}
+.back-btn:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.45)}
