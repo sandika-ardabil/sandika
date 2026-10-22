@@ -91,7 +91,7 @@ main{animation:fadein .7s ease}
 .logos-marquee{margin:34px auto 6px}
 .logos-title{font-size:1.15rem;font-weight:800;margin:0 0 14px;text-align:center;color:var(--ink,#1c2b3a)}
 .logo-showcase{display:flex;align-items:center;gap:12px}
-.showcase-window{flex:1;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;direction:ltr;cursor:grab;scrollbar-width:none;border-radius:18px;background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.06);padding:16px 12px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.showcase-window{flex:1;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;direction:ltr;cursor:grab;scrollbar-width:none;border-radius:18px;background:linear-gradient(180deg,#16191e,#121417);border:1px solid rgba(0,180,216,.18);padding:16px 12px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 .showcase-window::-webkit-scrollbar{display:none}
 .showcase-window.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
 .logo-track{display:flex;align-items:center;gap:18px;width:max-content}
@@ -172,3 +172,12 @@ main{animation:fadein .7s ease}
 #personnel-dialog .personnel-table-compact thead th:last-child{z-index:1;background:#172332}
 .personnel-back{display:inline-flex;align-items:center;gap:8px;margin:14px 0;padding:8px 16px;border:1px solid rgba(0,180,216,.45);border-radius:9px;color:#52e2ef;background:rgba(0,180,216,.08);cursor:pointer;font:inherit}
 .personnel-back:hover{background:rgba(0,180,216,.18)}
+
+/* ==== Fixed slider: dark theme + auto marquee, pause on hover ==== */
+.logos-title{color:#e8eef5 !important}
+.logo-showcase{position:relative}
+.showcase-arrow{position:relative;z-index:5}
+@keyframes logo-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-track.marquee-on{animation:logo-marquee 40s linear infinite;will-change:transform}
+.logo-showcase:hover .logo-track.marquee-on,
+.logo-track.marquee-on:hover{animation-play-state:paused}

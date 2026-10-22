@@ -205,10 +205,21 @@ document.addEventListener('DOMContentLoaded',function(){
    win.querySelector('[data-track]').innerHTML=L.map(function(l){
     return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
    }).join('');
+   // duplicate logos once for seamless CSS marquee loop
+   var track=win.querySelector('[data-track]');
+   track.innerHTML+=track.innerHTML;
+   track.classList.add('marquee-on');
+   // arrows: pause marquee briefly while clicking so manual scroll wins
+   document.querySelectorAll('.showcase-arrow').forEach(function(btn){
+    btn.addEventListener('mouseenter',function(){track.classList.remove('marquee-on');});
+    btn.addEventListener('mouseleave',function(){track.classList.add('marquee-on');});
+   });
+   win.addEventListener('pointerdown',function(){track.classList.remove('marquee-on');});
+   win.addEventListener('pointerup',function(){setTimeout(function(){track.classList.add('marquee-on');},600);});
+   win.addEventListener('pointerleave',function(){setTimeout(function(){track.classList.add('marquee-on');},600);});
    document.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
-     if(win.dataset.dragged==='1')return;
-     win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
+          win.scrollBy({left:Number(btn.dataset.dir)*360,behavior:'smooth'});
     });
    });
    // pointer drag with threshold + rAF + click suppression, snap kept when idle
