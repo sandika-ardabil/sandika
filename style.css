@@ -115,3 +115,16 @@ main{animation:fadein .7s ease}
 .company-logo-fallback{display:grid;place-items:center;color:#789;background:#fff}
 .company-grid .badge{margin-right:auto;white-space:nowrap}
 @media(max-width:520px){.company-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr))}.company-grid .company-tile{gap:9px;padding:12px}.company-logo{width:48px;height:48px;flex-basis:48px}}
+
+
+/* Personnel detail dialog — matches the site's dark/cyan theme */
+.personnel-dialog{width:min(1180px,94vw);max-width:94vw;max-height:88vh;padding:0;border:1px solid rgba(82,226,239,.3);border-radius:18px;background:#121824;color:#f3f8fb;box-shadow:0 24px 90px rgba(0,0,0,.72)}
+.personnel-dialog::backdrop{background:rgba(3,7,12,.78);backdrop-filter:blur(5px)}
+.personnel-modal-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:20px 24px 14px;background:rgba(18,24,36,.97);border-bottom:1px solid rgba(170,220,235,.14)}
+.personnel-modal-head .eyebrow{margin:0}.personnel-modal-head h2{margin:2px 0;font-size:20px}.personnel-total{margin:0;color:#a6b3c2;font-size:12px}
+.personnel-close{flex:0 0 40px;width:40px;height:40px;border:1px solid rgba(170,220,235,.2);border-radius:10px;background:#0c1017;color:#52e2ef;font-size:28px;line-height:1;cursor:pointer}
+.personnel-search{margin:14px 20px 10px}.personnel-table-wrap{max-height:calc(88vh - 190px);overflow:auto;margin:0 20px 20px;border:1px solid rgba(170,220,235,.14);border-radius:10px}
+.personnel-table{width:100%;border-collapse:separate;border-spacing:0;white-space:nowrap;font-size:12px}.personnel-table th,.personnel-table td{padding:9px 12px;text-align:right;border-bottom:1px solid rgba(170,220,235,.1)}
+.personnel-table th{position:sticky;top:0;background:#172332;color:#52e2ef;font-weight:700}.personnel-table tbody tr:nth-child(even){background:rgba(255,255,255,.025)}.personnel-table tbody tr:hover{background:rgba(0,180,216,.1)}
+.personnel-empty{padding:0 22px 18px;color:#a6b3c2}.company-grid .company-tile{font:inherit;color:inherit;text-align:right;cursor:pointer}.company-grid .company-tile:focus-visible,.personnel-close:focus-visible{outline:2px solid #52e2ef;outline-offset:3px}
+@media(max-width:600px){.personnel-dialog{width:96vw;max-width:96vw}.personnel-modal-head{padding:15px}.personnel-search{margin:10px}.personnel-table-wrap{margin:0 10px 12px;max-height:calc(88vh - 175px)}.personnel-table{font-size:11px}}
