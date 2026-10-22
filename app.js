@@ -16,95 +16,55 @@ document.addEventListener('DOMContentLoaded',function(){
   dots.forEach((d,k)=>d.addEventListener('click',()=>{clearInterval(timer);go(k);auto();}));
   go(0);auto();
  });
- // members render + search
+ // Members directory + personnel modal (639 records)
  var grid=document.getElementById('member-grid');
  if(grid){
-  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json())]).then(function(results){
-   var D=results[0], logos=results[1];
-   var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-   // Company-name to existing logo-manifest key correspondence.
-   var logoKeys={
-    'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman',
-    'سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far',
-    'مهبان دارو':'mahban','هجرت':'hejrat','ارمغان طبیعت':'armaghan tabiat','مشاء طب':'masha','داروگستر باریج اسانس':'barij',
-    'فردوس':'ferdos','البرز':'alborz','دارو گستر نخبگان':'nokhbeghan','سینا پخش':'sina','سها سروش':'sorosh','التیام':'eltiyam',
-    'ادورا':'adora','دارو پخش':'daroupakhsh','سها هلال':'soha','سلامت پخش هستی':'hasti','الیت':'elit','پونل برسام':'ponel',
-    'اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'
-   };
-   var logoFiles={};logos.forEach(function(l){logoFiles[l.name]=l.file;});
-   function norm(s){return String(s).replace(/\s+/g,' ').trim();}
+  Promise.all([fetch('assets/data.json').then(r=>r.json()),fetch('assets/logos.json').then(r=>r.json()),fetch('assets/personnel.json').then(r=>r.json())]).then(function(results){
+   var D=results[0], logos=results[1], personnel=results[2].records||[];
+   var fa=s=>String(s==null?'':s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+   var esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+   var norm=s=>String(s||'').replace(/\s+/g,' ').trim();
+   var logoKeys={'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman','سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far','مهبان دارو':'mahban','هجرت':'hejrat','ارمغان طبیعت':'armaghan tabiat','مشاء طب':'masha','داروگستر باریج اسانس':'barij','فردوس':'ferdos','البرز':'alborz','دارو گستر نخبگان':'nokhbeghan','سینا پخش':'sina','سها سروش':'sorosh','التیام':'eltiyam','ادورا':'adora','دارو پخش':'daroupakhsh','سها هلال':'soha','سلامت پخش هستی':'hasti','الیت':'elit','پونل برسام':'ponel','اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'};
+   var logoFiles={};logos.forEach(l=>logoFiles[l.name]=l.file);
+   var modal=document.getElementById('personnel-modal'), cards=document.getElementById('personnel-results'), search=document.getElementById('personnel-search'), companyFilter=document.getElementById('personnel-company-filter'), roleFilter=document.getElementById('personnel-role-filter');
+   var pageSize=48, currentPage=1, filtered=[];
+   var companies=[...new Set(personnel.map(p=>norm(p.company||p['نام شرکت'])).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fa'));
+   var roles=[...new Set(personnel.map(p=>norm(p.role||p['سمت شغلی'])).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fa'));
+   companies.forEach(c=>companyFilter.add(new Option(c,c)));
+   roles.forEach(r=>roleFilter.add(new Option(r,r)));
+   function applyFilters(){
+    var q=norm(search.value).toLocaleLowerCase(), co=companyFilter.value, role=roleFilter.value;
+    filtered=personnel.filter(p=>{
+     var name=norm(p.name||p['نام و نام خانوادگی']), company=norm(p.company||p['نام شرکت']), job=norm(p.role||p['سمت شغلی']);
+     return (!co||company===co)&&(!role||job===role)&&(!q||[name,company,job,norm(p.education||p['مدرک تحصیلی'])].some(v=>v.toLocaleLowerCase().includes(q)));
+    }); currentPage=1; renderPeople();
+   }
+   function renderPeople(){
+    var begin=(currentPage-1)*pageSize, shown=filtered.slice(begin,begin+pageSize);
+    cards.innerHTML=shown.map(function(p){var name=norm(p.name||p['نام و نام خانوادگی']);return '<article class="personnel-card"><span class="personnel-avatar">'+esc(name.slice(0,1)||'؟')+'</span><div class="personnel-details"><h3>'+esc(name)+'</h3><p>'+esc(p.role||p['سمت شغلی']||'—')+'</p><div class="personnel-tags"><span>'+esc(p.company||p['نام شرکت']||'')+'</span>'+(p.education||p['مدرک تحصیلی']?'<span>'+esc(p.education||p['مدرک تحصیلی'])+'</span>':'')+'</div></div><span class="experience">'+(p.distributionExperience||p['سابقه حضور در پخش']?fa(p.distributionExperience||p['سابقه حضور در پخش'])+' سال سابقه':'')+'</span></article>';}).join('');
+    document.getElementById('personnel-result-count').textContent=fa(filtered.length)+' نفر';
+    var pages=Math.max(1,Math.ceil(filtered.length/pageSize)), pager=document.getElementById('personnel-pagination');
+    pager.innerHTML='<button type="button" data-page="prev" '+(currentPage===1?'disabled':'')+'>قبلی</button><span>'+fa(currentPage)+' از '+fa(pages)+'</span><button type="button" data-page="next" '+(currentPage===pages?'disabled':'')+'>بعدی</button>';
+    pager.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{currentPage+=b.dataset.page==='next'?1:-1;renderPeople();cards.scrollTop=0;}));
+    document.getElementById('personnel-empty').hidden=filtered.length>0;
+   }
+   function openModal(company){modal.hidden=false;document.body.classList.add('modal-open');companyFilter.value=company||'';search.value='';roleFilter.value='';applyFilters();document.getElementById('personnel-close').focus();}
+   function closeModal(){modal.hidden=true;document.body.classList.remove('modal-open');}
+   document.querySelectorAll('[data-open-personnel]').forEach(b=>b.addEventListener('click',()=>openModal('')));
+   document.getElementById('personnel-close').addEventListener('click',closeModal);
+   modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)closeModal();});
+   [search,companyFilter,roleFilter].forEach(el=>el.addEventListener(el===search?'input':'change',applyFilters));
    function render(list){
-    grid.innerHTML=list.map(function(c){
-     var key=logoKeys[norm(c.name)],src=logoFiles[key];
-     var image=src?'<img class="company-logo" src="'+src+'" alt="لوگوی '+c.name+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
-     return '<article class="company-tile">'+image+'<b>'+c.name+'</b><span class="badge">'+fa(c.personnel)+' نفر</span></article>';
-    }).join('');
+    grid.innerHTML=list.map(c=>{var key=logoKeys[norm(c.name)],src=logoFiles[key],image=src?'<img class="company-logo" src="'+esc(src)+'" alt="لوگوی '+esc(c.name)+'" loading="lazy">':'<span class="company-logo company-logo-fallback" aria-hidden="true">★</span>';
+     return '<article class="company-tile">'+image+'<b>'+esc(c.name)+'</b><span class="badge">'+fa(c.personnel)+' نفر</span><button class="company-personnel-link" type="button" data-company="'+esc(norm(c.name))+'">مشاهده پرسنل</button></article>';}).join('');
     document.getElementById('empty-state').hidden=list.length>0;
+    grid.querySelectorAll('.company-personnel-link').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.company)));
    }
    render(D.companies);
    var inp=document.getElementById('member-search');
-   inp.addEventListener('input',function(){
-    var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));
-   });
-  });
- }
-
-
- // --- personnel details modal (members page) ---
- var personnelByCompany={};
- var personModal=document.getElementById('person-modal');
- if(personModal){
-  var pBox=personModal.querySelector('.person-modal-box');
-  var pBody=personModal.querySelector('#person-modal-body');
-  var pTitle=personModal.querySelector('#person-modal-title');
-  var pCount=personModal.querySelector('#person-modal-count');
-  function faNum(s){return String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);}
-  function normKey(s){return String(s||'').replace(/\u200c/g,' ').replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/\s+/g,' ').trim();}
-  fetch('assets/personnel.json').then(function(r){if(!r.ok)throw 0;return r.json();})
-   .then(function(P){
-    (P.records||[]).forEach(function(r){
-     var k=normKey(r.company||r['نام شرکت']);
-     (personnelByCompany[k]=personnelByCompany[k]||[]).push(r);
-    });
-   }).catch(function(){personnelByCompany={};}); // on failure: every company shows the graceful empty message
-  function openPersonModal(companyName){
-   var list=personnelByCompany[normKey(companyName)]||[];
-   pTitle.textContent='پرسنل '+companyName;
-   pCount.textContent=list.length?faNum(list.length)+' نفر':'';
-   if(!list.length){
-    pBody.innerHTML='<p class="person-empty">اطلاعات پرسنلی برای این شرکت ثبت نشده است.</p>';
-   }else{
-    pBody.innerHTML='<ul class="person-list">'+list.map(function(r){
-     var name=r.name||r['نام و نام خانوادگی']||'—';
-     var role=r.role||r['سمت شغلی']||'';
-     var edu=r.education||r['مدرک تحصیلی']||'';
-     var exp=r.distributionExperience!=null?r.distributionExperience:(r['سابقه حضور در پخش']||'');
-     var expTxt=exp!==''&&exp!=null?'سابقه پخش: '+faNum(exp)+' سال':'';
-     return '<li class="person-item"><div class="person-avatar" aria-hidden="true">'+String(name).trim().charAt(0)+'</div>'+
-      '<div class="person-info"><b>'+name+'</b>'+
-      (role?'<span class="person-role">'+role+'</span>':'')+
-      ((edu||expTxt)?'<span class="person-meta">'+[edu,expTxt].filter(Boolean).join(' • ')+'</span>':'')+
-      '</div></li>';
-    }).join('')+'</ul>';
-   }
-   personModal.classList.add('open');
-   personModal.hidden=false;
-   document.body.style.overflow='hidden';
-  }
-  function closePersonModal(){
-   personModal.classList.remove('open');
-   personModal.hidden=true;
-   document.body.style.overflow='';
-  }
-  personModal.querySelector('.person-modal-close').addEventListener('click',closePersonModal);
-  personModal.addEventListener('click',function(e){if(e.target===personModal)closePersonModal();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePersonModal();});
-  // make company tiles clickable
-  var grid2=document.getElementById('member-grid');
-  if(grid2)grid2.addEventListener('click',function(e){
-   var tile=e.target.closest('.company-tile');
-   if(tile)openPersonModal(tile.dataset.company||tile.querySelector('b').textContent);
-  });
+   inp.addEventListener('input',function(){var q=norm(inp.value);render(D.companies.filter(c=>!q||norm(c.name).includes(q)));});
+  }).catch(function(){var err=document.getElementById('personnel-load-error');if(err)err.hidden=false;});
  }
 
  // logos scroll showcase (33 logos, arrows + smooth pointer drag, no dots/marquee)
