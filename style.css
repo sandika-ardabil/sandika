@@ -163,3 +163,12 @@ main{animation:fadein .7s ease}
  .person-cards{grid-template-columns:1fr}
  .person-detail-body{padding:14px}
 }
+
+/* Compact, fixed-scope personnel table in company modal */
+#personnel-dialog .personnel-table-wrap{max-height:calc(88vh - 190px);overflow:auto}
+#personnel-dialog .personnel-table-compact{width:100%;min-width:780px;white-space:nowrap;font-size:12px}
+#personnel-dialog .personnel-table-compact th,#personnel-dialog .personnel-table-compact td{padding:7px 10px;line-height:1.55}
+#personnel-dialog .personnel-table-compact th:last-child,#personnel-dialog .personnel-table-compact td:last-child{position:sticky;left:0;background:#121824}
+#personnel-dialog .personnel-table-compact thead th:last-child{z-index:1;background:#172332}
+.personnel-back{display:inline-flex;align-items:center;gap:8px;margin:14px 0;padding:8px 16px;border:1px solid rgba(0,180,216,.45);border-radius:9px;color:#52e2ef;background:rgba(0,180,216,.08);cursor:pointer;font:inherit}
+.personnel-back:hover{background:rgba(0,180,216,.18)}

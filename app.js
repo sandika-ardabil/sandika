@@ -30,18 +30,18 @@ document.addEventListener('DOMContentLoaded',function(){
    /* ---- helpers ---- */
    function pick(r,fa,en){var v=r[fa];if(v==null||v==='')v=r[en];return v==null||v===''?'—':String(v);}
    var COMPACT=[
-    {fa:'ردیف',en:'rowIndex',label:'#'},
+    {fa:'ردیف',en:'rowIndex',label:'ردیف'},
     {fa:'نام شرکت',en:'company',label:'نام شرکت'},
     {fa:'نام و نام خانوادگی',en:'name',label:'نام و نام خانوادگی'},
     {fa:'کد ملی',en:'nationalId',label:'کد ملی'},
     {fa:'سمت شغلی',en:'role',label:'سمت شغلی'},
-    {fa:'وضعیت تاهل',en:'maritalStatus',label:'وضعیت تاهل'}
+    {fa:'وضعیت تاهل',en:'maritalStatus',label:'وضعیت تأهل'}
    ];
    var DETAILS=[
     {fa:'نام شرکت',en:'company',label:'نام شرکت'},
     {fa:'سمت شغلی',en:'role',label:'سمت شغلی'},
     {fa:'تاریخ تولد',en:'birthdate',label:'تاریخ تولد'},
-    {fa:'وضعیت تاهل',en:'maritalStatus',label:'وضعیت تاهل'},
+    {fa:'وضعیت تاهل',en:'maritalStatus',label:'وضعیت تأهل'},
     {fa:'تعداد فرزند',en:'childrenCount',label:'تعداد فرزند'},
     {fa:'مدرک تحصیلی',en:'education',label:'مدرک تحصیلی'},
     {fa:'سابقه بیمه',en:'insuranceHistory',label:'سابقه بیمه (سال)'},
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded',function(){
    }
    function viewBtn(r){
     var b=document.createElement('button');b.type='button';b.className='person-view-btn';
-    b.textContent='مشاهده';b.dataset.personId=String(r._id==null?'':r._id);
+    b.textContent='مشاهده جزئیات';b.dataset.personId=String(r._id==null?'':r._id);
     b.setAttribute('aria-label','مشاهده جزئیات '+pick(r,'نام و نام خانوادگی','name'));
     return b;
    }
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var q=norm(query.value).toLocaleLowerCase();
     var list=sorted(base.filter(function(r){return !q||fields.some(function(f){return norm(r[f]).toLocaleLowerCase().includes(q);});}),state.dlg);
     total.textContent=fa('نمایش '+list.length+' نفر از '+base.length+' نفر');
-    renderList(wrap,list,state.dlg);
+    renderTable(wrap,list,state.dlg);
     empty.hidden=list.length>0;
    }
    /* ---- person detail modal ---- */
