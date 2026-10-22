@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded',function(){
    win.querySelector('[data-track]').innerHTML=L.map(function(l){
     return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
    }).join('');
+   var tr=win.querySelector('[data-track]');tr.innerHTML+=tr.innerHTML; // seamless marquee loop
    document.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
      if(win.dataset.dragged==='1')return;
