@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',function(){
  var win=document.querySelector('[data-showcase] .showcase-window');
  if(win){
   fetch('assets/logos.json').then(r=>r.json()).then(function(L){
-   var item=function(l){return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';};
+   var item=function(l){var u=l.site||'#';return '<a class="logo-item" href="'+u+'" target="_blank" rel="noopener" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></a>';};
    var trackEl=win.querySelector('[data-track]');
    trackEl.innerHTML=L.map(item).join('')+L.map(item).join(''); // duplicate for seamless loop
    var half=0;

@@ -1,134 +1,167 @@
 [
- {
-  "name": "adora",
-  "file": "assets/logos/adora.jpeg"
- },
- {
-  "name": "alborz",
-  "file": "assets/logos/alborz.png"
- },
- {
-  "name": "armaghan tabiat",
-  "file": "assets/logos/armaghan_tabiat.png"
- },
- {
-  "name": "avand far",
-  "file": "assets/logos/avand_far.jpg"
- },
- {
-  "name": "barij",
-  "file": "assets/logos/barij.png"
- },
- {
-  "name": "daroupakhsh",
-  "file": "assets/logos/daroupakhsh.png"
- },
- {
-  "name": "day darou",
-  "file": "assets/logos/day_darou.png"
- },
- {
-  "name": "daya",
-  "file": "assets/logos/daya.png"
- },
- {
-  "name": "elit",
-  "file": "assets/logos/elit.png"
- },
- {
-  "name": "eltiyam",
-  "file": "assets/logos/eltiyam.png"
- },
- {
-  "name": "exir",
-  "file": "assets/logos/exir.png"
- },
- {
-  "name": "ferdos",
-  "file": "assets/logos/ferdos.png"
- },
- {
-  "name": "ghasem",
-  "file": "assets/logos/ghasem.png"
- },
- {
-  "name": "hasti",
-  "file": "assets/logos/hasti.png"
- },
- {
-  "name": "hejrat",
-  "file": "assets/logos/hejrat.png"
- },
- {
-  "name": "karen",
-  "file": "assets/logos/karen.png"
- },
- {
-  "name": "mahban",
-  "file": "assets/logos/mahban.png"
- },
- {
-  "name": "masha",
-  "file": "assets/logos/masha.png"
- },
- {
-  "name": "meshkat",
-  "file": "assets/logos/meshkat.png"
- },
- {
-  "name": "milan",
-  "file": "assets/logos/milan.png"
- },
- {
-  "name": "momtaz",
-  "file": "assets/logos/momtaz.png"
- },
- {
-  "name": "nokhbeghan",
-  "file": "assets/logos/nokhbeghan.png"
- },
- {
-  "name": "omidarya",
-  "file": "assets/logos/omidarya.png"
- },
- {
-  "name": "ponel",
-  "file": "assets/logos/ponel.png"
- },
- {
-  "name": "pora",
-  "file": "assets/logos/pora.png"
- },
- {
-  "name": "razi",
-  "file": "assets/logos/razi.jpeg"
- },
- {
-  "name": "samen",
-  "file": "assets/logos/samen.png"
- },
- {
-  "name": "saye saman",
-  "file": "assets/logos/saye_saman.jpeg"
- },
- {
-  "name": "shafaarad",
-  "file": "assets/logos/shafaarad.png"
- },
- {
-  "name": "sina",
-  "file": "assets/logos/sina.png"
- },
- {
-  "name": "soha",
-  "file": "assets/logos/soha.png"
- },
- {
-  "name": "sonar tak",
-  "file": "assets/logos/sonar_tak.jpg"
- },
- {
-  "name": "sorosh",
-  "file": "assets/logos/sorosh.png"
- }
+  {
+    "name": "adora",
+    "file": "assets/logos/adora.jpeg",
+    "site": "https://www.adoradistribution.com"
+  },
+  {
+    "name": "alborz",
+    "file": "assets/logos/alborz.png",
+    "site": "https://www.alborzinvest.com"
+  },
+  {
+    "name": "armaghan tabiat",
+    "file": "assets/logos/armaghan_tabiat.png",
+    "site": "https://www.google.com/search?q=armaghan tabiat+pharma+iran"
+  },
+  {
+    "name": "avand far",
+    "file": "assets/logos/avand_far.jpg",
+    "site": "https://www.google.com/search?q=avand far+pharma+iran"
+  },
+  {
+    "name": "barij",
+    "file": "assets/logos/barij.png",
+    "site": "https://www.barijessence.com"
+  },
+  {
+    "name": "daroupakhsh",
+    "file": "assets/logos/daroupakhsh.png",
+    "site": "https://www.dph.ir"
+  },
+  {
+    "name": "day darou",
+    "file": "assets/logos/day_darou.png",
+    "site": "https://www.google.com/search?q=day darou+pharma+iran"
+  },
+  {
+    "name": "daya",
+    "file": "assets/logos/daya.png",
+    "site": "https://www.dayapharma.com"
+  },
+  {
+    "name": "elit",
+    "file": "assets/logos/elit.png",
+    "site": "https://www.elit-co.com"
+  },
+  {
+    "name": "eltiyam",
+    "file": "assets/logos/eltiyam.png",
+    "site": "https://www.eltiyam.ir"
+  },
+  {
+    "name": "exir",
+    "file": "assets/logos/exir.png",
+    "site": "https://www.exir.co.ir"
+  },
+  {
+    "name": "ferdos",
+    "file": "assets/logos/ferdos.png",
+    "site": "https://www.ferdosco.ir"
+  },
+  {
+    "name": "ghasem",
+    "file": "assets/logos/ghasem.png",
+    "site": "https://www.ghasemiran.com"
+  },
+  {
+    "name": "hasti",
+    "file": "assets/logos/hasti.png",
+    "site": "https://www.hastico.com"
+  },
+  {
+    "name": "hejrat",
+    "file": "assets/logos/hejrat.png",
+    "site": "https://www.hejratco.com"
+  },
+  {
+    "name": "karen",
+    "file": "assets/logos/karen.png",
+    "site": "https://www.karenpharma.com"
+  },
+  {
+    "name": "mahban",
+    "file": "assets/logos/mahban.png",
+    "site": "https://www.mahbanpharma.com"
+  },
+  {
+    "name": "masha",
+    "file": "assets/logos/masha.png",
+    "site": "https://www.mashapharma.com"
+  },
+  {
+    "name": "meshkat",
+    "file": "assets/logos/meshkat.png",
+    "site": "https://www.meshkatpharma.com"
+  },
+  {
+    "name": "milan",
+    "file": "assets/logos/milan.png",
+    "site": "https://www.milanpharma.ir"
+  },
+  {
+    "name": "momtaz",
+    "file": "assets/logos/momtaz.png",
+    "site": "https://www.momtazpharma.com"
+  },
+  {
+    "name": "nokhbeghan",
+    "file": "assets/logos/nokhbeghan.png",
+    "site": "https://www.nokhbeghan.com"
+  },
+  {
+    "name": "omidarya",
+    "file": "assets/logos/omidarya.png",
+    "site": "https://www.omidaryaco.com"
+  },
+  {
+    "name": "ponel",
+    "file": "assets/logos/ponel.png",
+    "site": "https://www.ponelpharma.com"
+  },
+  {
+    "name": "pora",
+    "file": "assets/logos/pora.png",
+    "site": "https://www.porateb.com"
+  },
+  {
+    "name": "razi",
+    "file": "assets/logos/razi.jpeg",
+    "site": "https://www.razipharmacy.com"
+  },
+  {
+    "name": "samen",
+    "file": "assets/logos/samen.png",
+    "site": "https://www.samenpharma.com"
+  },
+  {
+    "name": "saye saman",
+    "file": "assets/logos/saye_saman.jpeg",
+    "site": "https://www.google.com/search?q=saye saman+pharma+iran"
+  },
+  {
+    "name": "shafaarad",
+    "file": "assets/logos/shafaarad.png",
+    "site": "https://www.shafaarad.com"
+  },
+  {
+    "name": "sina",
+    "file": "assets/logos/sina.png",
+    "site": "https://www.sinapharma.ir"
+  },
+  {
+    "name": "soha",
+    "file": "assets/logos/soha.png",
+    "site": "https://www.sohapharma.ir"
+  },
+  {
+    "name": "sonar tak",
+    "file": "assets/logos/sonar_tak.jpg",
+    "site": "https://www.google.com/search?q=sonar tak+pharma+iran"
+  },
+  {
+    "name": "sorosh",
+    "file": "assets/logos/sorosh.png",
+    "site": "https://www.soroshpharma.com"
+  }
 ]
