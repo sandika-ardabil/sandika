@@ -196,3 +196,9 @@ main{animation:fadein .7s ease}
     object-position: center;
     display: block;
 }
+
+/* Toggle between basic (name+role) and full personnel details */
+.personnel-view-toggle{display:flex;gap:8px;margin:0 0 12px;justify-content:flex-end}
+.view-toggle-btn{font:inherit;font-size:.85rem;padding:7px 16px;border-radius:999px;border:1px solid var(--line,#d8dee9);background:var(--surface,#fff);color:var(--muted,#5b6472);cursor:pointer;transition:all .2s}
+.view-toggle-btn:hover{border-color:var(--brand,#1d7a5f);color:var(--brand,#1d7a5f)}
+.view-toggle-btn.active{background:var(--brand,#1d7a5f);border-color:var(--brand,#1d7a5f);color:#fff;font-weight:700}

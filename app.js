@@ -51,17 +51,31 @@ document.addEventListener('DOMContentLoaded',function(){
    function norm(s){return String(s==null?'':s).replace(/\s+/g,' ').trim();}
    var dlg=document.getElementById('personnel-dialog'),title=document.getElementById('personnel-title'),total=document.getElementById('personnel-total'),query=document.getElementById('personnel-search'),wrap=document.getElementById('personnel-table-wrap'),empty=document.getElementById('personnel-empty');
    var fields=(P.fields||[]).filter(function(f){return f!=='_id'});
+   // Toggle view: default shows only name + job title; second tab shows all fields.
+   var toggleWrap=document.createElement('div');toggleWrap.className='personnel-view-toggle';
+   var btnBasic=document.createElement('button');btnBasic.type='button';btnBasic.className='view-toggle-btn active';btnBasic.textContent='نام و سمت';
+   var btnFull=document.createElement('button');btnFull.type='button';btnFull.className='view-toggle-btn';btnFull.textContent='اطلاعات کامل';
+   toggleWrap.appendChild(btnBasic);toggleWrap.appendChild(btnFull);
+   var currentView='basic';btnBasic.addEventListener('click',function(){currentView='basic';btnBasic.classList.add('active');btnFull.classList.remove('active');renderPersonnel(lastList);});
+   btnFull.addEventListener('click',function(){currentView='full';btnFull.classList.add('active');btnBasic.classList.remove('active');renderPersonnel(lastList);});
+   var lastList=[];
    function renderPersonnel(list){
+    lastList=list;
     var q=norm(query.value).toLocaleLowerCase();
     var filtered=list.filter(function(r){return !q||fields.some(function(f){return norm(r[f]).toLocaleLowerCase().includes(q)});});
     total.textContent=fa('نمایش '+filtered.length+' نفر از '+list.length+' نفر');
+    var basicFields=['نام و نام خانوادگی','سمت شغلی'];
+    var viewFields=currentView==='basic'?fields.filter(function(f){return basicFields.indexOf(f)>=0;}):fields;
     var table=document.createElement('table');table.className='personnel-table';
     var thead=document.createElement('thead'),tr=document.createElement('tr');
-    fields.forEach(function(f){var th=document.createElement('th');th.textContent=f;tr.appendChild(th)});thead.appendChild(tr);table.appendChild(thead);
+    viewFields.forEach(function(f){var th=document.createElement('th');th.textContent=f;tr.appendChild(th)});thead.appendChild(tr);table.appendChild(thead);
     var tbody=document.createElement('tbody');
-    filtered.forEach(function(r){var row=document.createElement('tr');fields.forEach(function(f){var td=document.createElement('td');td.textContent=r[f]==null?'':String(r[f]);row.appendChild(td)});tbody.appendChild(row)});
+    filtered.forEach(function(r){var row=document.createElement('tr');viewFields.forEach(function(f){var td=document.createElement('td');td.textContent=r[f]==null?'':String(r[f]);row.appendChild(td)});tbody.appendChild(row)});
     table.appendChild(tbody);wrap.replaceChildren(table);empty.hidden=filtered.length>0;
    }
+   // Insert the toggle above the search box, inside the dialog header area.
+   var headHost=query.parentNode;
+   headHost.insertBefore(toggleWrap,query);
    function openCompany(company){
     var list=P.records.filter(function(r){return norm(r.company||r['نام شرکت'])===norm(company.name)});
     title.textContent='پرسنل '+company.name;query.value='';renderPersonnel(list);dlg.showModal();query.focus();
