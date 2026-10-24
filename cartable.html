@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>صفحه اصلی | انجمن صنفی اردبیل</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="site-header"><a href="index.html" class="brand">انجمن پخش دارو اردبیل</a>
+<nav><a href="index.html">صفحه اصلی</a><a href="mission.html">رسالت ما</a><a href="members.html">اعضای انجمن</a><a href="news.html">اخبار و اطلاعیه‌ها</a><a href="services.html">خدمات</a><a href="cartable.html" class="active">کارتابل مکاتبات</a><a href="contact.html">ارتباط با ما</a></nav></header>
+<main class="container">
+<section class="page-hero"><h1> کارتابل مکاتبات</h1><p>آرشیو نامه‌ها، مصوبات و مکاتبات رسمی انجمن</p></section>
+<div class="letters-toolbar">
+  <input id="letterSearch" type="search" placeholder="جستجو در موضوع، فرستنده، گیرنده...">
+  <select id="letterType"><option value="">همه انواع</option><option>وارده</option><option>صادره</option><option>مصوبه</option></select>
+</div>
+<section id="lettersList" class="letters-grid"></section>
+</main>
+<footer class="site-footer"><div><b>با هم برای سلامت جامعه</b><p>انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</p><p>اردبیل، مبارزان، خیابان داروپخش، روبروی درمانگاه شهید بهشتی، شرکت پخش البرز</p></div><div class="socials"><a href="#"><svg viewBox="0 0 24 24"><path d="M21 4 18 20l-7-4-3 3 .5-5L18 7 6 14 1 12 21 4Z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.5 9h3v12h-3zM9 9h3v2h.1A3 3 0 0 1 15 9c3 0 4 2 4 5v7h-3v-6c0-2 0-3-2-3s-2 2-2 3v6H9z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 8c1-1 2 1 2 2l-1 1c1 2 2 3 4 4l1-1c1 0 3 1 2 2-1 2-3 2-6 0-3-2-5-6-2-8Z"/></svg></a></div></footer>
+<script>
+let LETTERS=[];
+async function loadLetters(){
+  try{ LETTERS = await (await fetch('assets/letters.json')).json(); }catch(e){ LETTERS=[]; }
+  render();
+}
+function esc(s){ const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+function render(){
+  const q=document.getElementById('letterSearch').value.trim();
+  const ty=document.getElementById('letterType').value;
+  const list=document.getElementById('lettersList'); list.innerHTML='';
+  LETTERS.filter(l=>(!ty||l.type===ty)&&(!q||[l.subject,l.sender,l.receiver,l.summary,l.number].join(' ').includes(q)))
+   .forEach(l=>{
+    const card=document.createElement('article'); card.className='letter-card';
+    card.innerHTML=`<div class="letter-head"><span class="badge badge-${l.type==='وارده'?'in':l.type==='صادره'?'out':'decree'}">${esc(l.type)}</span><span class="letter-no">شماره: ${esc(l.number)}</span><span class="letter-date">${esc(l.date)}</span></div>
+    <h3>${esc(l.subject)}</h3>
+    <p class="letter-meta"><strong>فرستنده:</strong> ${esc(l.sender)}<br><strong>گیرنده:</strong> ${esc(l.receiver)}</p>
+    <p class="letter-summary">${esc(l.summary)}</p>
+    <div class="letter-foot"><span class="status">${esc(l.status)}</span>${l.file?`<a class="btn" href="${esc(l.file)}" target="_blank">دانلود فایل</a>`:''}</div>`;
+    list.appendChild(card);
+  });
+  if(!list.children.length) list.innerHTML='<p class="empty">موردی یافت نشد.</p>';
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('letterSearch').addEventListener('input',render);
+  document.getElementById('letterType').addEventListener('change',render);
+  loadLetters();
+});
+</script>
+</body></html>
