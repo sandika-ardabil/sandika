@@ -1,18 +1,28 @@
 // Sandika Elite v3
 document.addEventListener('DOMContentLoaded',function(){
- // Approved homepage image slider
+ // Accessible three-slide homepage carousel
  var hero=document.querySelector('[data-hero-slider]');
  if(hero){
   var slides=Array.from(hero.querySelectorAll('.hero-slide'));
   var dots=Array.from(document.querySelectorAll('.hero-dot'));
-  var current=0, timer;
-  function showHero(n){current=(n+slides.length)%slides.length;slides.forEach(function(s,k){s.classList.toggle('active',k===current);s.setAttribute('aria-hidden',k===current?'false':'true')});dots.forEach(function(d,k){d.classList.toggle('active',k===current);if(k===current)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})}
-  function restartHero(){clearInterval(timer);timer=setInterval(function(){showHero(current+1)},6000)}
+  var current=Math.max(0,slides.findIndex(function(s){return s.classList.contains('active')})),timer=null,delay=5500;
+  function showHero(n){
+   if(!slides.length)return;
+   current=(n+slides.length)%slides.length;
+   slides.forEach(function(s,k){var active=k===current;s.classList.toggle('active',active);s.setAttribute('aria-hidden',active?'false':'true');});
+   dots.forEach(function(d,k){var active=k===current;d.classList.toggle('active',active);if(active)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current');});
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function start(){stop();if(slides.length>1&&!document.hidden)timer=setInterval(function(){showHero(current+1);},delay);}
+  function move(n){showHero(n);start();}
   var prev=document.querySelector('.hero-prev'),next=document.querySelector('.hero-next');
-  if(prev)prev.addEventListener('click',function(){showHero(current-1);restartHero()});
-  if(next)next.addEventListener('click',function(){showHero(current+1);restartHero()});
-  dots.forEach(function(d,k){d.addEventListener('click',function(){showHero(k);restartHero()})});
-  showHero(0);restartHero();
+  if(prev)prev.addEventListener('click',function(){move(current-1);});
+  if(next)next.addEventListener('click',function(){move(current+1);});
+  dots.forEach(function(d,k){d.addEventListener('click',function(){move(k);});});
+  hero.addEventListener('mouseenter',stop);hero.addEventListener('mouseleave',start);
+  hero.addEventListener('focusin',stop);hero.addEventListener('focusout',function(e){if(!hero.contains(e.relatedTarget))start();});
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  showHero(current);start();
  }
  // nav active
  var page=location.pathname.split('/').pop()||'index.html';
