@@ -242,3 +242,13 @@ main{animation:fadein .7s ease}
 .status{background:#eef4ff;color:#1f6feb;padding:.25rem .8rem;border-radius:8px;font-size:.82rem;font-weight:600}
 .letter-foot .btn{background:#0e7c66;color:#fff;padding:.4rem 1rem;border-radius:8px;text-decoration:none;font-size:.85rem}
 .empty{text-align:center;color:#8aa;padding:2rem}
+
+/* ==== Sleek Custom Scrollbars (cyan accent, dark track) ==== */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#0d1117;border-radius:4px}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent,#00b4d8);box-shadow:0 0 6px rgba(0,180,216,.5)}
+*{scrollbar-width:thin;scrollbar-color:#30363d #0d1117}
+/* dialog / modal scrollbar area uses same sleek style */
+dialog::-webkit-scrollbar,.modal::-webkit-scrollbar{width:6px}
+dialog::-webkit-scrollbar-thumb,.modal::-webkit-scrollbar-thumb{background:var(--accent,#00b4d8)}
