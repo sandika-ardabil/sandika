@@ -1,3 +1,12 @@
+
+// ==== file:// safe JSON loader (CORS-free fallback) ====
+var __jsonCache={};
+function loadJSON(url){
+ if(__jsonCache[url])return __jsonCache[url];
+ if(typeof JF_DATA!=='undefined'&&JF_DATA[url])return Promise.resolve(__jsonCache[url]=JF_DATA[url]);
+ return fetch(url).then(function(r){if(!r.ok)throw Error(url);return r.json();});
+}
+function JF(url){return loadJSON(url);}
 // Sandika Elite v3
 document.addEventListener('DOMContentLoaded',function(){
  // Accessible three-slide homepage carousel
@@ -43,7 +52,7 @@ document.addEventListener('DOMContentLoaded',function(){
  // Members and full personnel details. Only this page's behavior is extended.
  var grid=document.getElementById('member-grid');
  if(grid){
-  Promise.all([fetch('assets/data.json').then(r=>{if(!r.ok)throw Error('data.json');return r.json()}),fetch('assets/logos.json').then(r=>{if(!r.ok)throw Error('logos.json');return r.json()}),fetch('assets/personnel.json').then(r=>{if(!r.ok)throw Error('personnel.json');return r.json()})]).then(function(results){
+  Promise.all([JF('assets/data.json').then(r=>{if(!r.ok)throw Error('data.json');return r.json()}),JF('assets/logos.json').then(r=>{if(!r.ok)throw Error('logos.json');return r.json()}),JF('assets/personnel.json').then(r=>{if(!r.ok)throw Error('personnel.json');return r.json()})]).then(function(results){
    var D=results[0], logos=results[1], P=results[2];
    var fa=s=>String(s).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
    var logoKeys={'امیداریا دارو':'omidarya','قاسم ایران':'ghasem','دی دارو':'day darou','شفاآراد':'shafaarad','سایه سمن':'saye saman','سونار تک دارو':'sonar tak','مشکات فارمد':'meshkat','یارا طب ثامن':'samen','مکمل کارن':'karen','بهداشت سلامت آوند فر':'avand far','مهبان دارو':'mahban','هجرت':'hejrat','ارمغان طبیعت':'armaghan tabiat','مشاء طب':'masha','داروگستر باریج اسانس':'barij','فردوس':'ferdos','البرز':'alborz','دارو گستر نخبگان':'nokhbeghan','سینا پخش':'sina','سها سروش':'sorosh','التیام':'eltiyam','ادورا':'adora','دارو پخش':'daroupakhsh','سها هلال':'soha','سلامت پخش هستی':'hasti','الیت':'elit','پونل برسام':'ponel','اکسیر':'exir','پورا پخش':'pora','ممتاز':'momtaz','رازی':'razi','دایا دارو':'daya','میلان پارس فارمد':'milan'};
@@ -135,7 +144,7 @@ document.addEventListener('DOMContentLoaded',function(){
  // logos scroll showcase (33 logos, arrows + smooth pointer drag, no dots/marquee)
  var win=document.querySelector('[data-showcase] .showcase-window');
  if(win){
-  fetch('assets/logos.json').then(r=>r.json()).then(function(L){
+  JF('assets/logos.json').then(r=>r.json()).then(function(L){
    var item=function(l){var u=l.site||'#';return '<a class="logo-item" href="'+u+'" target="_blank" rel="noopener" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></a>';};
    var trackEl=win.querySelector('[data-track]');
    trackEl.innerHTML=L.map(item).join('')+L.map(item).join(''); // duplicate for seamless loop
