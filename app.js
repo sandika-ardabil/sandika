@@ -136,9 +136,25 @@ document.addEventListener('DOMContentLoaded',function(){
  var win=document.querySelector('[data-showcase] .showcase-window');
  if(win){
   fetch('assets/logos.json').then(r=>r.json()).then(function(L){
-   win.querySelector('[data-track]').innerHTML=L.map(function(l){
-    return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';
-   }).join('');
+   var item=function(l){return '<div class="logo-item" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></div>';};
+   var trackEl=win.querySelector('[data-track]');
+   trackEl.innerHTML=L.map(item).join('')+L.map(item).join(''); // duplicate for seamless loop
+   var half=0;
+   function measure(){half=trackEl.scrollWidth/2;}
+   window.addEventListener('resize',measure);setTimeout(measure,300);
+   // automatic leftward scroll (pauses on hover/drag)
+   var paused=false,autoRaf=null;
+   win.addEventListener('mouseenter',function(){paused=true;});
+   win.addEventListener('mouseleave',function(){paused=false;});
+   win.addEventListener('pointerdown',function(){paused=true;});
+   function auto(){
+    if(!paused&&!down&&half>0){
+     win.scrollLeft+=0.6; // move left
+     if(win.scrollLeft>=half)win.scrollLeft-=half;
+    }
+    autoRaf=requestAnimationFrame(auto);
+   }
+   auto();
    document.querySelectorAll('.showcase-arrow').forEach(function(btn){
     btn.addEventListener('click',function(){
      if(win.dataset.dragged==='1')return;
