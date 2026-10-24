@@ -194,7 +194,13 @@ document.addEventListener('DOMContentLoaded',function(){
    }
    win.addEventListener('pointerup',endDrag);
    win.addEventListener('pointercancel',endDrag);
-   win.addEventListener('click',function(e){if(win.dataset.dragged==='1'){e.preventDefault();e.stopPropagation();}},true);
+   win.addEventListener('click',function(e){
+    if(win.dataset.dragged==='1'){
+     win.dataset.dragged='0'; // reset immediately so next click works
+     var a=e.target.closest&&e.target.closest('a.logo-item');
+     if(a){e.preventDefault();e.stopPropagation();}
+    }
+   },true);
    win.addEventListener('dragstart',function(e){e.preventDefault();});
   });
  }
