@@ -255,3 +255,8 @@ dialog::-webkit-scrollbar-thumb,.modal::-webkit-scrollbar-thumb{background:var(-
 
 /* showcase: dark theme + auto leftward scroll */
 .showcase-window.dragging{scroll-behavior:auto}
+
+/* v7: explicit anchor logo-item hover/focus styles */
+a.logo-item{text-decoration:none;color:inherit;display:inline-block}
+a.logo-item:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+a.logo-item:focus-visible{outline:2px solid #2b7cff;outline-offset:3px}
