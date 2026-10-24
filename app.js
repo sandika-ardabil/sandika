@@ -58,22 +58,53 @@ document.addEventListener('DOMContentLoaded',function(){
    toggleWrap.appendChild(btnBasic);toggleWrap.appendChild(btnFull);
    var currentView='basic';btnBasic.addEventListener('click',function(){currentView='basic';btnBasic.classList.add('active');btnFull.classList.remove('active');renderPersonnel(lastList);});
    btnFull.addEventListener('click',function(){currentView='full';btnFull.classList.add('active');btnBasic.classList.remove('active');renderPersonnel(lastList);});
-   var lastList=[];
-   function renderPersonnel(list){
-    lastList=list;
-    var q=norm(query.value).toLocaleLowerCase();
-    var filtered=list.filter(function(r){return !q||fields.some(function(f){return norm(r[f]).toLocaleLowerCase().includes(q)});});
-    total.textContent=fa('نمایش '+filtered.length+' نفر از '+list.length+' نفر');
-    var basicFields=['نام و نام خانوادگی','سمت شغلی'];
-    var viewFields=currentView==='basic'?fields.filter(function(f){return basicFields.indexOf(f)>=0;}):fields;
-    var table=document.createElement('table');table.className='personnel-table';
-    var thead=document.createElement('thead'),tr=document.createElement('tr');
-    viewFields.forEach(function(f){var th=document.createElement('th');th.textContent=f;tr.appendChild(th)});thead.appendChild(tr);table.appendChild(thead);
-    var tbody=document.createElement('tbody');
-    filtered.forEach(function(r){var row=document.createElement('tr');viewFields.forEach(function(f){var td=document.createElement('td');td.textContent=r[f]==null?'':String(r[f]);row.appendChild(td)});tbody.appendChild(row)});
-    table.appendChild(tbody);wrap.replaceChildren(table);empty.hidden=filtered.length>0;
-   }
-   // Insert the toggle above the search box, inside the dialog header area.
+   var lastList=[];var personDlg=null;
+ function openPerson(r){
+  if(!personDlg){
+   personDlg=document.createElement('dialog');personDlg.className='person-detail-dialog';
+   personDlg.innerHTML='<div class="person-detail-head"><h3 class="person-detail-name"></h3><button type="button" class="person-detail-close" aria-label="بستن">×</button></div><div class="person-detail-body"></div>';
+   document.body.appendChild(personDlg);
+   personDlg.querySelector('.person-detail-close').addEventListener('click',function(){personDlg.close()});
+   personDlg.addEventListener('click',function(e){if(e.target===personDlg)personDlg.close()});
+  }
+  personDlg.querySelector('.person-detail-name').textContent=r['نام و نام خانوادگی']||'—';
+  var body=personDlg.querySelector('.person-detail-body');body.innerHTML='';
+  fields.forEach(function(f){
+   if(f==='نام و نام خانوادگی')return;
+   var v=r[f]==null?'':String(r[f]);
+   if(!v.trim())return;
+   var line=document.createElement('div');line.className='person-detail-row';
+   var k=document.createElement('span');k.className='person-detail-key';k.textContent=f;
+   var val=document.createElement('span');val.className='person-detail-val';val.textContent=v;
+   line.appendChild(k);line.appendChild(val);body.appendChild(line);
+  });
+  personDlg.showModal();
+ }
+ function renderPersonnel(list){
+  lastList=list;
+  var q=norm(query.value).toLocaleLowerCase();
+  var filtered=list.filter(function(r){return !q||fields.some(function(f){return norm(r[f]).toLocaleLowerCase().includes(q)});});
+  total.textContent=fa('نمایش '+filtered.length+' نفر از '+list.length+' نفر');
+  var basicFields=['نام و نام خانوادگی','سمت شغلی'];
+  var viewFields=currentView==='basic'?fields.filter(function(f){return basicFields.indexOf(f)>=0;}):fields;
+  var table=document.createElement('table');table.className='personnel-table compact';
+  var thead=document.createElement('thead'),tr=document.createElement('tr');
+  viewFields.forEach(function(f){var th=document.createElement('th');th.textContent=f;tr.appendChild(th)});
+  var thA=document.createElement('th');thA.textContent='مشاهده اطلاعات';thA.className='col-action';tr.appendChild(thA);
+  thead.appendChild(tr);table.appendChild(thead);
+  var tbody=document.createElement('tbody');
+  filtered.forEach(function(r){
+   var row=document.createElement('tr');
+   viewFields.forEach(function(f){var td=document.createElement('td');td.textContent=r[f]==null?'':String(r[f]);row.appendChild(td)});
+   var tdA=document.createElement('td');tdA.className='col-action';
+   var btn=document.createElement('button');btn.type='button';btn.className='person-view-btn';btn.textContent='مشاهده اطلاعات';
+   btn.addEventListener('click',function(e){e.stopPropagation();openPerson(r)});
+   tdA.appendChild(btn);row.appendChild(tdA);
+   tbody.appendChild(row);
+  });
+  table.appendChild(tbody);wrap.replaceChildren(table);empty.hidden=filtered.length>0;
+ }
+// Insert the toggle above the search box, inside the dialog header area.
    var headHost=query.parentNode;
    headHost.insertBefore(toggleWrap,query);
    function openCompany(company){

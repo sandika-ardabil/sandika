@@ -116,12 +116,12 @@ main{animation:fadein .7s ease}
 
 
 /* Personnel detail dialog — matches the site's dark/cyan theme */
-.personnel-dialog{width:min(1180px,94vw);max-width:94vw;max-height:88vh;padding:0;border:1px solid rgba(82,226,239,.3);border-radius:18px;background:#121824;color:#f3f8fb;box-shadow:0 24px 90px rgba(0,0,0,.72)}
+.personnel-dialog{width:min(640px,92vw);max-width:92vw;max-height:78vh;padding:0;border:1px solid rgba(82,226,239,.3);border-radius:18px;background:#121824;color:#f3f8fb;box-shadow:0 24px 90px rgba(0,0,0,.72)}
 .personnel-dialog::backdrop{background:rgba(3,7,12,.78);backdrop-filter:blur(5px)}
 .personnel-modal-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding:20px 24px 14px;background:rgba(18,24,36,.97);border-bottom:1px solid rgba(170,220,235,.14)}
 .personnel-modal-head .eyebrow{margin:0}.personnel-modal-head h2{margin:2px 0;font-size:20px}.personnel-total{margin:0;color:#a6b3c2;font-size:12px}
 .personnel-close{flex:0 0 40px;width:40px;height:40px;border:1px solid rgba(170,220,235,.2);border-radius:10px;background:#121417;color:#52e2ef;font-size:28px;line-height:1;cursor:pointer}
-.personnel-search{margin:14px 20px 10px}.personnel-table-wrap{max-height:calc(88vh - 190px);overflow:auto;margin:0 20px 20px;border:1px solid rgba(170,220,235,.14);border-radius:10px}
+.personnel-search{margin:14px 20px 10px}.personnel-table-wrap{max-height:calc(78vh - 180px);overflow:auto;margin:0 20px 20px;border:1px solid rgba(170,220,235,.14);border-radius:10px}
 .personnel-table{width:100%;border-collapse:separate;border-spacing:0;white-space:nowrap;font-size:12px}.personnel-table th,.personnel-table td{padding:9px 12px;text-align:right;border-bottom:1px solid rgba(170,220,235,.1)}
 .personnel-table th{position:sticky;top:0;background:#172332;color:#52e2ef;font-weight:700}.personnel-table tbody tr:nth-child(even){background:rgba(255,255,255,.025)}.personnel-table tbody tr:hover{background:rgba(0,180,216,.1)}
 .personnel-empty{padding:0 22px 18px;color:#a6b3c2}.company-grid .company-tile{font:inherit;color:inherit;text-align:right;cursor:pointer}.company-grid .company-tile:focus-visible,.personnel-close:focus-visible{outline:2px solid #52e2ef;outline-offset:3px}
@@ -202,3 +202,19 @@ main{animation:fadein .7s ease}
 .view-toggle-btn{font:inherit;font-size:.85rem;padding:7px 16px;border-radius:999px;border:1px solid var(--line,#d8dee9);background:var(--surface,#fff);color:var(--muted,#5b6472);cursor:pointer;transition:all .2s}
 .view-toggle-btn:hover{border-color:var(--brand,#1d7a5f);color:var(--brand,#1d7a5f)}
 .view-toggle-btn.active{background:var(--brand,#1d7a5f);border-color:var(--brand,#1d7a5f);color:#fff;font-weight:700}
+
+/* Compact personnel table + person detail modal */
+.personnel-table.compact{font-size:13px}
+.personnel-table.compact th,.personnel-table.compact td{padding:7px 10px}
+.personnel-table.compact .col-action{width:1%;white-space:nowrap}
+.person-view-btn{font:inherit;font-size:11.5px;padding:4px 12px;border-radius:999px;border:1px solid rgba(0,180,216,.5);background:rgba(0,180,216,.1);color:var(--cyan,#52e2ef);cursor:pointer;transition:all .18s}
+.person-view-btn:hover{background:var(--cyan,#52e2ef);color:#0a1017}
+.person-detail-dialog{width:min(440px,92vw);max-height:80vh;overflow:auto;padding:0;border:1px solid rgba(82,226,239,.35);border-radius:16px;background:#121824;color:#f3f8fb;box-shadow:0 24px 80px rgba(0,0,0,.7)}
+.person-detail-dialog::backdrop{background:rgba(3,7,12,.7);backdrop-filter:blur(4px)}
+.person-detail-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:rgba(18,24,36,.97);border-bottom:1px solid rgba(170,220,235,.14)}
+.person-detail-name{margin:0;font-size:16px;color:#52e2ef}
+.person-detail-close{flex:0 0 32px;width:32px;height:32px;border-radius:8px;border:1px solid rgba(170,220,235,.2);background:#121417;color:#52e2ef;font-size:22px;line-height:1;cursor:pointer}
+.person-detail-body{padding:12px 18px 18px;display:grid;gap:8px}
+.person-detail-row{display:flex;justify-content:space-between;gap:14px;padding:7px 10px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(170,220,235,.08)}
+.person-detail-key{color:#a6b3c2;font-size:12px;white-space:nowrap}
+.person-detail-val{font-size:13px;text-align:left;word-break:break-word}
