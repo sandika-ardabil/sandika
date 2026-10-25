@@ -338,3 +338,9 @@ body { padding-top:130px !important; }
 @keyframes splashBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.985)}}
 @media (prefers-reduced-motion:reduce){#welcome-splash .splash-title{animation:none;opacity:1}#welcome-splash .splash-sub{animation:none}}
 @media (max-width:520px){#welcome-splash .splash-sub{padding:8px 16px;font-size:.8rem}#welcome-splash .splash-frame .cf{width:44px;height:44px}}
+
+
+/* v24: larger emblem and association title in the white header */
+.brand-right img { width:52px !important; height:52px !important; object-fit:contain; }
+.marquee-text { font-size:17px !important; }
+@media (max-width:768px) { .marquee-text { font-size:14px !important; } }
