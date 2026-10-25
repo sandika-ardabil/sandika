@@ -359,3 +359,13 @@ body { padding-top:130px !important; }
 
 /* v16: move Persian welcome title further below I.P.H.S.D.A logo and its reflection */
 #welcome-splash .splash-title{bottom:6%!important}
+
+
+/* v17: seamless join between the white header row and red navigation bar */
+.site-header { border-bottom:0 !important; }
+.header-top-row { border-bottom:0 !important; }
+.header-bottom-nav { border-top:0 !important; margin-top:0 !important; }
+@media (max-width:768px) {
+  .site-header { height:102px !important; }
+  body { padding-top:102px !important; }
+}
