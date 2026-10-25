@@ -349,3 +349,10 @@ body { padding-top:130px !important; }
 @keyframes splashBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.985)}}
 @media (prefers-reduced-motion:reduce){#welcome-splash .splash-title{animation:none;opacity:1}#welcome-splash .splash-sub{animation:none}}
 @media (max-width:520px){#welcome-splash .splash-sub{padding:8px 16px;font-size:.8rem}#welcome-splash .splash-frame .cf{width:44px;height:44px}}
+
+/* v15 header and navigation colors */
+.site-header{background:#fff !important;backdrop-filter:none !important;}
+.header-top-row{background:#fff !important;border-bottom:1px solid #e5eaf0 !important;}
+.marquee-text{color:#0076D9 !important;}
+.header-bottom-nav{background:#D90429 !important;border-top:0 !important;box-shadow:none !important;}
+.header-bottom-nav a,.header-bottom-nav a:hover,.header-bottom-nav a.active{color:#fff !important;background:transparent !important;text-shadow:none !important;}
