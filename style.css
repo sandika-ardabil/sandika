@@ -389,3 +389,17 @@ body { padding-top:102px !important; }
   .header-bottom-nav a { padding:4px 6px; }
   body { padding-top:92px !important; }
 }
+
+/* v21: slightly thinner white header, thicker red navigation bar, larger association emblem */
+.site-header { height:102px !important; }
+.header-top-row { height:56px !important; }
+.brand-right img { width:56px !important; height:56px !important; }
+.header-bottom-nav { height:46px !important; }
+body { padding-top:102px !important; }
+@media (max-width:768px) {
+  .site-header { height:92px !important; }
+  .header-top-row { height:50px !important; }
+  .brand-right img { width:48px !important; height:48px !important; }
+  .header-bottom-nav { height:42px !important; }
+  body { padding-top:92px !important; }
+}
