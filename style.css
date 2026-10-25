@@ -334,7 +334,7 @@ body { padding-top:130px !important; }
 #welcome-splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,10,18,.15),rgba(3,10,18,.55));pointer-events:none}
 #welcome-splash>*{position:relative;z-index:1}
 /* welcome title: sits directly below the IPHSDA emblem & its reflection */
-#welcome-splash .splash-title{position:absolute;left:0;right:0;bottom:13%;margin:0;color:#eafcff;font-size:clamp(1.6rem,4.5vw,3.2rem);font-weight:800;text-shadow:0 0 6px #52e2ef,0 0 14px #00b4d8,0 0 28px #0096c7,0 2px 6px #000;animation:splashBlink 1.6s ease-in-out infinite}
+#welcome-splash .splash-title{position:absolute;left:0;right:0;bottom:6%;margin:0;color:#eafcff;font-size:clamp(1.6rem,4.5vw,3.2rem);font-weight:800;text-shadow:0 0 6px #52e2ef,0 0 14px #00b4d8,0 0 28px #0096c7,0 2px 6px #000;animation:splashBlink 1.6s ease-in-out infinite}
 /* guide badge: top-center glassmorphic pill with glowing aura */
 #welcome-splash .splash-sub{position:absolute;top:30px;left:50%;transform:translateX(-50%);margin:0;padding:10px 26px;color:#e6fbff;font-size:clamp(.85rem,2vw,1.05rem);font-weight:600;letter-spacing:.3px;background:rgba(10,22,32,.42);border:1px solid rgba(82,226,239,.35);border-radius:999px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 22px rgba(0,180,216,.35),inset 0 0 18px rgba(82,226,239,.08),0 6px 20px rgba(0,0,0,.35);text-shadow:0 1px 4px rgba(0,0,0,.6);animation:splashAura 2.6s ease-in-out infinite;white-space:nowrap;max-width:92vw}
 @keyframes splashAura{0%,100%{box-shadow:0 0 18px rgba(0,180,216,.28),inset 0 0 18px rgba(82,226,239,.08),0 6px 20px rgba(0,0,0,.35)}50%{box-shadow:0 0 34px rgba(82,226,239,.6),inset 0 0 22px rgba(82,226,239,.14),0 6px 20px rgba(0,0,0,.35)}}
@@ -356,3 +356,6 @@ body { padding-top:130px !important; }
 .marquee-text{color:#0076D9 !important;}
 .header-bottom-nav{background:#D90429 !important;border-top:0 !important;box-shadow:none !important;}
 .header-bottom-nav a,.header-bottom-nav a:hover,.header-bottom-nav a.active{color:#fff !important;background:transparent !important;text-shadow:none !important;}
+
+/* v16: move Persian welcome title further below I.P.H.S.D.A logo and its reflection */
+#welcome-splash .splash-title{bottom:6%!important}
