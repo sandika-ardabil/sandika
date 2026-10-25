@@ -328,3 +328,15 @@ body { padding-top:130px !important; }
   .brand-right img { width:54px; height:54px; }
   .marquee-text { font-size:15px; }
 }
+
+/* Welcome Splash v13: additive styles */
+#welcome-splash{position:fixed;inset:0;z-index:99999;background:#0b0f14 url('assets/enter_page.webp') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;text-align:center;cursor:pointer;transition:opacity .8s ease,visibility .8s ease;font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl}
+#welcome-splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,10,18,.15),rgba(3,10,18,.55));pointer-events:none}
+#welcome-splash>*{position:relative;z-index:1}
+#welcome-splash .splash-title{margin:0;color:#eafcff;font-size:clamp(1.6rem,4.5vw,3.2rem);font-weight:800;text-shadow:0 0 6px #52e2ef,0 0 14px #00b4d8,0 0 28px #0096c7,0 2px 6px #000;animation:splashBlink 1.6s ease-in-out infinite}
+#welcome-splash .splash-sub{margin:0;color:#cfeef7;font-size:clamp(.85rem,2vw,1.1rem);text-shadow:0 1px 4px #000}
+#welcome-splash .splash-btn{margin-top:6px;padding:14px 46px;font-size:1.15rem;font-weight:700;color:#04141b;background:linear-gradient(135deg,#52e2ef,#00b4d8);border:0;border-radius:999px;cursor:pointer;box-shadow:0 0 18px rgba(0,180,216,.65),0 6px 22px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s;font-family:inherit}
+#welcome-splash .splash-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 30px rgba(82,226,239,.9),0 10px 26px rgba(0,0,0,.5)}
+@keyframes splashBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.985)}}
+#welcome-splash.splash-hidden{opacity:0;visibility:hidden;pointer-events:none}
+@media (prefers-reduced-motion:reduce){#welcome-splash .splash-title{animation:none;opacity:1}}
