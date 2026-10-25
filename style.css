@@ -330,13 +330,22 @@ body { padding-top:130px !important; }
 }
 
 /* Welcome Splash v13: additive styles */
-#welcome-splash{position:fixed;inset:0;z-index:99999;background:#0b0f14 url('assets/enter_page.webp') center/cover no-repeat;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;text-align:center;cursor:pointer;transition:opacity .8s ease,visibility .8s ease;font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl}
+#welcome-splash{position:fixed;inset:0;z-index:99999;background:#0b0f14 url('assets/enter_page.webp') center/cover no-repeat;display:block;text-align:center;cursor:pointer;transition:opacity .8s ease,visibility .8s ease;font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl}
 #welcome-splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,10,18,.15),rgba(3,10,18,.55));pointer-events:none}
 #welcome-splash>*{position:relative;z-index:1}
-#welcome-splash .splash-title{margin:0;color:#eafcff;font-size:clamp(1.6rem,4.5vw,3.2rem);font-weight:800;text-shadow:0 0 6px #52e2ef,0 0 14px #00b4d8,0 0 28px #0096c7,0 2px 6px #000;animation:splashBlink 1.6s ease-in-out infinite}
-#welcome-splash .splash-sub{margin:0;color:#cfeef7;font-size:clamp(.85rem,2vw,1.1rem);text-shadow:0 1px 4px #000}
-#welcome-splash .splash-btn{margin-top:6px;padding:14px 46px;font-size:1.15rem;font-weight:700;color:#04141b;background:linear-gradient(135deg,#52e2ef,#00b4d8);border:0;border-radius:999px;cursor:pointer;box-shadow:0 0 18px rgba(0,180,216,.65),0 6px 22px rgba(0,0,0,.45);transition:transform .25s,box-shadow .25s;font-family:inherit}
-#welcome-splash .splash-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 30px rgba(82,226,239,.9),0 10px 26px rgba(0,0,0,.5)}
-@keyframes splashBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.985)}}
+/* welcome title: sits directly below the IPHSDA emblem & its reflection */
+#welcome-splash .splash-title{position:absolute;left:0;right:0;bottom:13%;margin:0;color:#eafcff;font-size:clamp(1.6rem,4.5vw,3.2rem);font-weight:800;text-shadow:0 0 6px #52e2ef,0 0 14px #00b4d8,0 0 28px #0096c7,0 2px 6px #000;animation:splashBlink 1.6s ease-in-out infinite}
+/* guide badge: top-center glassmorphic pill with glowing aura */
+#welcome-splash .splash-sub{position:absolute;top:30px;left:50%;transform:translateX(-50%);margin:0;padding:10px 26px;color:#e6fbff;font-size:clamp(.85rem,2vw,1.05rem);font-weight:600;letter-spacing:.3px;background:rgba(10,22,32,.42);border:1px solid rgba(82,226,239,.35);border-radius:999px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 22px rgba(0,180,216,.35),inset 0 0 18px rgba(82,226,239,.08),0 6px 20px rgba(0,0,0,.35);text-shadow:0 1px 4px rgba(0,0,0,.6);animation:splashAura 2.6s ease-in-out infinite;white-space:nowrap;max-width:92vw}
+@keyframes splashAura{0%,100%{box-shadow:0 0 18px rgba(0,180,216,.28),inset 0 0 18px rgba(82,226,239,.08),0 6px 20px rgba(0,0,0,.35)}50%{box-shadow:0 0 34px rgba(82,226,239,.6),inset 0 0 22px rgba(82,226,239,.14),0 6px 20px rgba(0,0,0,.35)}}
+/* high-tech pharmaceutical frame + glowing corner brackets */
+#welcome-splash .splash-frame{position:absolute;inset:0;z-index:1;pointer-events:none;border:2px solid rgba(0,229,255,.4);box-shadow:inset 0 0 60px rgba(0,229,255,.10),inset 0 0 14px rgba(0,229,255,.18)}
+#welcome-splash .splash-frame .cf{position:absolute;width:64px;height:64px;border:3px solid rgba(82,226,239,.9);box-shadow:0 0 18px rgba(0,229,255,.75),inset 0 0 12px rgba(0,229,255,.35)}
+#welcome-splash .cf.tl{top:-2px;right:-2px;border-left:0;border-bottom:0;border-radius:0 6px 0 0}
+#welcome-splash .cf.tr{top:-2px;left:-2px;border-right:0;border-bottom:0;border-radius:6px 0 0 0}
+#welcome-splash .cf.bl{bottom:-2px;right:-2px;border-left:0;border-top:0;border-radius:0 0 6px 0}
+#welcome-splash .cf.br{bottom:-2px;left:-2px;border-right:0;border-top:0;border-radius:0 0 0 6px}
 #welcome-splash.splash-hidden{opacity:0;visibility:hidden;pointer-events:none}
-@media (prefers-reduced-motion:reduce){#welcome-splash .splash-title{animation:none;opacity:1}}
+@keyframes splashBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.985)}}
+@media (prefers-reduced-motion:reduce){#welcome-splash .splash-title{animation:none;opacity:1}#welcome-splash .splash-sub{animation:none}}
+@media (max-width:520px){#welcome-splash .splash-sub{padding:8px 16px;font-size:.8rem}#welcome-splash .splash-frame .cf{width:44px;height:44px}}
