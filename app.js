@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',function(){
  if(hero){
   var slides=Array.from(hero.querySelectorAll('.hero-slide'));
   var dots=Array.from(document.querySelectorAll('.hero-dot'));
-  var current=Math.max(0,slides.findIndex(function(s){return s.classList.contains('active')})),timer=null,delay=6500;
+  var current=Math.max(0,slides.findIndex(function(s){return s.classList.contains('active')})),timer=null,delay=5500;
   function showHero(n){
    if(!slides.length)return;
    current=(n+slides.length)%slides.length;
@@ -22,11 +22,22 @@ document.addEventListener('DOMContentLoaded',function(){
   hero.addEventListener('mouseenter',stop);hero.addEventListener('mouseleave',start);
   hero.addEventListener('focusin',stop);hero.addEventListener('focusout',function(e){if(!hero.contains(e.relatedTarget))start();});
   document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
-  var touchX=null;hero.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});hero.addEventListener('touchend',function(e){if(touchX===null)return;var dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>55)move(current+(dx<0?1:-1));touchX=null;},{passive:true});hero.addEventListener('keydown',function(e){if(e.key==='ArrowRight')move(current+1);if(e.key==='ArrowLeft')move(current-1);});showHero(current);start();
+  showHero(current);start();
  }
  // nav active
  var page=location.pathname.split('/').pop()||'index.html';
  document.querySelectorAll('.site-header nav a').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active')});
+
+ // v35 Floating Island indicator: active item + hover preview with responsive geometry.
+ document.querySelectorAll('.header-bottom-nav').forEach(function(nav){
+  var indicator=nav.querySelector('.pill-indicator'); if(!indicator)return;
+  var links=Array.from(nav.querySelectorAll('a'));
+  function moveTo(link){if(!link)return;var nr=nav.getBoundingClientRect(),lr=link.getBoundingClientRect();nav.style.setProperty('--pill-left',(lr.left-nr.left+nav.scrollLeft)+'px');nav.style.setProperty('--pill-width',lr.width+'px');nav.classList.add('pill-ready');}
+  var active=nav.querySelector('a.active')||links.find(function(a){return a.getAttribute('href')===(location.pathname.split('/').pop()||'index.html')})||links[0];
+  links.forEach(function(a){a.addEventListener('mouseenter',function(){moveTo(a)});a.addEventListener('focus',function(){moveTo(a)});});
+  nav.addEventListener('mouseleave',function(){moveTo(active)});nav.addEventListener('focusout',function(e){if(!nav.contains(e.relatedTarget))moveTo(active)});
+  requestAnimationFrame(function(){moveTo(active)});window.addEventListener('resize',function(){moveTo(nav.matches(':hover')?(nav.querySelector(':hover')||active):active)});
+ });
  // mobile menu
  var h=document.querySelector('.site-header'),mt=document.querySelector('.menu-toggle');
  if(mt)mt.addEventListener('click',()=>h.classList.toggle('nav-open'));
