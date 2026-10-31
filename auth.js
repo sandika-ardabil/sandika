@@ -8,7 +8,6 @@
   function applyTheme(theme) {
     theme = theme === 'light' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', theme);
-    if (document.body) document.body.setAttribute('data-theme', theme);
     try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
     var button = document.querySelector('[data-theme-toggle]');
     if (button) {
