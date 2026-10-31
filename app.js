@@ -175,13 +175,15 @@ document.addEventListener('DOMContentLoaded',function(){
    });
    // pointer drag with threshold + rAF + click suppression, snap kept when idle
    var down=false,startX=0,startScroll=0,moved=false,raf=null,vel=0,lastX=0,lastT=0;
+   var suppressNextDragClick=false,dragClickTimer=null;
    win.addEventListener('pointerdown',function(e){
+    // Do not capture the pointer here: capture retargets a normal logo click
+    // to the scrolling window instead of the anchor in several browsers.
     down=true;moved=false;startX=e.clientX;startScroll=win.scrollLeft;
     lastX=e.clientX;lastT=performance.now();vel=0;
-    win.setPointerCapture(e.pointerId);
     win.classList.remove('dragging');
    });
-   win.addEventListener('pointermove',function(e){
+   document.addEventListener('pointermove',function(e){
     if(!down)return;
     var dx=e.clientX-startX;
     if(!moved&&Math.abs(dx)<6)return; // drag threshold
@@ -198,6 +200,9 @@ document.addEventListener('DOMContentLoaded',function(){
     win.classList.remove('dragging');
     if(moved){
      win.dataset.dragged='1';
+     suppressNextDragClick=true;
+     if(dragClickTimer)clearTimeout(dragClickTimer);
+     dragClickTimer=setTimeout(function(){suppressNextDragClick=false;dragClickTimer=null;},500);
      // momentum then snap
      var target=win.scrollLeft - vel*260;
      win.scrollTo({left:Math.max(0,target),behavior:'smooth'});
@@ -207,10 +212,17 @@ document.addEventListener('DOMContentLoaded',function(){
    win.addEventListener('pointerup',endDrag);
    win.addEventListener('pointercancel',endDrag);
    win.addEventListener('click',function(e){
-    if(win.dataset.dragged==='1'){
-     win.dataset.dragged='0'; // reset immediately so next click works
-     var a=e.target.closest&&e.target.closest('a.logo-item');
+    var a=e.target.closest&&e.target.closest('a.logo-item');
+    if(suppressNextDragClick){
+     suppressNextDragClick=false;
+     if(dragClickTimer){clearTimeout(dragClickTimer);dragClickTimer=null;}
      if(a){e.preventDefault();e.stopPropagation();}
+     return;
+    }
+    if(a){
+     // Open explicitly because carousel drag handling can cancel native anchor navigation.
+     e.preventDefault();
+     window.open(a.href,'_blank','noopener');
     }
    },true);
    win.addEventListener('dragstart',function(e){e.preventDefault();});
