@@ -147,8 +147,7 @@ document.addEventListener('DOMContentLoaded',function(){
  var win=document.querySelector('[data-showcase] .showcase-window');
  if(win){
   fetch('assets/logos.json').then(r=>r.json()).then(function(L){
-   var authoritativeSites={"adora":"https://adorateb.com/","alborz":"https://alborzdc.com/","armaghan tabiat":"https://armaghandistribution.com/","avand far":"https://iranavandfar.com/","barij":"https://barijessence.com/","daroupakhsh":"https://www.ondpline.com/","day darou":"https://daydarou.ir/","daya":"https://www.dayadarou.ir/","elit":"https://www.eliteco.ir/","eltiyam":"https://eltiampharm.com/","exir":"https://exirpd.com/","ferdos":"https://ferdowsdco.com/","ghasem":"https://www.ghasemiran.org/","hasti":"https://salamatpakhsh.com/","hejrat":"https://www.hejratco.com/","karen":"https://karendistribution.com/","mahban":"https://mahbangroup.com/","masha":"https://www.mashateb.com/","meshkat":"https://meshcutpharmed.com/","milan":"https://milanpars.com/","momtaz":"https://momtaz.ir/","nokhbeghan":"https://nokhbegandc.com/","omidarya":"https://linka.ir/company/19955af/%D8%A7%D9%85%DB%8C%D8%AF-%D8%A2%D8%B1%DB%8C%D8%A7-%D8%AF%D8%A7%D8%B1%D9%88","ponel":"https://poonelbersam.com/","pora":"https://pourapakhsh.com/","razi":"https://www.razico.ir/","samen":"https://yts.ir/","saye saman":"https://www.sayesaman.com/fa","shafaarad":"https://www.shafaarad.ir/","sina":"https://cinnadco.com/","soha":"https://sohahelal.ir/","sonar tak":"https://rasmio.com/company/10240084272/%D9%BE%D8%AE%D8%B4%20%D8%B3%D9%88%D9%86%D8%A7%D8%B1%20%D8%AA%DA%A9%20%D8%AF%D8%A7%D8%B1%D9%88/","sorosh":"https://rasmio.com/company/14009220500/%D8%B3%D9%87%D8%A7%20%D8%B3%D8%B1%D9%88%D8%B4%20%D9%86%D9%88%DB%8C%D9%86%20%D8%A2%D8%B3%D9%85%D8%A7%D9%86/"};
-   var item=function(l){var u=authoritativeSites[l.name]||l.site||'#';return '<a class="logo-item" href="'+u+'" target="_blank" rel="noopener" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></a>';};
+   var item=function(l){var u=l.site||'#';return '<a class="logo-item" href="'+u+'" target="_blank" rel="noopener" title="'+l.name+'"><img src="'+l.file+'" alt="'+l.name+'" loading="lazy" draggable="false"></a>';};
    var trackEl=win.querySelector('[data-track]');
    trackEl.innerHTML=L.map(item).join('')+L.map(item).join(''); // duplicate for seamless loop
    var half=0;
@@ -175,15 +174,13 @@ document.addEventListener('DOMContentLoaded',function(){
    });
    // pointer drag with threshold + rAF + click suppression, snap kept when idle
    var down=false,startX=0,startScroll=0,moved=false,raf=null,vel=0,lastX=0,lastT=0;
-   var suppressNextDragClick=false,dragClickTimer=null;
    win.addEventListener('pointerdown',function(e){
-    // Do not capture the pointer here: capture retargets a normal logo click
-    // to the scrolling window instead of the anchor in several browsers.
     down=true;moved=false;startX=e.clientX;startScroll=win.scrollLeft;
     lastX=e.clientX;lastT=performance.now();vel=0;
+    win.setPointerCapture(e.pointerId);
     win.classList.remove('dragging');
    });
-   document.addEventListener('pointermove',function(e){
+   win.addEventListener('pointermove',function(e){
     if(!down)return;
     var dx=e.clientX-startX;
     if(!moved&&Math.abs(dx)<6)return; // drag threshold
@@ -200,9 +197,6 @@ document.addEventListener('DOMContentLoaded',function(){
     win.classList.remove('dragging');
     if(moved){
      win.dataset.dragged='1';
-     suppressNextDragClick=true;
-     if(dragClickTimer)clearTimeout(dragClickTimer);
-     dragClickTimer=setTimeout(function(){suppressNextDragClick=false;dragClickTimer=null;},500);
      // momentum then snap
      var target=win.scrollLeft - vel*260;
      win.scrollTo({left:Math.max(0,target),behavior:'smooth'});
@@ -212,17 +206,10 @@ document.addEventListener('DOMContentLoaded',function(){
    win.addEventListener('pointerup',endDrag);
    win.addEventListener('pointercancel',endDrag);
    win.addEventListener('click',function(e){
-    var a=e.target.closest&&e.target.closest('a.logo-item');
-    if(suppressNextDragClick){
-     suppressNextDragClick=false;
-     if(dragClickTimer){clearTimeout(dragClickTimer);dragClickTimer=null;}
+    if(win.dataset.dragged==='1'){
+     win.dataset.dragged='0'; // reset immediately so next click works
+     var a=e.target.closest&&e.target.closest('a.logo-item');
      if(a){e.preventDefault();e.stopPropagation();}
-     return;
-    }
-    if(a){
-     // Open explicitly because carousel drag handling can cancel native anchor navigation.
-     e.preventDefault();
-     window.open(a.href,'_blank','noopener');
     }
    },true);
    win.addEventListener('dragstart',function(e){e.preventDefault();});
