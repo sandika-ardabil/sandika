@@ -317,3 +317,9 @@ document.addEventListener('DOMContentLoaded',function(){
   }
  }
 });
+
+// Native same-page anchor enhancement. Theme persistence and the shared accessible
+// toggle are owned by auth.js to avoid duplicate handlers or login-action collisions.
+(function(){
+ document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var id=a.getAttribute('href').slice(1);if(!id)return;var target=document.getElementById(decodeURIComponent(id));if(!target)return;e.preventDefault();target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});if(history.pushState)history.pushState(null,'','#'+encodeURIComponent(id));});
+})();
