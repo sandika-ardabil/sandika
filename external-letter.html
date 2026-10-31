@@ -48,12 +48,52 @@
   .off-letter{box-shadow:none;border-radius:0;width:100%;min-height:100vh;}
   .ol-close{display:none;}
 }
+
+/* Clearance request portal */
+.clearance-wrap{margin:0 auto 2rem;max-width:1100px;background:rgba(14,23,34,.82);border:1px solid rgba(0,180,216,.28);border-radius:18px;padding:clamp(16px,3vw,30px);box-shadow:0 12px 35px rgba(0,0,0,.18)}
+.clearance-wrap h2{margin:0 0 6px;color:var(--cyan)}.clearance-intro{color:var(--muted);line-height:1.9;margin:0 0 22px}
+.cl-section{border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0;background:rgba(255,255,255,.025)}
+.cl-section h3{font-size:1rem;margin:0 0 15px;color:#d8f8ff}.cl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cl-field label{display:block;margin-bottom:6px;font-size:.86rem;color:#c2d3df}.cl-field input,.cl-field textarea{box-sizing:border-box;width:100%;border:1px solid rgba(148,180,200,.35);border-radius:9px;padding:10px 12px;background:rgba(4,11,18,.75);color:#f4f8fb;font:inherit}.cl-field input:focus,.cl-field textarea:focus{outline:2px solid rgba(0,180,216,.35);border-color:var(--cyan)}.cl-field input[type=file]{padding:7px}.cl-full{grid-column:1/-1}.cl-check{border:1px dashed rgba(0,180,216,.35);padding:14px;border-radius:12px;margin:12px 0}.cl-check h4{margin:0 0 12px;color:var(--cyan)}.cl-note{border-right:3px solid var(--cyan);padding:10px 14px;background:rgba(0,180,216,.07);border-radius:8px;color:var(--muted);font-size:.85rem;line-height:1.9}.cl-status{margin-top:15px;color:#8ef0c1;line-height:1.8}.cl-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.cl-add{margin-top:10px}
+@media(max-width:650px){.cl-grid{grid-template-columns:1fr}.cl-full{grid-column:auto}}
 </style><script src="auth.js"></script></head>
 <body>
 <header class="site-header"><div class="header-top-row"><a href="index.html" class="brand-right"><img src="assets/iphsda_logo.webp" alt="نشان انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل"></a><div class="marquee-center"><div class="marquee-text">انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</div></div><div class="head-actions-left"><a class="login-btn-white" href="login.html">ورود کاربران</a></div></div><nav class="header-bottom-nav"><span class="pill-indicator" aria-hidden="true"></span><span class="pill-indicator" aria-hidden="true"></span><a href="index.html" class="">صفحه اصلی</a><a href="mission.html" class="">رسالت ما</a><a href="members.html" class="">اعضای انجمن</a><a href="news.html" class="">اخبار و اطلاعیه‌ها</a><a href="services.html" class="">خدمات</a><a href="cartable.html" class="active">کارتابل مکاتبات</a><a href="links.html" class="">لینک‌های مفید</a><a href="about.html" class="">درباره ما</a><a href="contact.html" class="">ارتباط با ما</a></nav></header>
 <main class="container">
 <section class="page-hero"><h1>نامه‌های خارجی</h1><p>آرشیو نامه‌ها، مصوبات و مکاتبات رسمی انجمن</p>
 <div style="margin-top:16px;"><button class="btn btn-primary" onclick="openComposer()">＋ نگارش نامه جدید با سربرگ رسمی</button></div></section>
+
+<section class="clearance-wrap" aria-labelledby="clearanceTitle">
+<h2 id="clearanceTitle">درخواست مفاصاحساب داروخانه</h2>
+<p class="clearance-intro">شرکت عضو، اطلاعات بدهی و اسناد مرتبط با داروخانه را تکمیل و پرونده‌ی درخواست را دریافت کند.</p>
+<div class="cl-note">اطلاعات این فرم در مرورگر شما جمع‌آوری می‌شود. برای ثبت و ارسال آنلاین به دبیرخانه، اتصال سرویس سمت سرور لازم است؛ تا آن زمان، پرونده‌ی JSON نهایی را دانلود و از مسیر رسمی شرکت ارسال کنید.</div>
+<form id="clearanceForm">
+<div class="cl-section"><h3>اطلاعات شرکت درخواست‌کننده</h3><div class="cl-grid">
+<div class="cl-field"><label for="clCompany">نام شرکت *</label><input id="clCompany" name="company" required></div>
+<div class="cl-field"><label for="clContact">نام و نام خانوادگی نماینده</label><input id="clContact" name="contact"></div>
+<div class="cl-field"><label for="clPhone">شماره تماس</label><input id="clPhone" name="phone" type="tel"></div>
+<div class="cl-field"><label for="clEmail">ایمیل</label><input id="clEmail" name="email" type="email"></div>
+</div></div>
+<div class="cl-section"><h3>بخش اطلاعات داروخانه (بدهکار)</h3><div class="cl-grid">
+<div class="cl-field"><label for="clPharmacy">نام داروخانه *</label><input id="clPharmacy" name="pharmacy" required></div>
+<div class="cl-field"><label for="clDebt">بدهی داروخانه (ریال)</label><input id="clDebt" name="pharmacyDebt" inputmode="decimal"></div>
+</div></div>
+<div class="cl-section"><h3>فاکتور روز</h3><div class="cl-grid">
+<div class="cl-field"><label for="clInvNo">شماره فاکتور</label><input id="clInvNo" name="invoiceNumber"></div>
+<div class="cl-field"><label for="clInvDate">تاریخ فاکتور</label><input id="clInvDate" name="invoiceDate" placeholder="۱۴۰۴/۰۱/۰۱"></div>
+<div class="cl-field"><label for="clInvAmount">مبلغ (ریال)</label><input id="clInvAmount" name="invoiceAmount" inputmode="decimal"></div>
+<div class="cl-field"><label for="clInvDueDate">سررسید فاکتور</label><input id="clInvDueDate" name="invoiceDueDate"></div>
+</div></div>
+<div class="cl-section"><h3>چک بین‌راهی</h3><div id="transitChecks"></div><button type="button" class="btn btn-ghost cl-add" onclick="addClearanceCheck('transitChecks','چک بین‌راهی')">＋ افزودن چک بین‌راهی</button></div>
+<div class="cl-section"><h3>چک برگشتی</h3><div id="returnedChecks"></div><button type="button" class="btn btn-ghost cl-add" onclick="addClearanceCheck('returnedChecks','چک برگشتی')">＋ افزودن چک برگشتی</button></div>
+<div class="cl-section"><h3>اطلاعات نامه مفاصاحساب نهایی</h3><div class="cl-grid">
+<div class="cl-field"><label for="clTitle">نام مفاصاحساب (عنوان/شرح)</label><input id="clTitle" name="clearanceTitle"></div>
+<div class="cl-field"><label for="clLetterNo">شماره نامه</label><input id="clLetterNo" name="letterNumber"></div>
+<div class="cl-field"><label for="clLetterDate">تاریخ نامه</label><input id="clLetterDate" name="letterDate" placeholder="۱۴۰۴/۰۱/۰۱"></div>
+<div class="cl-field"><label for="clAttachment">پیوست نامه / اسناد (چند فایل مجاز)</label><input id="clAttachment" name="attachments" type="file" multiple></div>
+<div class="cl-field cl-full"><label for="clNotes">توضیحات تکمیلی</label><textarea id="clNotes" name="notes" rows="3"></textarea></div>
+</div></div>
+<div class="cl-actions"><button type="submit" class="btn btn-primary">ثبت و دریافت پرونده‌ی درخواست</button><button type="reset" class="btn btn-ghost">پاک‌کردن فرم</button></div><div id="clearanceStatus" class="cl-status" role="status" aria-live="polite"></div>
+</form></section>
 <div class="letters-toolbar">
   <input id="letterSearch" type="search" placeholder="جستجو در موضوع، فرستنده، گیرنده...">
   <select id="letterType"><option value="">همه انواع</option><option>وارده</option><option>صادره</option><option>مصوبه</option></select>
@@ -209,6 +249,28 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('composerModal').addEventListener('click',e=>{ if(e.target.id==='composerModal')closeComposer(); });
   document.getElementById('printModal').addEventListener('click',e=>{ if(e.target.id==='printModal')closePrint(); });
   loadLetters();
+});
+
+function addClearanceCheck(containerId,label){
+ const host=document.getElementById(containerId), n=host.children.length+1, box=document.createElement('div');
+ box.className='cl-check'; box.innerHTML=`<h4>${label} ${n}</h4><div class="cl-grid">
+ <div class="cl-field"><label>شماره چک</label><input name="${containerId}Number[]"></div>
+ <div class="cl-field"><label>تاریخ</label><input name="${containerId}Date[]" placeholder="۱۴۰۴/۰۱/۰۱"></div>
+ <div class="cl-field"><label>مبلغ (ریال)</label><input name="${containerId}Amount[]" inputmode="decimal"></div>
+ <div class="cl-field"><label>نام صاحب چک</label><input name="${containerId}Holder[]"></div></div>`;
+ host.appendChild(box);
+}
+function clearanceReadFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve({name:file.name,type:file.type,size:file.size,dataUrl:r.result});r.onerror=reject;r.readAsDataURL(file);});}
+function clearanceRows(id){return [...document.querySelectorAll(`#${id} .cl-check`)].map(box=>Object.fromEntries([...box.querySelectorAll('input')].map(i=>[i.name.replace(id,'').replace('[]',''),i.value.trim()]))).filter(row=>Object.values(row).some(Boolean));}
+document.addEventListener('DOMContentLoaded',()=>{
+ addClearanceCheck('transitChecks','چک بین‌راهی'); addClearanceCheck('returnedChecks','چک برگشتی');
+ const form=document.getElementById('clearanceForm'); if(!form)return;
+ form.addEventListener('reset',()=>setTimeout(()=>{document.getElementById('transitChecks').innerHTML='';document.getElementById('returnedChecks').innerHTML='';addClearanceCheck('transitChecks','چک بین‌راهی');addClearanceCheck('returnedChecks','چک برگشتی');document.getElementById('clearanceStatus').textContent='';},0));
+ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.querySelector('[type=submit]'),status=document.getElementById('clearanceStatus');button.disabled=true;status.textContent='در حال آماده‌سازی پرونده…';
+ try{const data=Object.fromEntries(new FormData(form).entries());delete data.attachments;data.transitChecks=clearanceRows('transitChecks');data.returnedChecks=clearanceRows('returnedChecks');data.attachments=await Promise.all([...document.getElementById('clAttachment').files].map(clearanceReadFile));data.createdAt=new Date().toISOString();data.requestType='درخواست مفاصاحساب داروخانه';
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='clearance-request-'+Date.now()+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='پرونده‌ی درخواست دانلود شد. لطفاً آن را از مسیر رسمی به دبیرخانه ارسال کنید.';
+ }catch(err){status.textContent='ساخت پرونده انجام نشد؛ لطفاً دوباره تلاش کنید.';}finally{button.disabled=false;}
+ });
 });
 </script>
 </body></html>
