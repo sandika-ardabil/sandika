@@ -1,214 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>کارتابل مکاتبات | انجمن پخش دارو اردبیل</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-<style>
-/* ---------- Letter composer modal ---------- */
-.cmp-overlay{display:none;position:fixed;inset:0;background:rgba(6,10,18,.82);z-index:900;justify-content:center;align-items:flex-start;overflow-y:auto;padding:30px 15px;}
-.cmp-overlay.open{display:flex;}
-.cmp-box{background:#fff;color:#16202e;border-radius:14px;max-width:760px;width:100%;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.45);}
-.cmp-box h2{margin:0 0 18px;font-size:1.2rem;color:#0b5f8a;}
-.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.cmp-grid .full{grid-column:1/-1;}
-.cmp-box label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:#31506b;}
-.cmp-box input,.cmp-box select,.cmp-box textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid #c8d6e2;border-radius:8px;font-family:inherit;font-size:.95rem;}
-.cmp-box textarea{min-height:150px;resize:vertical;line-height:1.9;}
-.cmp-actions{display:flex;gap:12px;justify-content:flex-start;margin-top:20px;}
-.btn{display:inline-block;padding:9px 20px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:.9rem;text-decoration:none;}
-.btn-primary{background:#0b7fb3;color:#fff;}
-.btn-primary:hover{background:#095f86;}
-.btn-ghost{background:transparent;border:1px solid #9fb4c6;color:#31506b;}
-.btn-sm{padding:6px 14px;font-size:.8rem;border-radius:6px;}
-
-/* ---------- Official letter print view ---------- */
-.off-letter{background:#fff;color:#111;direction:rtl;font-family:'Vazirmatn',Tahoma,sans-serif;padding:40px 45px 110px;border-radius:10px;box-shadow:0 18px 55px rgba(0,0,0,.45);position:relative;}
-.ol-head{display:flex;align-items:center;gap:14px;border-bottom:3px solid #0b7fb3;padding-bottom:16px;margin-bottom:22px;}
-.ol-head img{width:78px;height:78px;object-fit:contain;}
-.ol-head .mid{flex:1;text-align:center;}
-.ol-head h2{margin:0 0 6px;font-size:1.2rem;color:#121417;}
-.ol-head p{margin:0;font-size:.75rem;color:#556;color:#555;letter-spacing:.2px;}
-.ol-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-weight:700;font-size:.95rem;color:#274156;border-bottom:1px dashed #b8c6d4;padding-bottom:12px;margin-bottom:20px;}
-.ol-to{margin-bottom:6px;font-size:1rem;line-height:1.9;}
-.ol-subject{margin-bottom:22px;font-size:1rem;}
-.ol-subject b{color:#0b5f8a;}
-.ol-body{font-size:1.05rem;line-height:2.3;text-align:justify;white-space:pre-wrap;color:#1d2b38;min-height:180px;}
-.ol-salute{font-weight:700;margin:6px 0 40px;color:#1d2b38;}
-/* signature pinned to lower-left of the letter page */
-.ol-sign{position:absolute;bottom:88px;left:45px;text-align:center;width:210px;}
-.ol-sign img{max-width:140px;height:auto;display:block;margin:0 auto -14px;position:relative;z-index:2;}
-.ol-sign .nm{font-weight:800;font-size:1rem;border-top:2px solid #121417;padding-top:6px;color:#121417;}
-.ol-sign .tt{font-size:.85rem;color:#5b6b7b;margin-top:4px;}
-.ol-foot{position:absolute;bottom:0;left:0;right:0;border-top:1px solid #cbd5e1;padding:8px 45px;font-size:.72rem;color:#64748b;text-align:center;background:#fff;}
-.ol-close{position:absolute;top:12px;left:14px;font-size:1.6rem;line-height:1;color:#7c8b9a;cursor:pointer;background:none;border:none;}
-.ol-close:hover{color:#0b7fb3;}
-
-@media print{
-  body *{visibility:hidden !important;}
-  #printModal,#printModal *{visibility:visible !important;}
-  #printModal{display:block !important;position:absolute;inset:0;background:#fff;padding:0;}
-  .off-letter{box-shadow:none;border-radius:0;width:100%;min-height:100vh;}
-  .ol-close{display:none;}
-}
-</style><script src="auth.js"></script></head>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ثبت و آماده‌سازی درخواست مکاتبه برای انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل">
+  <meta name="theme-color" content="#121417">
+  <title>مکاتبه و درخواست مفاصا حساب | دسترسی عمومی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#121417;--panel:#171e28;--accent:#00b4d8;--cyan:#52e2ef;--muted:#a6b3c2;--line:rgba(170,220,235,.16);--danger:#ff9b9b;--success:#9aefc0}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,rgba(0,180,216,.2),transparent 55%),var(--bg);color:#f3f8fb;font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.85}
+    a{color:var(--cyan)}.top{border-bottom:1px solid var(--line);background:rgba(10,16,24,.8);backdrop-filter:blur(14px)}.top-inner{width:min(1000px,92vw);min-height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px;color:#f3f8fb;text-decoration:none}.brand img{height:48px;width:48px;object-fit:contain;filter:drop-shadow(0 0 9px rgba(0,180,216,.4))}.brand b{display:block;font-size:14px}.brand small{color:var(--muted);font-size:11px}.public-tag{border:1px solid rgba(82,226,239,.4);color:var(--cyan);padding:4px 12px;border-radius:999px;font-size:12px;white-space:nowrap}
+    main{width:min(920px,92vw);margin:44px auto 64px}.intro{text-align:center;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:13px}.intro h1{margin:5px 0 8px;font-size:clamp(24px,4vw,36px);line-height:1.45}.intro p{color:var(--muted);margin:0 auto;max-width:720px}
+    .notice{border:1px solid rgba(82,226,239,.27);background:rgba(0,180,216,.07);border-radius:14px;padding:16px 18px;margin:22px 0;color:#d9edf2;font-size:14px}.notice strong{color:var(--cyan)}.config{margin-top:8px;color:var(--muted);font-size:13px;overflow-wrap:anywhere}.config code{color:#fff;direction:ltr;unicode-bidi:isolate}
+    .card{background:linear-gradient(145deg,rgba(24,33,45,.98),rgba(18,24,36,.98));border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,34px);box-shadow:0 22px 65px rgba(0,0,0,.25)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.field{min-width:0}.field.full{grid-column:1/-1}label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}label .req{color:var(--cyan)}.optional{color:var(--muted);font-size:12px;font-weight:400}input,select,textarea{width:100%;border:1px solid rgba(170,220,235,.2);border-radius:10px;background:#10161f;color:#f3f8fb;font:inherit;font-size:14px;padding:11px 13px;outline:none;transition:border .18s,box-shadow .18s}input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,180,216,.13)}input::placeholder,textarea::placeholder{color:#72808e}select{cursor:pointer}textarea{min-height:160px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin:5px 1px 0}.filebox{border:1px dashed rgba(170,220,235,.27);border-radius:12px;padding:12px}.consent{display:flex;gap:11px;align-items:flex-start;margin:20px 0 8px;font-size:13px;color:#dbe6eb}.consent input{accent-color:var(--accent);width:18px;height:18px;margin:5px 0 0;flex:none}.consent label{font-size:13px;font-weight:400;margin:0}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{border:1px solid transparent;border-radius:10px;padding:10px 18px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:filter .15s,transform .15s}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.primary{background:linear-gradient(120deg,#00b4d8,#087f9e);color:white;box-shadow:0 0 20px rgba(0,180,216,.18)}.secondary{background:transparent;border-color:rgba(82,226,239,.35);color:var(--cyan)}.feedback{display:none;margin-top:18px;border-radius:10px;padding:12px 14px;font-size:14px}.feedback.show{display:block}.feedback.ok{background:rgba(68,190,126,.1);border:1px solid rgba(105,226,157,.32);color:var(--success)}.feedback.err{background:rgba(255,100,100,.1);border:1px solid rgba(255,155,155,.35);color:var(--danger)}.ref{font-family:monospace;direction:ltr;unicode-bidi:isolate;display:inline-block}.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:650px){.top-inner{min-height:68px}.brand img{height:42px;width:42px}.brand b{font-size:12px}.brand small{font-size:10px}.public-tag{font-size:11px;padding:4px 9px}main{margin-top:28px}.grid{grid-template-columns:1fr;gap:14px}.field.full{grid-column:auto}.actions .btn{flex:1 1 100%}}
+  </style>
+</head>
 <body>
-<header class="site-header"><div class="header-top-row"><a href="index.html" class="brand-right"><img src="assets/iphsda_logo.webp" alt="نشان انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل"></a><div class="marquee-center"><div class="marquee-text">انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</div></div><div class="head-actions-left"><a class="login-btn-white" href="login.html">ورود کاربران</a></div></div><nav class="header-bottom-nav"><span class="pill-indicator" aria-hidden="true"></span><span class="pill-indicator" aria-hidden="true"></span><a href="index.html" class="">صفحه اصلی</a><a href="mission.html" class="">رسالت ما</a><a href="members.html" class="">اعضای انجمن</a><a href="news.html" class="">اخبار و اطلاعیه‌ها</a><a href="services.html" class="">خدمات</a><a href="cartable.html" class="active">کارتابل مکاتبات</a><a href="links.html" class="">لینک‌های مفید</a><a href="about.html" class="">درباره ما</a><a href="contact.html" class="">ارتباط با ما</a></nav></header>
-<main class="container">
-<section class="page-hero"><h1>نامه‌های خارجی</h1><p>آرشیو نامه‌ها، مصوبات و مکاتبات رسمی انجمن</p>
-<div style="margin-top:16px;"><button class="btn btn-primary" onclick="openComposer()">＋ نگارش نامه جدید با سربرگ رسمی</button></div></section>
-<div class="letters-toolbar">
-  <input id="letterSearch" type="search" placeholder="جستجو در موضوع، فرستنده، گیرنده...">
-  <select id="letterType"><option value="">همه انواع</option><option>وارده</option><option>صادره</option><option>مصوبه</option></select>
-</div>
-<section id="lettersList" class="letters-grid"></section>
-</main>
-<footer class="site-footer"><div><b>با هم برای سلامت جامعه</b><p>انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</p><p>اردبیل، مبارزان، خیابان داروپخش، روبروی درمانگاه شهید بهشتی، شرکت پخش البرز</p></div><div class="socials"><a href="#"><svg viewBox="0 0 24 24"><path d="M21 4 18 20l-7-4-3 3 .5-5L18 7 6 14 1 12 21 4Z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1-2-2ZM3.5 9h3v12h-3zM9 9h3v2h.1A3 3 0 0 1 15 9c3 0 4 2 4 5v7h-3v-6c0-2 0-3-2-3s-2 2-2 3v6H9z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 8c1-1 2 1 2 2l-1 1c1 2 2 3 4 4l1-1c1 0 3 1 2 2-1 2-3 2-6 0-3-2-5-6-2-8Z"/></svg></a></div></footer>
-
-<!-- Composer modal -->
-<div id="composerModal" class="cmp-overlay">
-  <div class="cmp-box">
-    <h2>نگارش نامه جدید اداری</h2>
-    <form id="letterForm" onsubmit="return composeSubmit(event)">
-      <div class="cmp-grid">
-        <div><label>شماره نامه</label><input id="fNo" required placeholder="۱۴۰۴/..."></div>
-        <div><label>تاریخ نامه (شمسی)</label><input id="fDate" required></div>
-        <div><label>نوع نامه</label><select id="fType"><option>صادره</option><option>وارده</option><option>مصوبه</option></select></div>
-        <div><label>انتخاب سریع مخاطب</label>
-          <select onchange="if(this.value)document.getElementById('fReceiver').value=this.value;">
-            <option value="">-- انتخاب از لیست --</option>
-            <option value="معاونت محترم غذا و دارو دانشگاه علوم پزشکی اردبیل">معاونت غذا و دارو اردبیل</option>
-            <option value="دانشگاه علوم پزشکی و خدمات بهداشتی درمانی استان اردبیل">دانشگاه علوم پزشکی اردبیل</option>
-            <option value="شرکت‌های پخش دارویی عضو انجمن">شرکت‌های پخش عضو انجمن</option>
-            <option value="انجمن داروسازان و داروخانه‌های استان اردبیل">انجمن داروسازان استان</option>
-          </select></div>
-        <div class="full"><label>مخاطب (گیرنده نهایی)</label><input id="fReceiver" required placeholder="نام شخص یا سازمان گیرنده..."></div>
-        <div class="full"><label>موضوع نامه</label><input id="fSubject" required placeholder="موضوع اصلی نامه..."></div>
-        <div class="full"><label>متن کامل نامه</label><textarea id="fBody" required placeholder="متن نامه را در اینجا وارد کنید..."></textarea></div>
+  <header class="top"><div class="top-inner">
+    <a class="brand" href="index.html" aria-label="بازگشت به وبگاه انجمن"><img src="assets/iphsda_logo.webp" alt="نشان انجمن"><span><b>انجمن صنفی کارفرمایی</b><small>شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</small></span></a>
+    <span class="public-tag">دسترسی عمومی · خارج از پرتال</span>
+  </div></header>
+  <main>
+    <section class="intro"><div class="eyebrow">درگاه مکاتبات برون‌سازمانی</div><h1>ارسال مکاتبه و درخواست مفاصا حساب</h1><p>این صفحه برای اشخاص و سازمان‌هایی است که بدون ورود به پرتال قصد آماده‌سازی درخواست برای انجمن را دارند.</p></section>
+    <aside class="notice"><strong>نحوهٔ ارسال:</strong> این وبگاه ایستا است و اطلاعات را دریافت یا ذخیره نمی‌کند. با زدن دکمهٔ «بازکردن برنامهٔ ایمیل»، برنامهٔ ایمیل شما برای ارسال باز می‌شود؛ ارسال فقط پس از اقدام شما در همان برنامه انجام می‌شود. فایل پیوست بارگذاری یا ارسال خودکار نمی‌شود و باید آن را دستی به ایمیل اضافه کنید.
+      <div class="config">ایمیل مقصد (قابل تنظیم در کد صفحه): <code id="emailDisplay">تنظیم نشده</code></div>
+    </aside>
+    <form class="card" id="letterForm" novalidate>
+      <div class="grid">
+        <div class="field"><label for="fullName">نام و نام خانوادگی <span class="req">*</span></label><input id="fullName" name="fullName" autocomplete="name" required maxlength="120" placeholder="نام کامل درخواست‌دهنده"></div>
+        <div class="field"><label for="organization">نام سازمان / شرکت <span class="req">*</span></label><input id="organization" name="organization" autocomplete="organization" required maxlength="160" placeholder="نام شرکت یا سازمان"></div>
+        <div class="field"><label for="identity">کد ملی یا شناسهٔ ثبت <span class="req">*</span></label><input id="identity" name="identity" required maxlength="40" autocomplete="off" placeholder="کد ملی یا شمارهٔ ثبت"></div>
+        <div class="field"><label for="phone">شماره تلفن <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="مثلاً ۰۹۱۲۱۲۳۴۵۶۷"></div>
+        <div class="field"><label for="email">ایمیل <span class="optional">(اختیاری)</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="name@example.com"></div>
+        <div class="field"><label for="type">نوع مکاتبه <span class="req">*</span></label><select id="type" name="type" required><option value="">انتخاب کنید</option><option>درخواست مفاصا حساب</option><option>سایر مکاتبات</option></select></div>
+        <div class="field full"><label for="subject">موضوع <span class="req">*</span></label><input id="subject" name="subject" required maxlength="180" placeholder="موضوع درخواست را بنویسید"></div>
+        <div class="field full"><label for="message">شرح درخواست <span class="req">*</span></label><textarea id="message" name="message" required minlength="10" maxlength="10000" placeholder="جزئیات درخواست خود را کامل بنویسید (حداقل ۱۰ نویسه)"></textarea></div>
+        <div class="field full"><label for="attachment">فایل پیوست <span class="optional">(اختیاری؛ ارسال خودکار نمی‌شود)</span></label><div class="filebox"><input id="attachment" name="attachment" type="file"><p class="hint">پس از بازشدن برنامهٔ ایمیل، فایل انتخاب‌شده را دستی به پیام پیوست کنید. این صفحه فایل را بارگذاری نمی‌کند.</p></div></div>
       </div>
-      <div class="cmp-actions">
-        <button type="submit" class="btn btn-primary">پیش‌نمایش و چاپ با سربرگ و امضا</button>
-        <button type="button" class="btn btn-ghost" onclick="closeComposer()">انصراف</button>
-      </div>
+      <div class="consent"><input id="consent" name="consent" type="checkbox" required><label for="consent">تأیید می‌کنم اطلاعات واردشده برای تهیهٔ متن مکاتبه در برنامهٔ ایمیل من استفاده شود و می‌دانم این صفحه آن را ارسال یا ذخیره نمی‌کند. <span class="req">*</span></label></div>
+      <div class="actions"><button class="btn primary" type="submit">بازکردن برنامهٔ ایمیل</button><button class="btn secondary" type="button" id="copyBtn">کپی متن ایمیل</button><button class="btn secondary" type="button" id="downloadBtn">دانلود متن ایمیل</button></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
     </form>
-  </div>
-</div>
-
-<!-- Official letter print modal -->
-<div id="printModal" class="cmp-overlay">
-  <div class="cmp-box" style="max-width:900px;background:transparent;box-shadow:none;padding:0;">
-    <div id="offLetter" class="off-letter">
-      <button class="ol-close" onclick="closePrint()" title="بستن">&times;</button>
-      <div class="ol-head">
-        <img src="assets/iphsda_logo.webp" alt="لوگوی انجمن">
-        <div class="mid">
-          <h2>انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</h2>
-          <p>Association of Iranian Pharmaceutical and Dietary Supplement Distributors — Ardabil</p>
-        </div>
-        <div style="width:78px;"></div>
-      </div>
-      <div class="ol-meta">
-        <span>شماره: <span id="pNo">—</span></span>
-        <span>تاریخ: <span id="pDate">—</span></span>
-        <span>پیوست: ندارد</span>
-      </div>
-      <div class="ol-to"><b>مخاطب:</b> <span id="pReceiver">—</span></div>
-      <div class="ol-subject"><b>موضوع:</b> <span id="pSubject">—</span></div>
-      <div class="ol-body" id="pBody"></div>
-      <div class="ol-salute">با احترام،</div>
-      <div class="ol-sign">
-        <img src="assets/signature.webp" alt="امضا" id="pSignImg">
-        <div class="nm">حسین قدیمی</div>
-        <div class="tt">دبیر انجمن استان اردبیل</div>
-      </div>
-      <div class="ol-foot">آدرس: اردبیل – مبارزان – خیابان داروپخش – روبروی درمانگاه شهید بهشتی – شرکت پخش البرز | کدپستی: ۵۶۱۶۶۹۴۷۶۱ | ایمیل: phasda.ardabil@gmail.com</div>
-    </div>
-    <div style="display:flex;gap:12px;justify-content:flex-start;margin-top:18px;">
-      <button class="btn btn-primary" onclick="window.print()">چاپ نامه</button>
-      <button class="btn btn-ghost" style="background:#fff;" onclick="closePrint()">بستن</button>
-    </div>
-  </div>
-</div>
-
-<script>
-let LETTERS=[];
-const FALLBACK = {
-  number:'—', no:'—', date:'—', sender:'—', receiver:'—',
-  subject:'بدون موضوع', summary:'', status:'', type:'صادره', file:null
-};
-function val(l,keys,fb){ for(const k of keys){ const v=l?l[k]:null; if(v!==undefined&&v!==null&&String(v).trim()!=='')return String(v);} return fb; }
-function esc(s){ const d=document.createElement('div'); d.textContent=(s===undefined||s===null)?'':String(s); return d.innerHTML; }
-function noUnd(s){ const t=String(s==null?'':s).trim(); return (!t||t==='undefined'||t==='null')?'—':t; }
-
-async function loadLetters(){
-  try{ LETTERS = await (await fetch('assets/letters.json')).json(); }
-  catch(e){ LETTERS=[]; }
-  if(!Array.isArray(LETTERS)) LETTERS=[];
-  render();
-}
-function render(){
-  const q=document.getElementById('letterSearch').value.trim();
-  const ty=document.getElementById('letterType').value;
-  const list=document.getElementById('lettersList'); list.innerHTML='';
-  LETTERS.filter(l=>(!ty||noUnd(l.type)===ty)&&(!q||[l.subject,l.sender,l.receiver,l.summary,l.number].map(noUnd).join(' ').includes(q)))
-   .forEach(l=>{
-    const number=noUnd(val(l,['number','no'],'—'));
-    const date=noUnd(val(l,['date'],'—'));
-    const sender=noUnd(val(l,['sender','from'],'—'));
-    const receiver=noUnd(val(l,['receiver','recipient','to'],'—'));
-    const subject=noUnd(val(l,['subject','title'],'بدون موضوع'));
-    const summary=noUnd(val(l,['summary','body','text'],''));
-    const type=noUnd(val(l,['type'],'صادره'));
-    const status=noUnd(val(l,['status'],''));
-    const file=(l&&typeof l.file==='string'&&l.file.trim()!=='')?l.file:null;
-    const badge=type==='وارده'?'in':(type==='صادره'?'out':'decree');
-    const card=document.createElement('article'); card.className='letter-card';
-    card.innerHTML=`<div class="letter-head"><span class="badge badge-${badge}">${esc(type)}</span><span class="letter-no">شماره: ${esc(number)}</span><span class="letter-date">${esc(date)}</span></div>
-    <h3>${esc(subject)}</h3>
-    <p class="letter-meta"><strong>فرستنده:</strong> ${esc(sender)}<br><strong>گیرنده:</strong> ${esc(receiver)}</p>
-    <p class="letter-summary">${esc(summary)}</p>
-    <div class="letter-foot"><span class="status">${esc(status)}</span>
-      <button class="btn btn-ghost btn-sm" onclick='openPrint(${JSON.stringify(number)},${JSON.stringify(date)},${JSON.stringify(receiver)},${JSON.stringify(subject)},${JSON.stringify(summary)})'>مشاهده با سربرگ و چاپ</button>
-      ${file?`<a class="btn btn-sm btn-primary" href="${esc(file)}" target="_blank">دانلود فایل</a>`:''}</div>`;
-    list.appendChild(card);
-  });
-  if(!list.children.length) list.innerHTML='<p class="empty">موردی یافت نشد.</p>';
-}
-
-/* ---------- Composer ---------- */
-function openComposer(){ document.getElementById('composerModal').classList.add('open'); try{ document.getElementById('fDate').value=new persianDate().format('YYYY/MM/DD'); }catch(e){ const d=new Date(); document.getElementById('fDate').value=d.toLocaleDateString('fa-IR'); } }
-function closeComposer(){ document.getElementById('composerModal').classList.remove('open'); }
-function composeSubmit(ev){
-  ev.preventDefault();
-  const l={ id:'LET-'+Date.now(),
-    number:document.getElementById('fNo').value.trim(),
-    date:document.getElementById('fDate').value.trim(),
-    type:document.getElementById('fType').value,
-    sender:'حسین قدیمی (دبیر انجمن استان اردبیل)',
-    receiver:document.getElementById('fReceiver').value.trim(),
-    subject:document.getElementById('fSubject').value.trim(),
-    summary:document.getElementById('fBody').value.trim(),
-    status:'پیش‌نویس', file:null };
-  LETTERS.unshift(l); render(); closeComposer();
-  openPrint(noUnd(l.number),noUnd(l.date),noUnd(l.receiver),noUnd(l.subject),noUnd(l.summary));
-  return false;
-}
-
-/* ---------- Official letter print view ---------- */
-function openPrint(number,date,receiver,subject,body){
-  document.getElementById('pNo').innerText=noUnd(number);
-  document.getElementById('pDate').innerText=noUnd(date);
-  document.getElementById('pReceiver').innerText=noUnd(receiver);
-  document.getElementById('pSubject').innerText=noUnd(subject);
-  document.getElementById('pBody').innerText=(body&&noUnd(body)!=='—')?body:'';
-  document.getElementById('printModal').classList.add('open');
-  window.scrollTo(0,0);
-}
-function closePrint(){ document.getElementById('printModal').classList.remove('open'); }
-
-document.addEventListener('DOMContentLoaded',()=>{
-  document.getElementById('letterSearch').addEventListener('input',render);
-  document.getElementById('letterType').addEventListener('change',render);
-  document.getElementById('composerModal').addEventListener('click',e=>{ if(e.target.id==='composerModal')closeComposer(); });
-  document.getElementById('printModal').addEventListener('click',e=>{ if(e.target.id==='printModal')closePrint(); });
-  loadLetters();
-});
-</script>
+    <p class="foot">شناسهٔ مرجع فقط برای درج در متن مکاتبه ساخته می‌شود و رسید ثبت یا تأیید دریافت درخواست نیست.</p>
+  </main>
+  <script>
+  (()=>{
+    // CONFIGURATION: replace this address with the association's monitored email before deployment.
+    const ASSOCIATION_EMAIL = 'CONFIGURE_ASSOCIATION_EMAIL@example.com';
+    const form=document.getElementById('letterForm'), feedback=document.getElementById('feedback');
+    document.getElementById('emailDisplay').textContent=ASSOCIATION_EMAIL;
+    let reference='';
+    function show(text,kind){feedback.textContent=text;feedback.className='feedback show '+kind;}
+    function getRef(){if(!reference){const d=new Date(),date=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');let n='';if(window.crypto&&crypto.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);n=(a[0]%1679616).toString(36).toUpperCase().padStart(4,'0')}else n=Math.random().toString(36).slice(2,8).toUpperCase();reference='SD-'+date+'-'+n;}return reference;}
+    function compose(){
+      if(!form.reportValidity())return null;
+      const recipient=ASSOCIATION_EMAIL.trim();
+      if(!recipient||recipient.includes('CONFIGURE_')||!/^\S+@\S+\.\S+$/.test(recipient)){show('ایمیل مقصد هنوز در کد این صفحه تنظیم نشده است. مدیر وبگاه باید مقدار ASSOCIATION_EMAIL را پیش از انتشار اصلاح کند.', 'err');return null;}
+      const data=new FormData(form),ref=getRef();
+      const body=[`شناسه مرجع: ${ref}`,`نوع مکاتبه: ${data.get('type')}`,`نام و نام خانوادگی: ${data.get('fullName')}`,`سازمان / شرکت: ${data.get('organization')}`,`کد ملی / شناسه ثبت: ${data.get('identity')}`,`تلفن: ${data.get('phone')}`,`ایمیل: ${data.get('email')||'—'}`,`موضوع: ${data.get('subject')}`,'','شرح درخواست:',data.get('message'),'','توجه: در صورت نیاز، فایل پیوست را به این ایمیل اضافه کنید.'].join('\n');
+      return {ref,subject:`[${ref}] ${data.get('type')} - ${data.get('subject')}`,body,to:recipient};
+    }
+    function encodedMail(m){return 'mailto:'+m.to+'?subject='+encodeURIComponent(m.subject)+'&body='+encodeURIComponent(m.body);}
+    form.addEventListener('submit',e=>{e.preventDefault();const m=compose();if(!m)return;show(`برنامهٔ ایمیل برای آماده‌سازی پیام باز می‌شود. بررسی کنید ایمیل باز شده و فایل پیوست را دستی اضافه کنید؛ درخواست تا زمانی که خودتان در برنامهٔ ایمیل ارسال نکنید، به انجمن نرسیده است. شناسهٔ مرجع: ${m.ref}`,'ok');try{window.location.href=encodedMail(m)}catch(err){show(`بازکردن برنامهٔ ایمیل ممکن نشد. از کپی یا دانلود متن استفاده کنید. شناسهٔ مرجع: ${m.ref}`,'err')}});
+    document.getElementById('copyBtn').addEventListener('click',async()=>{const m=compose();if(!m)return;const text=`به: ${m.to}\nموضوع: ${m.subject}\n\n${m.body}`;try{await navigator.clipboard.writeText(text);show(`متن ایمیل کپی شد. آن را در برنامهٔ ایمیل خود وارد و ارسال کنید؛ فایل را دستی پیوست کنید. شناسهٔ مرجع: ${m.ref}`,'ok')}catch(e){show('دسترسی کپی در این مرورگر ممکن نشد؛ از دکمهٔ دانلود متن ایمیل استفاده کنید.','err')}});
+    document.getElementById('downloadBtn').addEventListener('click',()=>{const m=compose();if(!m)return;const text=`به: ${m.to}\nموضوع: ${m.subject}\n\n${m.body}`;const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`${m.ref}-email.txt`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);show(`متن ایمیل دانلود شد. آن را در برنامهٔ ایمیل خود ارسال کنید و فایل را دستی پیوست کنید. شناسهٔ مرجع: ${m.ref}`,'ok')});
+  })();
+  </script>
 </body></html>
