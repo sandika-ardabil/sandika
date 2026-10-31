@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ثبت نامه بیرونی | انجمن پخش دارو اردبیل</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="auth.js"></script></head>
+<body class="">
+<header class="site-header"><div class="header-top-row"><a href="index.html" class="brand-right"><img src="assets/iphsda_logo.webp" alt="لوگو انجمن"></a><div class="marquee-center"><div class="marquee-text">انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</div></div><div class="head-actions-left"><a class="login-btn-white" href="login.html">ورود کاربران</a></div></div><nav class="header-bottom-nav"><a href="index.html" class="">صفحه اصلی</a><a href="mission.html" class="">رسالت ما</a><a href="members.html" class="">اعضای انجمن</a><a href="news.html" class="">اخبار و اطلاعیه‌ها</a><a href="services.html" class="">خدمات</a><a href="cartable.html" class="active">کارتابل مکاتبات</a><a href="links.html" class="">لینک‌های مفید</a><a href="about.html" class="">درباره ما</a><a href="contact.html" class="">ارتباط با ما</a></nav></header>
+<main class="inner-page">
+<section class="page-hero"><p class="eyebrow">دبیرخانه الکترونیک</p><h1>ثبت نامه بیرونی</h1></section>
+<section class="container content-section">
+  <div class="glass-card" style="max-width:860px;margin:0 auto;padding:28px;">
+    <h2 style="margin:0 0 6px;">فرم ثبت نامه (نسخه نمایشی - ذخیره محلی)</h2>
+    <p style="color:#4a5c70;font-size:.9rem;">اطلاعات صرفاً در همین مرورگر (localStorage) ذخیره می‌شود و در کارتابل مکاتبات نمایش داده خواهد شد.</p>
+    <form id="extForm" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div><label>شماره نامه *</label><input type="text" id="fNumber" required></div>
+        <div><label>تاریخ *</label><input type="date" id="fDate" required></div>
+        <div><label>نوع نامه *</label><select id="fType"><option value="وارده">وارده</option><option value="صادره">صادره</option><option value="مصوبه">مصوبه</option></select></div>
+        <div><label>دسته (اختیاری)</label><input type="text" id="fCategory" value="عمومی"></div>
+        <div><label>فرستنده *</label><input type="text" id="fSender" required></div>
+        <div><label>گیرنده *</label><input type="text" id="fReceiver" value="دبیرخانه انجمن" required></div>
+        <div style="grid-column:1/-1;"><label>موضوع *</label><input type="text" id="fSubject" required></div>
+        <div style="grid-column:1/-1;"><label>شرح / خلاصه *</label><textarea id="fSummary" required style="min-height:140px;resize:vertical;"></textarea></div>
+        <div><label>اولویت *</label><select id="fPriority"><option value="عادی">عادی</option><option value="فوری">فوری</option><option value="خیلی فوری">خیلی فوری</option></select></div>
+        <div><label>پیوست (PDF/Word/تصویر - حداکثر ۲ مگابایت)</label><input type="file" id="fAttachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"></div>
+        <div style="grid-column:1/-1;"><label>یادداشت (اختیاری)</label><textarea id="fNote" style="min-height:70px;resize:vertical;"></textarea></div>
+      </div>
+      <div id="extError" style="display:none;background:#fdecea;color:#c62828;border:1px solid #f5c6c2;border-radius:8px;padding:10px 14px;margin-top:14px;font-size:.88rem;"></div>
+      <div id="extSuccess" style="display:none;background:#eafaf2;color:#0e7c66;border:1px solid #bfe9d8;border-radius:8px;padding:14px;margin-top:14px;font-size:.92rem;line-height:2;"></div>
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+        <button type="submit" class="btn btn-primary">ثبت نامه</button>
+        <button type="button" class="btn btn-ghost" id="clearBtn">پاک کردن فرم</button>
+        <a href="cartable.html" class="btn btn-ghost">مشاهده کارتابل</a>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div><b>با هم برای سلامت جامعه</b><p>انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل</p><p>اردبیل، مبارزان، خیابان داروپخش، روبروی درمانگاه شهید بهشتی، شرکت پخش البرز</p></div><div class="socials"><a href="#"><svg viewBox="0 0 24 24"><path d="M21 4 18 20l-7-4-3 3 .5-5L18 7 6 14 1 12 21 4Z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><path d="M5 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3.5 9h3v12h-3zM9 9h3v2h.1A3 3 0 0 1 15 9c3 0 4 2 4 5v7h-3v-6c0-2 0-3-2-3s-2 2-2 3v6H9z"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a><a href="#"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 8c1-1 2 1 2 2l-1 1c1 2 2 3 4 4l1-1c1 0 3 1 2 2-1 2-3 2-6 0-3-2-5-6-2-8Z"/></svg></a></div></footer>
+<script src="app.js" defer></script>
+<script>
+(function(){
+  const KEY='sandika_external_letters';
+  const MAX=2*1024*1024;
+  const form=document.getElementById('extForm');
+  const err=document.getElementById('extError');
+  const ok=document.getElementById('extSuccess');
+  function showErr(msg){ err.textContent=msg; err.style.display='block'; ok.style.display='none'; err.scrollIntoView({behavior:'smooth',block:'center'}); }
+  function showOk(html){ ok.innerHTML=html; ok.style.display='block'; err.style.display='none'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
+  function v(id){ return document.getElementById(id); }
+  v('fDate').value=new Date().toISOString().slice(0,10);
+  v('clearBtn').addEventListener('click',function(){
+    form.reset(); err.style.display='none'; ok.style.display='none';
+    v('fCategory').value='عمومی'; v('fReceiver').value='دبیرخانه انجمن';
+    v('fDate').value=new Date().toISOString().slice(0,10);
+  });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    const number=v('fNumber').value.trim();
+    const date=v('fDate').value;
+    const sender=v('fSender').value.trim();
+    const receiver=v('fReceiver').value.trim();
+    const subject=v('fSubject').value.trim();
+    const summary=v('fSummary').value.trim();
+    const note=v('fNote').value.trim();
+    const category=v('fCategory').value.trim()||'عمومی';
+    if(!number) return showErr('خطا: وارد کردن شماره نامه الزامی است.');
+    if(!date) return showErr('خطا: انتخاب تاریخ نامه الزامی است.');
+    if(!sender) return showErr('خطا: وارد کردن نام فرستنده الزامی است.');
+    if(!receiver) return showErr('خطا: وارد کردن گیرنده الزامی است.');
+    if(!subject) return showErr('خطا: وارد کردن موضوع نامه الزامی است.');
+    if(!summary) return showErr('خطا: وارد کردن شرح/خلاصه نامه الزامی است.');
+    const fileInput=v('fAttachment');
+    const f=fileInput.files&&fileInput.files[0]?fileInput.files[0]:null;
+    if(f){
+      const extOk=/\.(pdf|doc|docx|jpe?g|png|webp)$/i.test(f.name);
+      if(!extOk) return showErr('خطا: فرمت پیوست مجاز نیست (فقط PDF/DOC/DOCX/JPG/JPEG/PNG/WEBP).');
+      if(f.size>MAX) return showErr('خطا: حجم پیوست بیش از ۲ مگابایت است.');
+    }
+    const now=Date.now();
+    const ymd=new Date().toISOString().slice(0,10).replace(/-/g,'');
+    const finish=function(attData){
+      const rec={
+        id:'EXT-'+now,
+        number:number, date:date, type:v('fType').value, category:category,
+        sender:sender, receiver:receiver, subject:subject, summary:summary,
+        status:'ثبت اولیه', cartable_status:'ورودی دبیرخانه',
+        priority:v('fPriority').value||'عادی', assignee:'دبیرخانه',
+        tracking_code:'EXT-'+ymd+'-'+String(now).slice(-4),
+        referred_to:'', internal_note:note, file:null,
+        attachmentName:f?f.name:null, attachmentType:f?f.type||'':null, attachmentSize:f?f.size:null,
+        attachmentData:attData||null,
+        createdAt:new Date(now).toISOString(), source:'external'
+      };
+      let arr=[];
+      try{ const a=JSON.parse(localStorage.getItem(KEY)||'[]'); if(Array.isArray(a)) arr=a; }catch(e){}
+      arr.unshift(rec);
+      try{ localStorage.setItem(KEY, JSON.stringify(arr)); }
+      catch(e){ return showErr('خطا: ذخیره‌سازی محلی ناموفق بود (حجم پیوست زیاد است؟)'); }
+      showOk('✅ نامه با موفقیت ثبت شد.<br>کد رهگیری: <b>'+rec.tracking_code+'</b><br><a class="btn btn-primary btn-sm" style="margin-top:8px;" href="cartable.html">رفتن به کارتابل مکاتبات</a>');
+      form.reset(); v('fCategory').value='عمومی'; v('fReceiver').value='دبیرخانه انجمن';
+      v('fDate').value=new Date().toISOString().slice(0,10);
+    };
+    if(f){
+      const r=new FileReader();
+      r.onload=function(){ finish(r.result); };
+      r.onerror=function(){ showErr('خطا: خواندن فایل پیوست ناموفق بود.'); };
+      r.readAsDataURL(f);
+    } else { finish(null); }
+  });
+})();
+</script>
+</body>
+</html>
