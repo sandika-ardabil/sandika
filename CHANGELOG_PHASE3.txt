@@ -1,0 +1,4 @@
+v38 Cinematic video integration
+- Added assets/hero_cinematic.mp4 as a muted, looping, inline hero background.
+- Added dark cinematic overlay with existing glass story cards and controls above the video.
+- Retained the still-image fallback for reduced-motion preferences.
