@@ -1,58 +1,45 @@
-/* Shared Sandika authentication and one-way login gate. */
+/* Sandika login flow: shared client-side gate */
 (function () {
   'use strict';
-  var USER_KEY = 'sandika_user';
-  var AUTH_KEY = 'sandika_authenticated';
+  var KEY = 'sandika_user';
   var LOGIN = 'login.html';
-
-  function readFrom(storage, key) {
-    try { return storage.getItem(key); } catch (e) { return null; }
-  }
-  function getValue(key) {
-    return readFrom(window.sessionStorage, key) || readFrom(window.localStorage, key);
-  }
+  var INTRO = 'intro.html';
   function readUser() {
-    if (getValue(AUTH_KEY) !== '1') return null;
-    var raw = getValue(USER_KEY);
-    if (raw === 'admin') return { username: 'admin', role: 'manager' };
+    var raw = null;
+    try { raw = sessionStorage.getItem(KEY) || localStorage.getItem(KEY); } catch (e) {}
     if (!raw) return null;
     try {
       var user = JSON.parse(raw);
       return user && typeof user.username === 'string' && user.username.trim() ? user : null;
     } catch (e) { return null; }
   }
-  function setBoth(key, value) {
-    try { window.sessionStorage.setItem(key, value); } catch (e) {}
-    try { window.localStorage.setItem(key, value); } catch (e) {}
+  function clearUser() {
+    try { sessionStorage.removeItem(KEY); } catch (e) {}
+    try { localStorage.removeItem(KEY); } catch (e) {}
   }
   function saveUser(user) {
-    setBoth(AUTH_KEY, '1');
-    setBoth(USER_KEY, (user && user.username) || 'admin');
+    var raw = JSON.stringify(user);
+    try { sessionStorage.setItem(KEY, raw); } catch (e) {}
+    try { localStorage.setItem(KEY, raw); } catch (e) {}
   }
-  function clearUser() {
-    [window.sessionStorage, window.localStorage].forEach(function (storage) {
-      try { storage.removeItem(USER_KEY); storage.removeItem(AUTH_KEY); } catch (e) {}
-    });
-  }
-
   var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   var user = readUser();
-  window.SandikaAuth = { read: readUser, save: saveUser, clear: clearUser, isLoggedIn: function () { return !!readUser(); } };
-
-  // login.html and intro.html are public; every other page has exactly one
-  // unauthenticated destination, avoiding intro/login/index redirect cycles.
-  if (page !== LOGIN && page !== 'intro.html' && !user) {
-    location.replace(LOGIN);
+  window.SandikaAuth = { read: readUser, save: saveUser, clear: clearUser, isLoggedIn: function(){ return !!readUser(); } };
+  if (page !== LOGIN && page !== INTRO && !user) {
+    var target = location.pathname.split('/').pop() || 'index.html';
+    if (location.search) target += location.search;
+    location.replace(LOGIN + '?return=' + encodeURIComponent(target));
     return;
   }
-  if (page === LOGIN && user) {
+  if (page === LOGIN && user && new URLSearchParams(location.search).get('force') !== '1') {
     location.replace('index.html');
     return;
   }
   document.addEventListener('DOMContentLoaded', function () {
     var action = document.querySelector('.login-btn-white');
     if (!action) return;
-    if (readUser()) {
+    var current = readUser();
+    if (current) {
       action.textContent = 'خروج کاربران';
       action.href = '#logout';
       action.onclick = function (event) {
