@@ -1,4 +1,6 @@
-v38 Cinematic video integration
-- Added assets/hero_cinematic.mp4 as a muted, looping, inline hero background.
-- Added dark cinematic overlay with existing glass story cards and controls above the video.
-- Retained the still-image fallback for reduced-motion preferences.
+فاز ۳ — ورود شیشه‌ای و جریان OTP نمایشی
+- بازطراحی login.html با پالت آبی آینده‌نگر، شیشه‌گرایی، رابط responsive و پشتیبانی RTL.
+- افزودن ورود با ایمیل/موبایل و رمز عبور، نمایش/پنهان‌سازی رمز و خطاهای فرم.
+- افزودن OTP نمایشی چهاررقمی: درخواست، نمایش کد، تأیید، شمارش انقضا (۵ دقیقه)، تلاش محدود و ارسال مجدد.
+- حفظ کلیدهای storage سازگار با auth.js و حفظ رمز آزمایشی موجود admin/admin.
+- شبیه‌سازی OTP فقط برای توسعه/دمو است؛ ارسال واقعی کد در این نسخه انجام نمی‌شود.

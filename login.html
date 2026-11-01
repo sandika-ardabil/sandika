@@ -1,114 +1,48 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#061327">
-  <meta name="description" content="ورود امن به سامانه انجمن صنفی کارفرمایی شرکت‌های پخش دارو و مکمل‌های انسانی استان اردبیل">
-  <title>ورود به حساب کاربری | انجمن صنفی اردبیل</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="auth.js"></script>
-  <style>
-    :root{color-scheme:dark;--ice:#8cecff;--blue:#27b9ff;--glass:rgba(9,27,54,.70)}
-    *{box-sizing:border-box}
-    html,body{min-height:100%;margin:0}
-    body.login-page{min-height:100vh;overflow-x:hidden;position:relative;display:grid;place-items:center;padding:34px 18px;color:#f3fbff;font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.75;background:#061327}
-    .login-backdrop{position:fixed;inset:0;z-index:-3;background:linear-gradient(115deg,rgba(3,11,29,.90),rgba(5,24,53,.64) 50%,rgba(4,13,35,.91)),url('assets/hero_bg_clean.webp') center/cover no-repeat}
-    .login-backdrop:before,.login-backdrop:after{content:"";position:absolute;pointer-events:none}
-    .login-backdrop:before{inset:-20%;background:radial-gradient(ellipse at 18% 22%,rgba(0,180,255,.28),transparent 26%),radial-gradient(ellipse at 82% 73%,rgba(31,97,255,.27),transparent 30%),radial-gradient(circle at 50% 12%,rgba(109,229,255,.13),transparent 24%);filter:blur(8px)}
-    .login-backdrop:after{inset:0;background:linear-gradient(transparent 65%,rgba(7,37,76,.3)),repeating-linear-gradient(0deg,transparent 0 64px,rgba(117,215,255,.025) 65px),repeating-linear-gradient(90deg,transparent 0 64px,rgba(117,215,255,.025) 65px)}
-    .ambient-orb{position:fixed;border-radius:50%;pointer-events:none;filter:blur(1px);z-index:-1}
-    .orb-one{width:210px;height:210px;top:9%;left:10%;background:radial-gradient(circle at 34% 28%,#c0f9ff 0,rgba(48,177,255,.62) 3%,rgba(31,115,255,.15) 20%,transparent 68%);box-shadow:0 0 75px rgba(32,149,255,.18)}
-    .orb-two{width:290px;height:290px;right:3%;bottom:4%;background:radial-gradient(circle at 37% 30%,rgba(169,244,255,.7),rgba(35,129,255,.15) 13%,transparent 66%)}
-    .login-scene{position:relative;width:min(100%,470px);padding:1px;border-radius:27px;background:linear-gradient(145deg,rgba(152,232,255,.72),rgba(62,153,255,.22) 30%,rgba(154,223,255,.16) 68%,rgba(45,174,255,.6));box-shadow:0 28px 90px rgba(0,0,0,.49),0 0 55px rgba(20,145,255,.2);isolation:isolate}
-    .login-scene:before{content:"";position:absolute;z-index:-1;inset:12px -19px -17px;border:1px solid rgba(92,194,255,.18);border-radius:34px;transform:perspective(600px) rotateX(5deg);box-shadow:0 15px 45px rgba(0,91,208,.13)}
-    .login-card{position:relative;overflow:hidden;border:1px solid rgba(208,246,255,.18);border-radius:26px;padding:34px 38px 28px;background:linear-gradient(145deg,rgba(13,36,69,.82),rgba(6,19,43,.79));backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);box-shadow:inset 0 1px rgba(255,255,255,.11),inset 0 0 38px rgba(46,154,255,.07)}
-    .login-card:before{content:"";position:absolute;top:-130px;left:-90px;width:320px;height:230px;background:radial-gradient(ellipse,rgba(70,193,255,.17),transparent 68%);pointer-events:none}
-    .brand-mark{position:relative;width:70px;height:70px;margin:0 auto 13px;border:1px solid rgba(141,228,255,.44);border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(126,229,255,.16),rgba(24,89,171,.23));box-shadow:0 0 32px rgba(37,168,255,.2),inset 0 0 18px rgba(157,229,255,.08);transform:rotate(-2deg)}
-    .brand-mark img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 0 9px rgba(87,215,255,.55));transform:rotate(2deg)}
-    .login-header{text-align:center;position:relative;margin-bottom:25px}
-    .login-header h1{font-size:clamp(20px,5vw,24px);line-height:1.6;margin:0 0 4px;color:#f3fbff;font-weight:700;text-shadow:0 0 22px rgba(95,205,255,.22)}
-    .login-header p{font-size:13px;margin:0;color:#a6c4d8;font-weight:400}
-    .form-group{margin-bottom:16px}
-    .form-group label{display:block;margin:0 0 7px;color:#d9edf8;font-size:13px;font-weight:500}
-    .field-shell{position:relative}
-    .field-icon{position:absolute;right:15px;top:50%;width:19px;height:19px;transform:translateY(-50%);color:#7dcff4;pointer-events:none}
-    .field-shell input{width:100%;height:53px;padding:0 46px 0 45px;border:1px solid rgba(161,210,239,.19);border-radius:13px;background:rgba(3,17,37,.54);color:#f5fbff;font:400 14px Vazirmatn,Tahoma,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
-    .field-shell input::placeholder{color:#82a3bb;opacity:1}
-    .field-shell input:focus{border-color:rgba(75,200,255,.78);background:rgba(5,24,48,.79);box-shadow:0 0 0 3px rgba(28,165,255,.12),0 0 23px rgba(29,157,255,.13)}
-    .toggle-password{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:31px;height:31px;border:0;border-radius:9px;background:transparent;color:#83b3d1;display:grid;place-items:center;cursor:pointer}
-    .toggle-password:hover,.toggle-password:focus-visible{color:#b3f2ff;background:rgba(86,183,255,.1);outline:none}
-    .login-btn-submit{width:100%;height:52px;margin-top:4px;border:1px solid rgba(194,248,255,.38);border-radius:13px;color:white;background:linear-gradient(105deg,#1687f8,#14b9e9 54%,#287cf3);font:700 15px Vazirmatn,Tahoma,sans-serif;cursor:pointer;box-shadow:0 9px 26px rgba(0,133,255,.28),inset 0 1px rgba(255,255,255,.34);transition:transform .2s,box-shadow .2s,filter .2s}
-    .login-btn-submit:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 12px 31px rgba(0,151,255,.38),inset 0 1px rgba(255,255,255,.4)}
-    .login-btn-submit:focus-visible,.social-btn:focus-visible,.signup-link:focus-visible{outline:2px solid #a5efff;outline-offset:3px}
-    .submit-content{display:flex;align-items:center;justify-content:center;gap:10px}.submit-arrow{font-size:20px;line-height:1;font-family:Arial,sans-serif}
-    .error-msg{display:none;margin:0 0 15px;padding:10px 13px;border-radius:11px;border:1px solid rgba(255,120,138,.38);background:rgba(169,39,65,.17);color:#ffb4bd;font-size:12px;text-align:center}
-    .error-msg[role="alert"]{display:block}
-    .divider{display:flex;align-items:center;gap:13px;margin:20px 0 14px;color:#91abc0;font-size:12px;white-space:nowrap}
-    .divider:before,.divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(140,198,225,.27))}.divider:after{transform:scaleX(-1)}
-    .social-options{display:grid;grid-template-columns:1fr 1fr;gap:11px;direction:ltr}
-    .social-btn{height:46px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid rgba(165,208,234,.19);border-radius:12px;background:rgba(4,18,39,.43);color:#e9f5fc;font:500 13px Vazirmatn,Tahoma,sans-serif;cursor:pointer;transition:.2s}
-    .social-btn:hover{border-color:rgba(100,203,255,.55);background:rgba(28,92,150,.24);box-shadow:0 0 18px rgba(30,147,232,.11)}
-    .social-btn svg{width:19px;height:19px;flex:none}
-    .social-note{min-height:18px;margin:8px 0 0;text-align:center;font-size:11px;color:#8cb2c8}
-    .login-footer{border-top:1px solid rgba(162,208,232,.13);padding-top:15px;margin-top:11px;text-align:center;color:#a9c1d2;font-size:12px}
-    .signup-link{color:#74d8ff;font-weight:700;margin-right:4px;text-decoration:none}.signup-link:hover{color:#c0f5ff;text-shadow:0 0 12px rgba(81,198,255,.5)}
-    .back-home{position:fixed;bottom:18px;left:22px;color:rgba(201,229,243,.72);font-size:11px;transition:color .2s}.back-home:hover{color:#fff}
-    @media(max-width:520px){body.login-page{padding:23px 16px}.login-card{padding:28px 22px 23px}.login-scene:before{inset:9px -8px -12px}.brand-mark{width:62px;height:62px;border-radius:19px}.brand-mark img{width:47px;height:47px}.back-home{position:relative;bottom:auto;left:auto;grid-row:2;margin-top:23px;text-align:center}.login-page{grid-template-rows:1fr auto}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-  </style>
-</head>
-<body class="login-page">
-  <div class="login-backdrop" aria-hidden="true"></div><div class="ambient-orb orb-one" aria-hidden="true"></div><div class="ambient-orb orb-two" aria-hidden="true"></div>
-  <main class="login-scene" aria-labelledby="loginTitle">
-    <section class="login-card">
-      <div class="brand-mark"><img src="assets/iphsda_logo.webp" alt="نشان انجمن صنفی اردبیل"></div>
-      <header class="login-header"><h1 id="loginTitle">به حساب کاربری خود وارد شوید</h1><p>خوشحلیم که دوباره می‌بینیم!</p></header>
-      <div id="errorBox" class="error-msg" role="alert" aria-live="polite"></div>
-      <form id="loginForm" onsubmit="handleLogin(event)" novalidate>
-        <div class="form-group"><label for="username">ایمیل یا شماره موبایل</label><div class="field-shell"><svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><input type="text" id="username" name="username" placeholder="ایمیل یا شماره موبایل" autocomplete="username" autocapitalize="none" spellcheck="false" required></div></div>
-        <div class="form-group"><label for="password">رمز عبور</label><div class="field-shell"><svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input type="password" id="password" name="password" placeholder="رمز عبور" autocomplete="current-password" required><button class="toggle-password" type="button" id="togglePassword" aria-label="نمایش رمز عبور" aria-pressed="false"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg></button></div></div>
-        <button type="submit" class="login-btn-submit"><span class="submit-content">ورود به حساب <span class="submit-arrow" aria-hidden="true">←</span></span></button>
-      </form>
-      <div class="divider">یا ورود با</div>
-      <div class="social-options" aria-label="روش‌های ورود جایگزین">
-        <button class="social-btn" type="button" data-provider="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.7c3.9-3.6 6-8.8 6-15Z"/><path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.7-5.1c-1.8 1.2-4 2-6.8 2-5.2 0-9.6-3.5-11.2-8.2H5.9v5.3A20 20 0 0 0 24 44Z"/><path fill="#FBBC05" d="M12.8 27.9a12 12 0 0 1 0-7.8v-5.3H5.9a20 20 0 0 0 0 18.4l6.9-5.3Z"/><path fill="#EA4335" d="M24 11.9c3 0 5.7 1 7.8 3.1l5.9-5.9C34.1 5.8 29.5 4 24 4A20 20 0 0 0 5.9 14.8l6.9 5.3c1.6-4.7 6-8.2 11.2-8.2Z"/></svg><span>Google</span></button>
-        <button class="social-btn" type="button" data-provider="Apple"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.7 12.8c0-2.4 2-3.6 2.1-3.7a4.5 4.5 0 0 0-3.5-1.9c-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9a4.9 4.9 0 0 0-4.1 2.5c-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.5 1.3-.1 1.8-.8 3.4-.8 1.6 0 2.1.8 3.4.8 1.4 0 2.2-1.2 3.1-2.5a11 11 0 0 0 1.4-2.9 4.2 4.2 0 0 1-3.2-4.2ZM14.2 5.6A4.4 4.4 0 0 0 15.2 2a4.6 4.6 0 0 0-3 1.5 4.2 4.2 0 0 0-1.1 3.4 3.8 3.8 0 0 0 3.1-1.3Z"/></svg><span>Apple</span></button>
-      </div>
-      <p id="socialNote" class="social-note" aria-live="polite"></p>
-      <footer class="login-footer">حساب کاربری ندارید؟ <a class="signup-link" href="intro.html" id="signupLink">ثبت‌نام کنید</a></footer>
-    </section>
-  </main>
-  <a class="back-home" href="intro.html">بازگشت به صفحهٔ خوش‌آمدگویی</a>
-  <script>
-    function handleLogin(event){
-      event.preventDefault();
-      var username=document.getElementById('username').value.trim();
-      var password=document.getElementById('password').value;
-      var box=document.getElementById('errorBox');
-      box.textContent='';box.removeAttribute('role');
-      if(!username||!password){box.textContent='لطفاً ایمیل یا شماره موبایل و رمز عبور را وارد کنید.';box.setAttribute('role','alert');return;}
-      // Retain the existing demo credentials/auth mechanism until a server API is configured.
-      if(username.toLowerCase()==='admin'&&password==='admin'){
-        var user={username:'admin',role:'manager'};
-        if(window.SandikaAuth&&typeof SandikaAuth.save==='function')SandikaAuth.save(user);
-        else{sessionStorage.setItem('sandika_user',JSON.stringify(user));localStorage.setItem('sandika_user',JSON.stringify(user));}
-        sessionStorage.setItem('sandika_authenticated','1');
-        var target=new URLSearchParams(location.search).get('return')||'index.html';
-        if(!/^[a-z0-9][a-z0-9._-]*\.html(?:\?.*)?$/i.test(target)||target.toLowerCase()==='login.html')target='index.html';
-        location.href=target;
-      }else if(username.toLowerCase()==='admin'){
-        box.textContent='رمز عبور نادرست است.';box.setAttribute('role','alert');
-      }else{
-        box.textContent='این حساب در سامانهٔ فعلی ثبت نشده است.';box.setAttribute('role','alert');
-      }
-    }
-    document.getElementById('togglePassword').addEventListener('click',function(){var input=document.getElementById('password'),show=input.type==='password';input.type=show?'text':'password';this.setAttribute('aria-pressed',String(show));this.setAttribute('aria-label',show?'پنهان کردن رمز عبور':'نمایش رمز عبور');});
-    document.querySelectorAll('.social-btn').forEach(function(button){button.addEventListener('click',function(){document.getElementById('socialNote').textContent='ورود با '+button.dataset.provider+' در این نسخه فعال نیست.';});});
-    document.getElementById('signupLink').addEventListener('click',function(event){event.preventDefault();document.getElementById('socialNote').textContent='ثبت‌نام آنلاین هنوز در سامانه فعال نشده است.';});
-  </script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07152e"><title>ورود کاربران | انجمن صنفی اردبیل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{color-scheme:dark;--otp-cyan:#55d9ff;--otp-blue:#427aff}
+body.otp-login-page{margin:0;min-height:100vh;overflow-x:hidden;font-family:Vazirmatn, sans-serif;color:#eff7ff;background:radial-gradient(ellipse at 50% 105%,#164c91 0,transparent 43%),radial-gradient(ellipse at 12% 30%,#102d63 0,transparent 38%),radial-gradient(ellipse at 88% 22%,#122b59 0,transparent 35%),linear-gradient(145deg,#040b19,#07152e 55%,#091a36)}
+.otp-login-page:before,.otp-login-page:after{content:"";position:fixed;pointer-events:none;border-radius:50%;filter:blur(2px);opacity:.55;z-index:0}.otp-login-page:before{width:260px;height:260px;left:-95px;top:18%;background:radial-gradient(circle at 35% 30%,#a2f4ff 0,#318bff 18%,#143b8b 52%,transparent 72%);box-shadow:0 0 70px #158fff55}.otp-login-page:after{width:190px;height:190px;right:-50px;bottom:12%;background:radial-gradient(circle at 35% 30%,#d4f7ff 0,#5b9bff 20%,#193b87 58%,transparent 72%);box-shadow:0 0 70px #148bff66}
+.login-shell{position:relative;z-index:1;min-height:100vh;display:grid;place-items:center;padding:34px 18px;box-sizing:border-box}.login-glow{position:absolute;width:min(550px,90vw);height:135px;bottom:8%;border-radius:50%;background:#178fff;filter:blur(75px);opacity:.19;pointer-events:none}.otp-card{position:relative;width:min(100%,440px);box-sizing:border-box;padding:34px 36px 27px;border:1px solid rgba(169,220,255,.23);border-radius:28px;background:linear-gradient(145deg,rgba(18,42,77,.77),rgba(8,23,49,.74));box-shadow:0 28px 90px #0008,inset 0 1px 0 #ffffff1c,0 0 38px #168aff20;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.brand-mark{width:58px;height:58px;margin:0 auto 17px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,#93efff,#3f87ff 55%,#8b76ff);box-shadow:0 0 32px #36baff78}.brand-mark img{width:43px;height:43px;object-fit:contain;filter:drop-shadow(0 2px 5px #001)}.login-heading{text-align:center;margin-bottom:25px}.login-heading h1{font-size:23px;margin:0 0 7px;font-weight:700;letter-spacing:-.3px}.login-heading p{margin:0;color:#a8bbd4;font-size:13px}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;padding:4px;margin-bottom:22px;border:1px solid #ffffff14;background:#06142b80;border-radius:13px;gap:4px}.auth-tab{border:0;border-radius:10px;padding:10px;background:transparent;color:#9fb4ce;font:inherit;font-size:13px;cursor:pointer;transition:.2s}.auth-tab[aria-selected="true"]{background:linear-gradient(120deg,#1b5590,#174177);color:#fff;box-shadow:inset 0 0 0 1px #75caff38}.field{margin-bottom:16px}.field label{display:block;font-size:12px;color:#cfdded;margin:0 2px 8px}.input-wrap{position:relative}.input-wrap input{box-sizing:border-box;width:100%;height:49px;border-radius:13px;border:1px solid #bfdcff24;background:#04132a8c;color:#fff;padding:0 44px 0 45px;font:inherit;font-size:14px;outline:none;transition:.2s}.input-wrap input::placeholder{color:#7e94b0}.input-wrap input:focus{border-color:#58c9ffb8;box-shadow:0 0 0 3px #55cfff16}.field-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#75b9e8;font-size:17px;pointer-events:none}.show-pass{position:absolute;left:9px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#a5bbd5;padding:8px;cursor:pointer;font-size:17px}.primary-btn{width:100%;min-height:49px;margin-top:5px;border:1px solid #a4eaff55;border-radius:14px;background:linear-gradient(110deg,#168ed8,#3479f6 60%,#5577ff);color:#fff;font:inherit;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 9px 26px #167ce64a;transition:transform .18s,filter .18s}.primary-btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.primary-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}.form-message{display:none;border-radius:11px;padding:10px 12px;margin:0 0 14px;font-size:12px;line-height:1.8}.form-message.show{display:block}.form-message.error{background:#ff525218;border:1px solid #ff64645c;color:#ffaaaa}.form-message.success{background:#36dba018;border:1px solid #36dba04d;color:#a9ffdc}.otp-panel{display:none}.otp-panel.active{display:block}.otp-code{direction:ltr;text-align:center;letter-spacing:.55em;font-size:25px!important;font-weight:700;padding-inline:16px!important}.otp-hint{font-size:11px;color:#8ea7c4;text-align:center;line-height:1.9;margin:12px 0 0}.demo-code{display:none;margin:12px 0 0;padding:10px 12px;text-align:center;border-radius:11px;border:1px dashed #67ceff70;background:#2a9bd314;color:#c9f2ff;font-size:12px;line-height:1.8}.demo-code.show{display:block}.resend-row{display:flex;justify-content:space-between;align-items:center;margin:12px 2px 0;font-size:11px;color:#92a8c3}.text-action{border:0;background:none;color:#69d8ff;font:inherit;cursor:pointer;padding:4px}.text-action:disabled{color:#778aa1;cursor:not-allowed}.login-foot{text-align:center;border-top:1px solid #ffffff14;padding-top:17px;margin-top:22px;color:#8fa4bd;font-size:11px;line-height:1.9}.login-foot a{color:#78d8ff;text-decoration:none}.back-home{display:block;text-align:center;margin-top:11px;color:#a8bbd4;font-size:12px;text-decoration:none}.back-home:hover{color:#fff}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:520px){.login-shell{padding:20px 14px}.otp-card{padding:28px 22px 23px;border-radius:23px}.login-heading h1{font-size:21px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style></head>
+<body class="otp-login-page"><main class="login-shell"><div class="login-glow" aria-hidden="true"></div><section class="otp-card" aria-labelledby="loginTitle">
+<div class="brand-mark"><img src="assets/iphsda_logo.webp" alt="نشان انجمن صنفی اردبیل"></div>
+<header class="login-heading"><h1 id="loginTitle">به حساب کاربری خود وارد شوید</h1><p>خوشحالیم که دوباره می‌بینیمت!</p></header>
+<div class="auth-tabs" role="tablist" aria-label="روش ورود"><button id="passwordTab" class="auth-tab" type="button" role="tab" aria-selected="true" aria-controls="passwordPanel">ورود با رمز عبور</button><button id="otpTab" class="auth-tab" type="button" role="tab" aria-selected="false" aria-controls="otpPanel">ورود با کد یکبارمصرف</button></div>
+<div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+<section id="passwordPanel" role="tabpanel" aria-labelledby="passwordTab"><form id="passwordForm" novalidate>
+<div class="field"><label for="identifier">ایمیل یا شماره موبایل</label><div class="input-wrap"><span class="field-icon" aria-hidden="true">✉</span><input id="identifier" name="identifier" type="text" autocomplete="username" inputmode="email" placeholder="ایمیل یا شماره موبایل" required></div></div>
+<div class="field"><label for="password">رمز عبور</label><div class="input-wrap"><span class="field-icon" aria-hidden="true">⌑</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="رمز عبور" required><button class="show-pass" type="button" id="togglePassword" aria-label="نمایش یا پنهان‌کردن رمز عبور" aria-pressed="false">◉</button></div></div>
+<button class="primary-btn" type="submit">ورود به حساب <span aria-hidden="true">←</span></button></form></section>
+<section id="otpPanel" class="otp-panel" role="tabpanel" aria-labelledby="otpTab" hidden>
+<form id="requestOtpForm" novalidate><div class="field"><label for="otpIdentifier">ایمیل یا شماره موبایل</label><div class="input-wrap"><span class="field-icon" aria-hidden="true">✉</span><input id="otpIdentifier" name="otpIdentifier" type="text" autocomplete="email" inputmode="email" placeholder="مثال: name@example.com یا 0912…" required></div></div><button class="primary-btn" type="submit">ارسال کد تأیید <span aria-hidden="true">←</span></button><p class="otp-hint">در نسخهٔ نمایشی، کد تأیید روی همین صفحه نمایش داده می‌شود.</p></form>
+<form id="verifyOtpForm" hidden novalidate><div class="field"><label for="otpCode">کد چهاررقمی</label><div class="input-wrap"><span class="field-icon" aria-hidden="true">▦</span><input id="otpCode" class="otp-code" name="otpCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]{4}" placeholder="••••" required aria-describedby="otpDemoCode"></div></div><button class="primary-btn" type="submit">تأیید و ورود <span aria-hidden="true">←</span></button><div class="demo-code" id="otpDemoCode" role="status" aria-live="polite"></div><div class="resend-row"><span id="otpExpiry">کد تا ۵ دقیقه معتبر است.</span><button id="resendOtp" class="text-action" type="button" disabled>ارسال مجدد</button></div><button id="changeIdentifier" class="text-action" type="button" style="margin-top:9px">ویرایش ایمیل/شماره</button></form></section>
+<footer class="login-foot">ورود آزمایشی با رمز: <b dir="ltr">admin / admin</b><br>سامانهٔ OTP این نسخه شبیه‌سازی شده و پیامکی/ایمیلی ارسال نمی‌کند.</footer><a class="back-home" href="intro.html">بازگشت به صفحهٔ خوش‌آمدگویی</a>
+</section></main>
+<script>
+(function(){'use strict';
+const $=id=>document.getElementById(id), tabs=[$('passwordTab'),$('otpTab')], message=$('formMessage');
+function alertMessage(text,type){message.textContent=text;message.className='form-message show '+type}
+function clearMessage(){message.textContent='';message.className='form-message'}
+function validIdentifier(value){const v=value.trim();return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)||/^\+?[0-9٠-٩۰-۹][0-9٠-٩۰-۹\s()\-]{6,18}$/.test(v)}
+function safeReturn(){const raw=new URLSearchParams(location.search).get('return');if(!raw)return 'index.html';try{const decoded=raw;if(decoded.startsWith('/')||decoded.includes('\\')||decoded.includes('://')||decoded.split('/').includes('..'))return 'index.html';return decoded||'index.html'}catch(e){return 'index.html'}}
+function login(identifier,role){const clean=identifier.trim();const user={username:clean,role:role||'user'};try{sessionStorage.setItem('sandika_user',JSON.stringify(user));localStorage.setItem('sandika_user',JSON.stringify(user));sessionStorage.setItem('sandika_authenticated','1')}catch(e){}location.href=safeReturn()}
+tabs.forEach((tab,index)=>tab.addEventListener('click',()=>{clearMessage();tabs.forEach((t,i)=>t.setAttribute('aria-selected',String(i===index)));$('passwordPanel').hidden=index!==0;$('otpPanel').hidden=index===0;$('otpPanel').classList.toggle('active',index===1);if(index===1)$('otpIdentifier').focus()}));
+$('togglePassword').addEventListener('click',()=>{const input=$('password'),show=input.type==='password';input.type=show?'text':'password';$('togglePassword').setAttribute('aria-pressed',String(show));$('togglePassword').setAttribute('aria-label',show?'پنهان‌کردن رمز عبور':'نمایش رمز عبور')});
+$('passwordForm').addEventListener('submit',e=>{e.preventDefault();clearMessage();const user=$('identifier').value.trim(),pass=$('password').value;if(!user||!pass){alertMessage('ایمیل/شماره و رمز عبور را وارد کنید.','error');return}if(user.toLowerCase()==='admin'&&pass==='admin'){login('admin','manager');return}alertMessage('اطلاعات ورود معتبر نیست. برای ورود آزمایشی از admin / admin استفاده کنید یا روش OTP را انتخاب کنید.','error')});
+let currentCode='',expiresAt=0,timer=null,tries=0;
+function updateCountdown(){const left=Math.max(0,Math.ceil((expiresAt-Date.now())/1000));if(left<=0){$('otpExpiry').textContent='کد منقضی شده است.';$('resendOtp').disabled=false;clearInterval(timer);return}$('otpExpiry').textContent='زمان باقی‌مانده: '+Math.floor(left/60)+':'+String(left%60).padStart(2,'0');$('resendOtp').disabled=left>240}
+function requestCode(){const who=$('otpIdentifier').value.trim();if(!validIdentifier(who)){alertMessage('یک ایمیل معتبر یا شمارهٔ موبایل معتبر وارد کنید.','error');$('otpIdentifier').focus();return}clearMessage();currentCode=String(Math.floor(1000+Math.random()*9000));expiresAt=Date.now()+300000;tries=0;$('otpDemoCode').innerHTML='کد نمایشی شما: <strong dir="ltr" style="letter-spacing:.2em">'+currentCode+'</strong><br>این کد فقط برای آزمایش است و به مقصد ارسال نشده.';$('otpDemoCode').classList.add('show');$('requestOtpForm').hidden=true;$('verifyOtpForm').hidden=false;$('otpCode').value='';$('otpCode').focus();if(timer)clearInterval(timer);updateCountdown();timer=setInterval(updateCountdown,1000);alertMessage('کد چهاررقمی آزمایشی ساخته شد.','success')}
+$('requestOtpForm').addEventListener('submit',e=>{e.preventDefault();requestCode()});$('resendOtp').addEventListener('click',requestCode);$('changeIdentifier').addEventListener('click',()=>{clearInterval(timer);currentCode='';$('verifyOtpForm').hidden=true;$('requestOtpForm').hidden=false;$('otpDemoCode').classList.remove('show');clearMessage();$('otpIdentifier').focus()});$('otpCode').addEventListener('input',e=>{e.target.value=e.target.value.replace(/[^0-9٠-٩۰-۹]/g,'').replace(/[٠-٩]/g,c=>String(c.charCodeAt(0)-1632)).replace(/[۰-۹]/g,c=>String(c.charCodeAt(0)-1776)).slice(0,4)});
+$('verifyOtpForm').addEventListener('submit',e=>{e.preventDefault();clearMessage();const code=$('otpCode').value.trim();if(Date.now()>expiresAt){alertMessage('کد منقضی شده است؛ کد تازه درخواست کنید.','error');$('resendOtp').disabled=false;return}if(tries>=5){alertMessage('به‌دلیل چند تلاش ناموفق، کد تازه درخواست کنید.','error');return}if(code!==currentCode){tries++;alertMessage('کد واردشده نادرست است. ('+(5-tries)+' تلاش باقی‌مانده)','error');return}clearInterval(timer);login($('otpIdentifier').value.trim(),'user')});
+})();
+</script></body></html>
