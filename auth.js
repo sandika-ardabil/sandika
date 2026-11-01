@@ -1,24 +1,56 @@
-/* Supabase-first authentication with a localStorage development fallback. */
-(function(){'use strict';
-  var SUPABASE_URL='https://halyqkmvxpgxagmrvzpo.supabase.co';
-  var SUPABASE_ANON_KEY=''; // Configure a Supabase anon/public key here to enable hosted authentication.
-  var USER_KEY='sandika_user', ACCOUNTS_KEY='sandika_local_accounts';
-  var client=null;
-  try{if(window.supabase&&SUPABASE_ANON_KEY)client=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY)}catch(e){console.warn('Supabase initialization unavailable; local fallback will be used.',e)}
-  function safeGet(store,key){try{return store.getItem(key)}catch(e){return null}}
-  function saveUser(user){var normalized={username:user.username||user.email||user.phone||user.id||'user',email:user.email||'',phone:user.phone||'',role:'member'};var raw=JSON.stringify(normalized);try{sessionStorage.setItem(USER_KEY,raw)}catch(e){}try{localStorage.setItem(USER_KEY,raw)}catch(e){}try{sessionStorage.setItem('sandika_authenticated','1')}catch(e){}return normalized}
-  function readUser(){var raw=safeGet(sessionStorage,USER_KEY)||safeGet(localStorage,USER_KEY);if(!raw)return null;try{var u=JSON.parse(raw);return u&&typeof u.username==='string'&&u.username.trim()?u:null}catch(e){return null}}
-  function clearUser(){try{sessionStorage.removeItem(USER_KEY);sessionStorage.removeItem('sandika_authenticated')}catch(e){}try{localStorage.removeItem(USER_KEY)}catch(e){}}
-  window.SandikaAuth={url:SUPABASE_URL,read:readUser,save:saveUser,clear:clearUser,isLoggedIn:function(){return !!readUser()}};
-  function accounts(){try{return JSON.parse(safeGet(localStorage,ACCOUNTS_KEY)||'{}')}catch(e){return {}}}
-  function identityValue(v){return v.indexOf('@')>=0?{email:v}:{phone:v}}
-  async function digest(text){if(window.crypto&&crypto.subtle){var bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return Array.from(new Uint8Array(bytes)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}return 'plain:'+text}
-  function show(message,success){var el=document.getElementById('authMessage');if(!el)return;el.textContent=message;el.hidden=false;el.classList.toggle('success',!!success)}
-  function setMode(mode){var form=document.getElementById('authForm');if(!form)return;var register=mode==='register';form.dataset.mode=mode;document.querySelector('.auth-tabs').classList.toggle('register-mode',register);document.querySelectorAll('.auth-tab').forEach(function(t){var active=t.dataset.mode===mode;t.classList.toggle('active',active);t.setAttribute('aria-selected',active?'true':'false')});document.getElementById('authTitle').innerHTML=register?'برای ساخت حساب <span>ثبت‌نام کنید</span>':'به حساب کاربری خود <span>وارد شوید</span>';document.querySelector('.submit-label').textContent=register?'ایجاد حساب کاربری':'ورود به حساب';document.getElementById('password').autocomplete=register?'new-password':'current-password';document.getElementById('authFootnote').innerHTML=register?'قبلاً حساب ساخته‌اید؟ <button type="button" data-switch="login">وارد شوید</button>':'حساب کاربری ندارید؟ <button type="button" data-switch="register">ثبت‌نام کنید</button>';var msg=document.getElementById('authMessage');if(msg){msg.hidden=true;msg.textContent=''}}
-  async function handleSubmit(event){event.preventDefault();var form=event.currentTarget,button=form.querySelector('.submit-button'),identity=document.getElementById('identity').value.trim(),passValue=document.getElementById('password').value,register=form.dataset.mode==='register';if(!identity||passValue.length<6){show('ایمیل/موبایل و رمز عبور حداقل ۶ کاراکتری را وارد کنید.');return}button.disabled=true;try{var credentials=identityValue(identity),result=null;
-      if(client){if(register){result=await client.auth.signUp((credentials[['pass','word'].join('')]=passValue,credentials));}else{result=await client.auth.signInWithPassword((credentials[['pass','word'].join('')]=passValue,credentials));}if(result.error)throw result.error;if(register&&!result.data.session){show('حساب ساخته شد. برای تأیید، ایمیل خود را بررسی کنید.',true);return}var u=(result.data&&result.data.user)||{};saveUser({username:identity,email:u.email||'',phone:u.phone||''});redirect();return}
-      var db=accounts(),key=identity.toLowerCase();if(register){if(db[key])throw new Error('این ایمیل یا شماره موبایل قبلاً ثبت شده است.');db[key]={credential:await digest(passValue),identity:identity};try{localStorage.setItem(ACCOUNTS_KEY,JSON.stringify(db))}catch(e){throw new Error('ذخیره‌سازی محلی در این مرورگر در دسترس نیست.')}saveUser({username:identity,email:identity.indexOf('@')>=0?identity:'',phone:identity.indexOf('@')<0?identity:''});show('ثبت‌نام محلی انجام شد؛ ورود شما برقرار است.',true);setTimeout(redirect,600)}else{if(!db[key]||db[key].credential!==await digest(passValue))throw new Error('مشخصات ورود درست نیست یا حساب محلی وجود ندارد.');saveUser({username:identity,email:identity.indexOf('@')>=0?identity:'',phone:identity.indexOf('@')<0?identity:''});redirect()}
-    }catch(err){show(err&&err.message?err.message:'در انجام درخواست خطایی رخ داد.')}finally{button.disabled=false}}
-  function redirect(){var dest=new URLSearchParams(location.search).get('return');if(dest&&/^[a-z0-9._-]+\.html(?:\?.*)?$/i.test(dest))location.href=dest;else location.href='index.html'}
-  document.addEventListener('DOMContentLoaded',function(){if(readUser()&&new URLSearchParams(location.search).get('force')!=='1'){location.replace('index.html');return}document.querySelectorAll('.auth-tab').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.mode)})});document.addEventListener('click',function(e){var sw=e.target.closest('[data-switch]');if(sw)setMode(sw.dataset.switch)});document.getElementById('authForm').addEventListener('submit',handleSubmit);document.querySelector('.eye-toggle').addEventListener('click',function(){var input=document.getElementById('password'),visible=input.type==='password';input.type=visible?'text':'password';this.setAttribute('aria-label',visible?'پنهان کردن رمز عبور':'نمایش رمز عبور')});document.querySelectorAll('[data-provider]').forEach(function(b){b.addEventListener('click',async function(){if(!client){show('ورود با '+b.dataset.provider+' پس از پیکربندی کلید عمومی Supabase فعال می‌شود.');return}try{var r=await client.auth.signInWithOAuth({provider:b.dataset.provider,options:{redirectTo:location.origin+location.pathname}});if(r.error)throw r.error}catch(err){show(err.message||'ورود اجتماعی در دسترس نیست.')}})})});
+/* Sandika login flow: shared client-side gate */
+(function () {
+  'use strict';
+  var KEY = 'sandika_user';
+  var LOGIN = 'login.html';
+  var INTRO = 'intro.html';
+  function readUser() {
+    var raw = null;
+    try { raw = sessionStorage.getItem(KEY) || localStorage.getItem(KEY); } catch (e) {}
+    if (!raw) return null;
+    try {
+      var user = JSON.parse(raw);
+      return user && typeof user.username === 'string' && user.username.trim() ? user : null;
+    } catch (e) { return null; }
+  }
+  function clearUser() {
+    try { sessionStorage.removeItem(KEY); } catch (e) {}
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  }
+  function saveUser(user) {
+    var raw = JSON.stringify(user);
+    try { sessionStorage.setItem(KEY, raw); } catch (e) {}
+    try { localStorage.setItem(KEY, raw); } catch (e) {}
+  }
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var user = readUser();
+  window.SandikaAuth = { read: readUser, save: saveUser, clear: clearUser, isLoggedIn: function(){ return !!readUser(); } };
+  if (page !== LOGIN && page !== INTRO && !user) {
+    var target = location.pathname.split('/').pop() || 'index.html';
+    if (location.search) target += location.search;
+    location.replace(LOGIN + '?return=' + encodeURIComponent(target));
+    return;
+  }
+  if (page === LOGIN && user && new URLSearchParams(location.search).get('force') !== '1') {
+    location.replace('index.html');
+    return;
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    var action = document.querySelector('.login-btn-white');
+    if (!action) return;
+    var current = readUser();
+    if (current) {
+      action.textContent = 'خروج کاربران';
+      action.href = '#logout';
+      action.onclick = function (event) {
+        event.preventDefault();
+        clearUser();
+        location.replace(LOGIN);
+      };
+    } else {
+      action.textContent = 'ورود کاربران';
+      action.href = LOGIN;
+      action.onclick = null;
+    }
+  });
 })();
