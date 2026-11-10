@@ -62,7 +62,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%}
 .company-tile b{font-size:13.5px}.badge{font-size:11px;color:var(--cyan);background:rgba(0,180,216,.12);border-radius:18px;padding:3px 10px}
 .full-news{display:flex;gap:18px;margin-bottom:20px}.full-news img{width:180px;height:120px;object-fit:cover;border-radius:14px}
 .full-news time{color:var(--cyan);font-size:12px}.full-news h2{margin:2px 0 8px;font-size:17px}
-.service-card,.contact-card{text-align:center}.service-symbol{font-size:30px;color:var(--cyan);text-shadow:0 0 18px rgba(0,180,216,.7)}
+.service-card,.contact-card{text-align:center}.service-symbol{font-size:30px;color:var(--cyan);text-shadow:0 0 18px rgba(0,180,216,.7)}.contact-card .service-symbol{display:inline-flex;align-items:center;justify-content:center;line-height:1}.contact-icon{display:block;width:clamp(28px,2.4vw,34px);height:clamp(28px,2.4vw,34px);color:var(--cyan);filter:drop-shadow(0 0 7px rgba(0,180,216,.45));flex:none}
 .coming-soon{display:inline-block;margin-top:10px;font-size:11px;border:1px solid rgba(0,180,216,.4);color:var(--cyan);border-radius:20px;padding:3px 14px}
 .contact-grid,.service-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 /* footer */
