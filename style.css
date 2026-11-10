@@ -416,14 +416,13 @@ main.login-container{min-height:calc(80vh - 190px)}
 @media(max-width:430px){.header-top-row{height:56px!important;min-height:56px;flex-basis:56px}.brand-right img{width:42px!important;height:42px!important}.login-btn-white{padding:5px 7px!important;font-size:9px!important}.header-bottom-nav{height:46px!important;min-height:46px;flex-basis:46px}.header-bottom-nav a{padding:7px 9px!important;font-size:10px!important}body{padding-top:146px!important}}
 @media(prefers-reduced-motion:reduce){.header-bottom-nav .pill-indicator,.header-bottom-nav a{transition-duration:.01ms!important}}
 
-/* Board portrait layout: full uncropped portraits, grouped by office. */
-.board-section{width:100%;max-width:1440px;box-sizing:border-box}
-.board-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.alternate-grid,.inspector-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.person-card.board-person,.person-card.alternate-person,.person-card.inspector-person{padding:14px;min-width:0}
-.person-photo{display:block;width:100%;height:clamp(260px,31vw,410px);margin:0 auto 12px;object-fit:contain;object-position:center;background:rgba(255,255,255,.035);border-radius:12px}
-.avatar-placeholder{width:min(100%,320px);height:clamp(260px,31vw,410px);margin:0 auto 12px;border-radius:12px;box-sizing:border-box}
-.person-card .person-photo+ h3{margin-top:0}
-@media(max-width:900px){.board-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.person-photo,.avatar-placeholder{height:clamp(250px,44vw,380px)}}
-@media(max-width:600px){.board-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.alternate-grid,.inspector-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.person-card.board-person,.person-card.alternate-person,.person-card.inspector-person{padding:10px 8px}.person-photo,.avatar-placeholder{height:clamp(210px,65vw,340px)}}
-@media(max-width:380px){.board-grid,.alternate-grid,.inspector-grid{grid-template-columns:1fr}.person-photo,.avatar-placeholder{height:340px}}
+/* Uniform manager portrait frames on the about page */
+.content-section .people-grid{gap:16px;justify-content:center;align-items:stretch}
+.content-section .people-grid.board-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.content-section .people-grid.secondary-grid,.content-section .people-grid.inspector-grid{grid-template-columns:repeat(2,minmax(0,190px));}
+.content-section .person-card{padding:14px 12px}
+.content-section .avatar{width:110px;height:110px;min-width:110px;min-height:110px;box-sizing:border-box;margin:0 auto 12px;border-radius:50%;overflow:hidden;display:grid;place-items:center;padding:0;flex:none}
+.content-section .avatar img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;border-radius:50%}
+.content-section .avatar-fallback{font-size:24px}
+@media(max-width:760px){.content-section .people-grid.board-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.content-section .people-grid.board-grid,.content-section .people-grid.secondary-grid,.content-section .people-grid.inspector-grid{grid-template-columns:1fr 1fr;gap:10px}.content-section .person-card{padding:12px 8px}.content-section .avatar{width:96px;height:96px;min-width:96px;min-height:96px}}
