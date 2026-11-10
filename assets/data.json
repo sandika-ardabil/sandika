@@ -169,21 +169,25 @@
   "alternate": [
     {
       "name": "حبیب اسفندیاری",
-      "votes": 10
+      "votes": 10,
+      "role": "عضو علی‌البدل"
     },
     {
       "name": "قاسم لطفی",
-      "votes": 7
+      "votes": 7,
+      "role": "عضو علی‌البدل"
     }
   ],
   "inspectors": [
     {
       "name": "توحید نعمتی",
-      "votes": 17
+      "votes": 17,
+      "role": "بازرس"
     },
     {
       "name": "مهدی زمانی",
-      "votes": 9
+      "votes": 9,
+      "role": "بازرس"
     }
   ],
   "contact": {
