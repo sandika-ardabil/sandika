@@ -8,7 +8,7 @@
     'clearance.html':['admin'],
     'settings.html':['admin']
   };
-  var LABELS={admin:'مدیر سیستم',board:'عضو هیئت‌مدیره',member:'عضو عادی'};
+  var LABELS={admin:'مدیر سیستم',manager:'مدیر سیستم',board:'عضو هیئت‌مدیره',member:'عضو عادی'};
   function normalizeRole(r){ r=String(r||'').toLowerCase(); return r==='manager'?'admin':(['admin','board','member'].indexOf(r)>=0?r:'member'); }
   function read(){
     var raw=null; try{raw=sessionStorage.getItem(KEY)||localStorage.getItem(KEY);}catch(e){}
@@ -19,7 +19,7 @@
   function clear(){try{sessionStorage.removeItem(KEY);localStorage.removeItem(KEY);sessionStorage.removeItem('sandika_authenticated');}catch(e){}}
   function allows(role,page){return !PAGE_ROLES[page]||PAGE_ROLES[page].indexOf(normalizeRole(role))>=0;}
   var page=(location.pathname.split('/').pop()||'index.html').toLowerCase(), user=read();
-  window.SandikaAuth={read:read,save:save,clear:clear,isLoggedIn:function(){return !!read();},roleOf:function(u){return normalizeRole((u||read()||{}).role);},label:function(r){return LABELS[normalizeRole(r)];},canAccess:function(p){return allows((read()||{}).role,p);},accountsKey:'sandika_role_accounts_v1'};
+  window.SandikaAuth={read:read,save:save,clear:clear,isLoggedIn:function(){return !!read();},roleOf:function(u){var r=normalizeRole((u||read()||{}).role);return r==='admin'?'manager':r;},getRole:function(){return this.roleOf();},isManager:function(){return this.getRole()==='manager';},requireRole:function(roles,redirect){var r=this.getRole(),ok=Array.isArray(roles)?roles.indexOf(r)>=0:r===roles;if(!ok)location.replace(redirect||LOGIN);return ok;},label:function(r){return LABELS[normalizeRole(r)];},canAccess:function(p){return allows((read()||{}).role,p);},accountsKey:'sandika_role_accounts_v1'};
   if(PAGE_ROLES[page]&&(!user||!allows(user.role,page))){var dest=location.pathname.split('/').pop()||page;if(location.search)dest+=location.search;location.replace(LOGIN+'?denied=1&return='+encodeURIComponent(dest));return;}
   if(page===LOGIN&&user&&new URLSearchParams(location.search).get('force')!=='1'){location.replace(user.role==='admin'?'settings.html':user.role==='board'?'cartable.html':'members.html');return;}
   document.addEventListener('DOMContentLoaded',function(){
