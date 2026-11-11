@@ -415,29 +415,3 @@ main.login-container{min-height:calc(80vh - 190px)}
 @media(max-width:768px){.site-header{top:8px!important;gap:7px!important}.header-top-row{width:calc(100vw - 18px)!important;height:62px!important;min-height:62px;flex-basis:62px;padding:0 10px!important;border-radius:19px}.brand-right img{width:48px!important;height:48px!important}.marquee-center{margin:0 8px!important}.marquee-text{font-size:clamp(10px,2.7vw,13px)!important}.login-btn-white{padding:6px 10px!important;font-size:10px!important}.header-bottom-nav{height:50px!important;min-height:50px;flex-basis:50px;max-width:calc(100vw - 14px);gap:1px!important;padding:5px!important}.header-bottom-nav .pill-indicator{top:5px;height:calc(100% - 10px)}.header-bottom-nav a{font-size:11px!important;padding:8px 11px!important}body{padding-top:158px!important}.login-container{padding-top:24px!important}}
 @media(max-width:430px){.header-top-row{height:56px!important;min-height:56px;flex-basis:56px}.brand-right img{width:42px!important;height:42px!important}.login-btn-white{padding:5px 7px!important;font-size:9px!important}.header-bottom-nav{height:46px!important;min-height:46px;flex-basis:46px}.header-bottom-nav a{padding:7px 9px!important;font-size:10px!important}body{padding-top:146px!important}}
 @media(prefers-reduced-motion:reduce){.header-bottom-nav .pill-indicator,.header-bottom-nav a{transition-duration:.01ms!important}}
-
-/* v56 leadership portraits */
-.leadership-page{padding-top:12px;padding-bottom:40px}
-.leadership-group{margin:0 0 34px}
-.leadership-group>h2{margin:0 0 18px;padding:0 0 10px;border-bottom:1px solid rgba(82,226,239,.24);color:#52e2ef}
-.leadership-grid{align-items:stretch}
-.leadership-card{height:100%;box-sizing:border-box}
-.avatar.portrait-frame{width:112px;height:148px;margin:0 auto 14px;border-radius:50% / 42%;overflow:hidden;display:block;background:linear-gradient(145deg,#193342,#0b1923);border:2px solid rgba(82,226,239,.55);box-shadow:0 8px 24px rgba(0,0,0,.28)}
-.portrait-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 24%}
-.avatar.initials-avatar{display:grid;place-items:center;font-size:34px;color:#e8fbff}
-@media(max-width:520px){.leadership-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.leadership-card{padding:14px 9px}.avatar.portrait-frame{width:96px;height:132px}}
-
-/* v57 oval portraits restored +30% */
-.avatar.portrait-frame{
-  width:146px;height:192px;margin:0 auto 16px;display:block;overflow:hidden;
-  border-radius:50% / 50%;
-  background:radial-gradient(circle at 50% 35%,rgba(0,212,232,.28) 0%,#0b1923 78%);
-  border:3px solid rgba(82,226,239,.85);
-  box-shadow:0 0 0 4px rgba(0,180,216,.15),0 0 24px rgba(0,212,232,.55),0 0 55px rgba(0,180,216,.35),inset 0 0 18px rgba(0,180,216,.35);
-}
-.avatar.portrait-frame img,.portrait-frame img{
-  display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;
-}
-@media(max-width:520px){
-  .avatar.portrait-frame{width:126px;height:166px;margin-bottom:12px}
-}

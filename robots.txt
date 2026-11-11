@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /cartable.html
-Disallow: /clearance.html
 Disallow: /external-letter.html
+Disallow: /clearance.html
+Disallow: /login.html
 
 Sitemap: https://sandika-ardabil.ir/sitemap.xml

@@ -1,9 +1,9 @@
-/* Sandika login flow: shared client-side gate */
+/* Private-area client-side login gate. Public pages never require authentication. */
 (function () {
   'use strict';
   var KEY = 'sandika_user';
   var LOGIN = 'login.html';
-  var INTRO = 'intro.html';
+  var PRIVATE_PAGES = ['cartable.html', 'external-letter.html', 'clearance.html'];
   function readUser() {
     var raw = null;
     try { raw = sessionStorage.getItem(KEY) || localStorage.getItem(KEY); } catch (e) {}
@@ -25,8 +25,8 @@
   var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   var user = readUser();
   window.SandikaAuth = { read: readUser, save: saveUser, clear: clearUser, isLoggedIn: function(){ return !!readUser(); } };
-  if (page !== LOGIN && page !== INTRO && !user) {
-    var target = location.pathname.split('/').pop() || 'index.html';
+  if (PRIVATE_PAGES.indexOf(page) !== -1 && !user) {
+    var target = location.pathname.split('/').pop() || page;
     if (location.search) target += location.search;
     location.replace(LOGIN + '?return=' + encodeURIComponent(target));
     return;
@@ -38,19 +38,12 @@
   document.addEventListener('DOMContentLoaded', function () {
     var action = document.querySelector('.login-btn-white');
     if (!action) return;
-    var current = readUser();
-    if (current) {
+    if (readUser()) {
       action.textContent = 'خروج کاربران';
       action.href = '#logout';
-      action.onclick = function (event) {
-        event.preventDefault();
-        clearUser();
-        location.replace(LOGIN);
-      };
+      action.onclick = function (event) { event.preventDefault(); clearUser(); location.replace(LOGIN); };
     } else {
-      action.textContent = 'ورود کاربران';
-      action.href = LOGIN;
-      action.onclick = null;
+      action.textContent = 'ورود کاربران'; action.href = LOGIN; action.onclick = null;
     }
   });
 })();
