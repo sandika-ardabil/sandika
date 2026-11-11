@@ -139,51 +139,60 @@
       "name": "ایرج خضری",
       "role": "رئیس هیئت‌مدیره",
       "company": "پخش فردوس",
-      "votes": 19
+      "votes": 19,
+      "image": "assets/managers/iraj-khezri.webp"
     },
     {
       "name": "حبیب اعیانی",
       "role": "نایب رئیس هیئت‌مدیره",
       "company": "امید آریا دارو",
-      "votes": 19
+      "votes": 19,
+      "image": "assets/managers/habib-ayani.webp"
     },
     {
       "name": "حسین قدیمی",
       "role": "دبیر انجمن",
       "company": "پخش البرز",
-      "votes": 21
+      "votes": 21,
+      "image": "assets/managers/hossein-ghadimi.webp"
     },
     {
       "name": "مهدی شاهی",
       "role": "عضو اصلی و خزانه‌دار",
       "company": "توزیع داروپخش",
-      "votes": 11
+      "votes": 11,
+      "image": "assets/managers/mehdi-shahi.webp"
     },
     {
       "name": "عیسی فتحی",
       "role": "عضو اصلی هیئت‌مدیره",
       "company": "سها هلال",
-      "votes": 11
+      "votes": 11,
+      "image": "assets/managers/essa-fathi.webp"
     }
   ],
   "alternate": [
     {
       "name": "حبیب اسفندیاری",
-      "votes": 10
+      "votes": 10,
+      "image": "assets/managers/habib-esfandiari.webp"
     },
     {
       "name": "قاسم لطفی",
-      "votes": 7
+      "votes": 7,
+      "image": "assets/managers/ghasem-lotfi.webp"
     }
   ],
   "inspectors": [
     {
       "name": "توحید نعمتی",
-      "votes": 17
+      "votes": 17,
+      "image": "assets/managers/tohid-nemati.webp"
     },
     {
       "name": "مهدی زمانی",
-      "votes": 9
+      "votes": 9,
+      "image": null
     }
   ],
   "contact": {

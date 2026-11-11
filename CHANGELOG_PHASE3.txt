@@ -1,6 +1,7 @@
-فاز ۳ — ورود شیشه‌ای و جریان OTP نمایشی
-- بازطراحی login.html با پالت آبی آینده‌نگر، شیشه‌گرایی، رابط responsive و پشتیبانی RTL.
-- افزودن ورود با ایمیل/موبایل و رمز عبور، نمایش/پنهان‌سازی رمز و خطاهای فرم.
-- افزودن OTP نمایشی چهاررقمی: درخواست، نمایش کد، تأیید، شمارش انقضا (۵ دقیقه)، تلاش محدود و ارسال مجدد.
-- حفظ کلیدهای storage سازگار با auth.js و حفظ رمز آزمایشی موجود admin/admin.
-- شبیه‌سازی OTP فقط برای توسعه/دمو است؛ ارسال واقعی کد در این نسخه انجام نمی‌شود.
+Sandika v59 — RBAC tiers
+- Roles: admin (system manager), board, member. Legacy manager role maps to admin.
+- admin: full access, including approvals, cartable, external letters, clearance, settings.
+- board: cartable and member review/list access.
+- member: member portal/personal edit-submission only.
+- Admin creates role accounts from settings.html.
+- Static-site client-side checks are not a substitute for server-side authorization.
