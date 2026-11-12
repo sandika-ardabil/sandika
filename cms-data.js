@@ -7,5 +7,12 @@ var api={ready:load(),get:function(k){var d=merge(baseData,ov);if(k==='news')ret
 function apply(){if(!document)return;var title=ov.siteTitle;if(title){document.querySelectorAll('.marquee-text').forEach(function(n){n.textContent=title});var h=document.querySelector('h1');if(h&&document.body.classList.contains('home-page'))h.textContent=title;}
 if(ov.aboutText){var p=document.querySelector('[data-cms-about]');if(p)p.textContent=ov.aboutText;}
 if(Array.isArray(ov.missionTexts)){var boxes=document.querySelectorAll('[data-cms-mission]');ov.missionTexts.forEach(function(t,i){if(boxes[i])boxes[i].textContent=t})}}
+
+/* v62 visual editor bridge: accept live CMS updates only from the same-origin parent admin. */
+w.addEventListener('message',function(event){
+ if(event.source!==w.parent || (event.origin!==w.location.origin && !(w.location.origin==='null' && event.origin==='null')))return;
+ var msg=event.data;if(!msg||msg.type!=='SANDIKA_CMS_UPDATE'||!msg.overrides||typeof msg.overrides!=='object')return;
+ api.saveOverrides(msg.overrides);
+});
 api.ready.then(apply);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);w.SandikaCMS=api;
 })(window);
