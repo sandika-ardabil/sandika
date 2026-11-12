@@ -421,3 +421,14 @@ main.login-container{min-height:calc(80vh - 190px)}
 .person-card .avatar.portrait-frame img{width:100%;height:100%;object-fit:cover;display:block}
 
 .space-top { margin-top: 38px; }
+
+
+/* Requested about/members page refinements (scoped; other pages unchanged) */
+.about-page .container, .members-page .container{width:min(1440px,96vw);margin-inline:auto}
+.about-page .avatar.portrait-frame{width:68px;height:78px;border-radius:50% / 60%;overflow:hidden;flex:0 0 auto}
+.about-page .avatar.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.members-page .company-logo{width:65px;height:65px;flex-basis:65px}
+@media(max-width:520px){
+ .about-page .container, .members-page .container{width:calc(100% - 28px)}
+ .members-page .company-logo{width:55px;height:55px;flex-basis:55px}
+}
