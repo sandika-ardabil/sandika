@@ -5,5 +5,3 @@ Sandika v59 — RBAC tiers
 - member: member portal/personal edit-submission only.
 - Admin creates role accounts from settings.html.
 - Static-site client-side checks are not a substitute for server-side authorization.
-
-[v62] افزودن تب ویرایشگر بصری در کنسول مدیریت با پیش‌نمایش زندهٔ iframe و همگام‌سازی تغییرات CMS از طریق postMessage هم‌مبدأ.
