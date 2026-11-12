@@ -1,0 +1,7 @@
+Sandika v59 — RBAC tiers
+- Roles: admin (system manager), board, member. Legacy manager role maps to admin.
+- admin: full access, including approvals, cartable, external letters, clearance, settings.
+- board: cartable and member review/list access.
+- member: member portal/personal edit-submission only.
+- Admin creates role accounts from settings.html.
+- Static-site client-side checks are not a substitute for server-side authorization.

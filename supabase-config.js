@@ -1,0 +1,2 @@
+/* Client configuration only. Never place a Supabase secret/service-role key here. */
+(function(w){var c={};try{c=JSON.parse(localStorage.getItem('sandika_supabase_config')||'{}')}catch(e){};var cms=w.SandikaCMS;if(cms&&cms.get){var x=cms.get('supabaseConfig')||{};c=Object.assign({},x,c)}w.SandikaSupabase={url:String(c.url||''),key:String(c.key||''),isConfigured:function(){return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(this.url)&&!!this.key}}})(window);
