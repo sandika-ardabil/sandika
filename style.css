@@ -432,3 +432,21 @@ main.login-container{min-height:calc(80vh - 190px)}
  .about-page .container, .members-page .container{width:calc(100% - 28px)}
  .members-page .company-logo{width:55px;height:55px;flex-basis:55px}
 }
+
+
+/* Scoped 20% enlargement and precise centering: members and about pages only */
+.members-page .company-grid{grid-template-columns:repeat(auto-fill,minmax(252px,1fr))}
+.members-page .company-grid .company-tile{min-height:110px;padding:17px 19px;gap:14px}
+.members-page .company-grid .company-logo{width:78px;height:78px;flex-basis:78px}
+.about-page .people-grid{grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:22px;justify-items:center}
+.about-page .person-card{width:100%;padding:22px}
+.about-page .avatar.portrait-frame{width:82px;height:94px;margin-inline:auto;display:grid;place-items:center}
+.about-page .avatar.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;margin:auto}
+@media(max-width:520px){
+ .members-page .company-grid{grid-template-columns:repeat(auto-fill,minmax(186px,1fr))}
+ .members-page .company-grid .company-tile{padding:14px;gap:11px}
+ .members-page .company-grid .company-logo{width:66px;height:66px;flex-basis:66px}
+ .about-page .people-grid{grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:20px}
+ .about-page .person-card{padding:21px}
+ .about-page .avatar.portrait-frame{width:82px;height:94px}
+}
